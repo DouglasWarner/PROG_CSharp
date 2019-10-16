@@ -1,0 +1,6 @@
+D:\alumno1718\Escritorio\App_Ejemplo10-10\App_Ejemplo10-10\bin\Debug\App_Ejemplo10-10.exe.config
+D:\alumno1718\Escritorio\App_Ejemplo10-10\App_Ejemplo10-10\bin\Debug\App_Ejemplo10-10.exe
+D:\alumno1718\Escritorio\App_Ejemplo10-10\App_Ejemplo10-10\bin\Debug\App_Ejemplo10-10.pdb
+D:\alumno1718\Escritorio\App_Ejemplo10-10\App_Ejemplo10-10\obj\Debug\App_Ejemplo10-10.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\App_Ejemplo10-10\App_Ejemplo10-10\obj\Debug\App_Ejemplo10-10.exe
+D:\alumno1718\Escritorio\App_Ejemplo10-10\App_Ejemplo10-10\obj\Debug\App_Ejemplo10-10.pdb

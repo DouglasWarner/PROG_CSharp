@@ -1,0 +1,6 @@
+D:\alumno1718\Escritorio\App_AreaTriangulo\App_AreaTriangulo\bin\Debug\App_AreaTriangulo.exe.config
+D:\alumno1718\Escritorio\App_AreaTriangulo\App_AreaTriangulo\bin\Debug\App_AreaTriangulo.exe
+D:\alumno1718\Escritorio\App_AreaTriangulo\App_AreaTriangulo\bin\Debug\App_AreaTriangulo.pdb
+D:\alumno1718\Escritorio\App_AreaTriangulo\App_AreaTriangulo\obj\Debug\App_AreaTriangulo.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\App_AreaTriangulo\App_AreaTriangulo\obj\Debug\App_AreaTriangulo.exe
+D:\alumno1718\Escritorio\App_AreaTriangulo\App_AreaTriangulo\obj\Debug\App_AreaTriangulo.pdb

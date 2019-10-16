@@ -1,0 +1,6 @@
+D:\alumno1718\Escritorio\Ejemplo_14-10\Ejemplo_14-10\bin\Debug\Ejemplo_14-10.exe.config
+D:\alumno1718\Escritorio\Ejemplo_14-10\Ejemplo_14-10\bin\Debug\Ejemplo_14-10.exe
+D:\alumno1718\Escritorio\Ejemplo_14-10\Ejemplo_14-10\bin\Debug\Ejemplo_14-10.pdb
+D:\alumno1718\Escritorio\Ejemplo_14-10\Ejemplo_14-10\obj\Debug\Ejemplo_14-10.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\Ejemplo_14-10\Ejemplo_14-10\obj\Debug\Ejemplo_14-10.exe
+D:\alumno1718\Escritorio\Ejemplo_14-10\Ejemplo_14-10\obj\Debug\Ejemplo_14-10.pdb

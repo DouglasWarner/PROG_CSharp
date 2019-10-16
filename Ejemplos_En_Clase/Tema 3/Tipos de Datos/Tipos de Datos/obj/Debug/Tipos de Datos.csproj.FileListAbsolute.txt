@@ -1,0 +1,6 @@
+D:\alumno1718\Escritorio\Tipos de Datos\Tipos de Datos\bin\Debug\Tipos de Datos.exe.config
+D:\alumno1718\Escritorio\Tipos de Datos\Tipos de Datos\bin\Debug\Tipos de Datos.exe
+D:\alumno1718\Escritorio\Tipos de Datos\Tipos de Datos\bin\Debug\Tipos de Datos.pdb
+D:\alumno1718\Escritorio\Tipos de Datos\Tipos de Datos\obj\Debug\Tipos de Datos.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\Tipos de Datos\Tipos de Datos\obj\Debug\Tipos de Datos.exe
+D:\alumno1718\Escritorio\Tipos de Datos\Tipos de Datos\obj\Debug\Tipos de Datos.pdb

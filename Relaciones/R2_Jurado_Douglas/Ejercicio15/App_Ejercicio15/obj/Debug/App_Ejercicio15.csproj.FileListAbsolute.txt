@@ -1,0 +1,6 @@
+D:\alumno1718\Escritorio\App_Ejercicio15\App_Ejercicio15\bin\Debug\App_Ejercicio15.exe.config
+D:\alumno1718\Escritorio\App_Ejercicio15\App_Ejercicio15\bin\Debug\App_Ejercicio15.exe
+D:\alumno1718\Escritorio\App_Ejercicio15\App_Ejercicio15\bin\Debug\App_Ejercicio15.pdb
+D:\alumno1718\Escritorio\App_Ejercicio15\App_Ejercicio15\obj\Debug\App_Ejercicio15.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\App_Ejercicio15\App_Ejercicio15\obj\Debug\App_Ejercicio15.exe
+D:\alumno1718\Escritorio\App_Ejercicio15\App_Ejercicio15\obj\Debug\App_Ejercicio15.pdb

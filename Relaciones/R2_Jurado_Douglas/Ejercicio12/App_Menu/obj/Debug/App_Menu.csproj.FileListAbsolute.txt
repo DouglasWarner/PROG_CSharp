@@ -1,0 +1,6 @@
+D:\alumno1718\Escritorio\App_Menu\App_Menu\bin\Debug\App_Menu.exe.config
+D:\alumno1718\Escritorio\App_Menu\App_Menu\bin\Debug\App_Menu.exe
+D:\alumno1718\Escritorio\App_Menu\App_Menu\bin\Debug\App_Menu.pdb
+D:\alumno1718\Escritorio\App_Menu\App_Menu\obj\Debug\App_Menu.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\App_Menu\App_Menu\obj\Debug\App_Menu.exe
+D:\alumno1718\Escritorio\App_Menu\App_Menu\obj\Debug\App_Menu.pdb

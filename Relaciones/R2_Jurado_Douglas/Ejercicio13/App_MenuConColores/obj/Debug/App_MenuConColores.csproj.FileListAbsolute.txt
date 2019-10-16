@@ -1,0 +1,6 @@
+D:\alumno1718\Escritorio\App_MenuConColores\App_MenuConColores\bin\Debug\App_MenuConColores.exe.config
+D:\alumno1718\Escritorio\App_MenuConColores\App_MenuConColores\bin\Debug\App_MenuConColores.exe
+D:\alumno1718\Escritorio\App_MenuConColores\App_MenuConColores\bin\Debug\App_MenuConColores.pdb
+D:\alumno1718\Escritorio\App_MenuConColores\App_MenuConColores\obj\Debug\App_MenuConColores.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\App_MenuConColores\App_MenuConColores\obj\Debug\App_MenuConColores.exe
+D:\alumno1718\Escritorio\App_MenuConColores\App_MenuConColores\obj\Debug\App_MenuConColores.pdb

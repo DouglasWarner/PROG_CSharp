@@ -1,0 +1,29 @@
+1.
+
+a) El resultado de R es 45.
+b) Hay un error en la sintasis, entre el [ % ] y [ == ] deberia de haber un numero para poder
+	ejecutar la expresion booleana.
+c) Expresion booleana que como resultado devuelve true, ya que la suma de a + b (7) es mayor que la resta de c - 2 (3).
+d) Expresion booleana que compara si la constante numerica 1 es igual a 1. Devolveria true.
+
+
+2. 
+
+a) x = 64
+b) x = 21
+c) y = 1.25
+d) y = 10
+e) x = 52.5
+f) x = 13.20
+g) x = 36.67
+
+3.
+ Mostrara la variable b con formato hexadecimal, luego las varibles i e f con el formato por defecto.
+
+4.
+
+a) false
+b) true
+c) true
+d) true
+e) 
