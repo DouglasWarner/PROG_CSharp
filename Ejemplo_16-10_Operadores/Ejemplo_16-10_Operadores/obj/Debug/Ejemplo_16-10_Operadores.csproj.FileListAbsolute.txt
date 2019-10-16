@@ -1,0 +1,6 @@
+C:\Douglas_Programacion\Ejemplo_16-10_Operadores\Ejemplo_16-10_Operadores\bin\Debug\Ejemplo_16-10_Operadores.exe.config
+C:\Douglas_Programacion\Ejemplo_16-10_Operadores\Ejemplo_16-10_Operadores\bin\Debug\Ejemplo_16-10_Operadores.exe
+C:\Douglas_Programacion\Ejemplo_16-10_Operadores\Ejemplo_16-10_Operadores\bin\Debug\Ejemplo_16-10_Operadores.pdb
+C:\Douglas_Programacion\Ejemplo_16-10_Operadores\Ejemplo_16-10_Operadores\obj\Debug\Ejemplo_16-10_Operadores.csprojResolveAssemblyReference.cache
+C:\Douglas_Programacion\Ejemplo_16-10_Operadores\Ejemplo_16-10_Operadores\obj\Debug\Ejemplo_16-10_Operadores.exe
+C:\Douglas_Programacion\Ejemplo_16-10_Operadores\Ejemplo_16-10_Operadores\obj\Debug\Ejemplo_16-10_Operadores.pdb
