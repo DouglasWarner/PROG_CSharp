@@ -46,24 +46,25 @@ namespace Tipos_de_Datos
 			// Char (2^16) 16 bits
 			char caracter = 'c';
 			Console.WriteLine("Char --> {0}", caracter);
-			/* Enumeraciones
-				enum MyEnum
-				{
+			//Enumeraciones
+			enum MyEnum
+			{
 	         
-				}
-			 */
-			/* Estructuras
-				struct MyStruct
-				{
+			}
+			
+			//Estructuras
+			struct MyStruct
+			{
 		
-				}
-			*/
+			}
+			
 
 			//							POR REFERENCIA
 			/* Clases
 			 * Arrays
 			 * String
 			 * Interfaces
+             * Colecciones
 			 */
 
 			

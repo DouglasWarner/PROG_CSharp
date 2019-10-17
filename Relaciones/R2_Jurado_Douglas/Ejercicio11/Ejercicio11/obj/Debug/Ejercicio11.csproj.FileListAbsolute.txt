@@ -1,0 +1,6 @@
+C:\Douglas_Programacion\Relaciones\R2_Jurado_Douglas\Ejercicio11\Ejercicio11\bin\Debug\Ejercicio11.exe.config
+C:\Douglas_Programacion\Relaciones\R2_Jurado_Douglas\Ejercicio11\Ejercicio11\bin\Debug\Ejercicio11.exe
+C:\Douglas_Programacion\Relaciones\R2_Jurado_Douglas\Ejercicio11\Ejercicio11\bin\Debug\Ejercicio11.pdb
+C:\Douglas_Programacion\Relaciones\R2_Jurado_Douglas\Ejercicio11\Ejercicio11\obj\Debug\Ejercicio11.csprojResolveAssemblyReference.cache
+C:\Douglas_Programacion\Relaciones\R2_Jurado_Douglas\Ejercicio11\Ejercicio11\obj\Debug\Ejercicio11.exe
+C:\Douglas_Programacion\Relaciones\R2_Jurado_Douglas\Ejercicio11\Ejercicio11\obj\Debug\Ejercicio11.pdb
