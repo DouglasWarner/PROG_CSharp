@@ -1,0 +1,6 @@
+D:\alumno1718\Escritorio\Ejemplo_17-10_ManejoDeBits\Ejemplo_17-10_ManejoDeBits\bin\Debug\Ejemplo_17-10_ManejoDeBits.exe.config
+D:\alumno1718\Escritorio\Ejemplo_17-10_ManejoDeBits\Ejemplo_17-10_ManejoDeBits\bin\Debug\Ejemplo_17-10_ManejoDeBits.exe
+D:\alumno1718\Escritorio\Ejemplo_17-10_ManejoDeBits\Ejemplo_17-10_ManejoDeBits\bin\Debug\Ejemplo_17-10_ManejoDeBits.pdb
+D:\alumno1718\Escritorio\Ejemplo_17-10_ManejoDeBits\Ejemplo_17-10_ManejoDeBits\obj\Debug\Ejemplo_17-10_ManejoDeBits.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\Ejemplo_17-10_ManejoDeBits\Ejemplo_17-10_ManejoDeBits\obj\Debug\Ejemplo_17-10_ManejoDeBits.exe
+D:\alumno1718\Escritorio\Ejemplo_17-10_ManejoDeBits\Ejemplo_17-10_ManejoDeBits\obj\Debug\Ejemplo_17-10_ManejoDeBits.pdb
