@@ -1,0 +1,6 @@
+C:\Douglas_Programacion\Ejemplo_Random\Ejemplo_Random\bin\Debug\Ejemplo_Random.exe.config
+C:\Douglas_Programacion\Ejemplo_Random\Ejemplo_Random\bin\Debug\Ejemplo_Random.exe
+C:\Douglas_Programacion\Ejemplo_Random\Ejemplo_Random\bin\Debug\Ejemplo_Random.pdb
+C:\Douglas_Programacion\Ejemplo_Random\Ejemplo_Random\obj\Debug\Ejemplo_Random.csprojResolveAssemblyReference.cache
+C:\Douglas_Programacion\Ejemplo_Random\Ejemplo_Random\obj\Debug\Ejemplo_Random.exe
+C:\Douglas_Programacion\Ejemplo_Random\Ejemplo_Random\obj\Debug\Ejemplo_Random.pdb

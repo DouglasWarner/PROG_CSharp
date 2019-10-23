@@ -1,0 +1,1 @@
+C:\Douglas_Programacion\App_CalcularAñoBisiesto\App_CalcularAñoBisiesto\bin\Debug\App_CalcularAñoBisiesto.exe.config

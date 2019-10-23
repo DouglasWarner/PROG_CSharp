@@ -35,7 +35,6 @@ namespace Ejercicio8
                 {
                     Console.WriteLine("Porfavor introduce un número.");
                     Console.ReadLine();
-                    return;
                 }
 
                 if (numero1 == numero2)

@@ -4,3 +4,9 @@ C:\Douglas_Programacion\Tareas\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\bin\Debug
 C:\Douglas_Programacion\Tareas\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.csprojResolveAssemblyReference.cache
 C:\Douglas_Programacion\Tareas\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.exe
 C:\Douglas_Programacion\Tareas\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.pdb
+C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.exe.config
+C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.exe
+C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.pdb
+C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.exe
+C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.pdb
+C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.csprojResolveAssemblyReference.cache
