@@ -22,23 +22,35 @@ namespace Ejercicio10
             if (!int.TryParse(tmp, out numero))
             {
                 Console.WriteLine("Porfavor introduce un numero");
+                Console.ReadLine();
                 return;
             }
 
-            if (numero < 7 && numero > 99)
+            if (numero < 7 || numero > 99)
             {
                 Console.WriteLine("Porfavor introduce un numero entre 7 y 99");
+                Console.ReadLine();
                 return;
             }
             else
-                Console.WriteLine(EsPrimo(numero) ? "Es primo" : "No es primo");
+            {
+                Console.WriteLine(EsPrimo(numero) ? numero + "-> Es primo" : numero + "-> No es primo");
+            }
 
             Console.ReadLine();
         }
 
         static bool EsPrimo(int num)
         {
-            return (num % 2 == 0) ? false : true;
+            int contador = 0;
+            for (int i = 1; i <= num; i++)
+            {
+                if (num % i == 0)
+                    contador++;
+                if (contador > 2)
+                    return false;
+            }
+            return true;
         }
     }
 }
