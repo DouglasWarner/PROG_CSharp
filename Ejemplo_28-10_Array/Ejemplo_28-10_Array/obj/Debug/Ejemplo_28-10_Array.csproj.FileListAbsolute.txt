@@ -1,0 +1,6 @@
+C:\Douglas_Programacion\Ejemplo_28-10_Array\Ejemplo_28-10_Array\bin\Debug\Ejemplo_28-10_Array.exe.config
+C:\Douglas_Programacion\Ejemplo_28-10_Array\Ejemplo_28-10_Array\bin\Debug\Ejemplo_28-10_Array.exe
+C:\Douglas_Programacion\Ejemplo_28-10_Array\Ejemplo_28-10_Array\bin\Debug\Ejemplo_28-10_Array.pdb
+C:\Douglas_Programacion\Ejemplo_28-10_Array\Ejemplo_28-10_Array\obj\Debug\Ejemplo_28-10_Array.csprojResolveAssemblyReference.cache
+C:\Douglas_Programacion\Ejemplo_28-10_Array\Ejemplo_28-10_Array\obj\Debug\Ejemplo_28-10_Array.exe
+C:\Douglas_Programacion\Ejemplo_28-10_Array\Ejemplo_28-10_Array\obj\Debug\Ejemplo_28-10_Array.pdb
