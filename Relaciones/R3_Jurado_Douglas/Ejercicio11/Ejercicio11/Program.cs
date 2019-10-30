@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio11
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 28/10/2019						VERSION: 1.0
+ * COMENTARIO: Lee por teclado números hasta introducir un 0, y luego suma los pares e
+ *              imprime su cuadrado y suma los impares y muestra la media de los impares.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +15,6 @@ namespace Ejercicio11
 {
     class Program
     {
-        /*  Escribir en C# un programa que lea por teclados números hasta introducir un 0, que sume los pares e
-            imprima su cuadrado, sume los impares y muestre la media.
-        */
         static void Main(string[] args)
         {
             string tmp = string.Empty;

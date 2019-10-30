@@ -4,7 +4,6 @@
  * 	    FECHA: 28/10/2019						VERSION: 1.0
  * COMENTARIO: Genera una quiniela con valores aleatorios de X, 1 y 2.
  *---------------------------------------------------------------------- */
-
 using System;
 using System.Collections.Generic;
 using System.Linq;

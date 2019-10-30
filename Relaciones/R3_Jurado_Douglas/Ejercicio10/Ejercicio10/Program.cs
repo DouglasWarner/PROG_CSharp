@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio10
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 28/10/2019						VERSION: 1.0
+ * COMENTARIO: Comprueba si dado un número positivo, comprendido entre 7 y 99, es primo o no.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +14,6 @@ namespace Ejercicio10
 {
     class CalcularPrimo
     {
-        // Escribir en pseudocódigo si dado un número positivo, comprendodo entre 7 y 99,es primo o no.
         static void Main(string[] args)
         {
             string tmp = string.Empty;

@@ -4,7 +4,6 @@
  * 	    FECHA: 28/10/2019						VERSION: 1.0
  * COMENTARIO: Convierta las millas marinas en metros. 1 milla marina equivale a 1.852 metros.
  *---------------------------------------------------------------------- */
-
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio13
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 28/10/2019						VERSION: 1.0
+ * COMENTARIO: Muestra por pantalla frases con caracteres especiales del String.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

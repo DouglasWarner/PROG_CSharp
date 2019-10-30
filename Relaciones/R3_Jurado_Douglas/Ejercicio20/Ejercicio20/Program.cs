@@ -4,7 +4,6 @@
  * 	    FECHA: 28/10/2019						VERSION: 1.0
  * COMENTARIO: Cálcula la media de una serie de notas introducidas.
  *---------------------------------------------------------------------- */
-
 using System;
 using System.Collections.Generic;
 using System.Linq;

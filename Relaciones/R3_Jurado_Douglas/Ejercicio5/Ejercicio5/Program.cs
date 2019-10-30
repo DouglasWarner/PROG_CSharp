@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio5
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 28/10/2019						VERSION: 1.0
+ * COMENTARIO: Un menú con opciones: Cálcular área de un cuadrado, un rectángulo y un triangulo.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

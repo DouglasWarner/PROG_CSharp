@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio7
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 28/10/2019						VERSION: 1.0
+ * COMENTARIO: Lee por teclado, hasta introducir un *, y imprime en mayúsculas las letras.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +14,6 @@ namespace Ejercicio7
 {
     class AMayusculas
     {
-        /* Hacer un ordinograma que lea letras por teclado hasta introducir un *, 
-         * y las vaya imprimiendo en mayúsculas. Los caracteres no letras los escribe tal cual.
-         * Si quieres crea la función ‘AMayuscula’ y úsala.*/
-
         static void Main(string[] args)
         {
             Console.WriteLine("Escribe por teclado. Voy a convertirlas en mayuscula. Para terminar pulsa [*].");

@@ -10,3 +10,9 @@ C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\D
 C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.exe
 C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.pdb
 C:\Douglas_Programacion\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.csprojResolveAssemblyReference.cache
+C:\Users\metho\OneDrive\Escritorio\PROG\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.exe.config
+C:\Users\metho\OneDrive\Escritorio\PROG\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.exe
+C:\Users\metho\OneDrive\Escritorio\PROG\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.pdb
+C:\Users\metho\OneDrive\Escritorio\PROG\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.exe
+C:\Users\metho\OneDrive\Escritorio\PROG\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\bin\Debug\Ejercicio8.pdb
+C:\Users\metho\OneDrive\Escritorio\PROG\Relaciones\R3_Jurado_Douglas\Ejercicio8\Ejercicio8\obj\Debug\Ejercicio8.csprojResolveAssemblyReference.cache
