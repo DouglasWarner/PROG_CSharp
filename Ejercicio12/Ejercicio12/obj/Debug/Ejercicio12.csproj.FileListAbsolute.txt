@@ -1,6 +1,0 @@
-C:\Douglas_Programacion\Ejercicio12\Ejercicio12\bin\Debug\Ejercicio12.exe.config
-C:\Douglas_Programacion\Ejercicio12\Ejercicio12\bin\Debug\Ejercicio12.exe
-C:\Douglas_Programacion\Ejercicio12\Ejercicio12\bin\Debug\Ejercicio12.pdb
-C:\Douglas_Programacion\Ejercicio12\Ejercicio12\obj\Debug\Ejercicio12.csprojResolveAssemblyReference.cache
-C:\Douglas_Programacion\Ejercicio12\Ejercicio12\obj\Debug\Ejercicio12.exe
-C:\Douglas_Programacion\Ejercicio12\Ejercicio12\obj\Debug\Ejercicio12.pdb

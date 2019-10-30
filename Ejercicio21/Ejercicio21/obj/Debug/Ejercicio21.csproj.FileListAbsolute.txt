@@ -1,6 +1,0 @@
-C:\Douglas_Programacion\Ejercicio21\Ejercicio21\bin\Debug\Ejercicio21.exe.config
-C:\Douglas_Programacion\Ejercicio21\Ejercicio21\obj\Debug\Ejercicio21.csprojResolveAssemblyReference.cache
-C:\Douglas_Programacion\Ejercicio21\Ejercicio21\bin\Debug\Ejercicio21.exe
-C:\Douglas_Programacion\Ejercicio21\Ejercicio21\bin\Debug\Ejercicio21.pdb
-C:\Douglas_Programacion\Ejercicio21\Ejercicio21\obj\Debug\Ejercicio21.exe
-C:\Douglas_Programacion\Ejercicio21\Ejercicio21\obj\Debug\Ejercicio21.pdb

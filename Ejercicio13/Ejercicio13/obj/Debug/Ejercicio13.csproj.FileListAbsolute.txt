@@ -1,5 +1,0 @@
-C:\Douglas_Programacion\Ejercicio13\Ejercicio13\bin\Debug\Ejercicio13.exe.config
-C:\Douglas_Programacion\Ejercicio13\Ejercicio13\bin\Debug\Ejercicio13.exe
-C:\Douglas_Programacion\Ejercicio13\Ejercicio13\bin\Debug\Ejercicio13.pdb
-C:\Douglas_Programacion\Ejercicio13\Ejercicio13\obj\Debug\Ejercicio13.exe
-C:\Douglas_Programacion\Ejercicio13\Ejercicio13\obj\Debug\Ejercicio13.pdb
