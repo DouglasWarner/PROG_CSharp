@@ -1,0 +1,6 @@
+C:\Douglas_Programacion\Ejemplo_30-10\Ejemplo_30-10\bin\Debug\Ejemplo_30-10.exe.config
+C:\Douglas_Programacion\Ejemplo_30-10\Ejemplo_30-10\bin\Debug\Ejemplo_30-10.exe
+C:\Douglas_Programacion\Ejemplo_30-10\Ejemplo_30-10\bin\Debug\Ejemplo_30-10.pdb
+C:\Douglas_Programacion\Ejemplo_30-10\Ejemplo_30-10\obj\Debug\Ejemplo_30-10.csprojResolveAssemblyReference.cache
+C:\Douglas_Programacion\Ejemplo_30-10\Ejemplo_30-10\obj\Debug\Ejemplo_30-10.exe
+C:\Douglas_Programacion\Ejemplo_30-10\Ejemplo_30-10\obj\Debug\Ejemplo_30-10.pdb
