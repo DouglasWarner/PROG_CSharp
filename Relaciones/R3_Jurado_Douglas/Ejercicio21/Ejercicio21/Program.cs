@@ -17,14 +17,14 @@ namespace Ejercicio21
         static void Main(string[] args)
         {
             Random rnd = new Random();
-            char[] resultado = new char[] { '1', '2', 'x'};
+            char[] resultados = new char[] { '1', '2', 'x'};
             char[] resultQuiniela = new char[15];
 
             Console.WriteLine("Generador de resultado de quiniela de futbol");
 
-            CrearQuiniela(rnd, resultado, resultQuiniela);
+            CrearQuiniela(rnd, resultados, resultQuiniela);
 
-            MostrarQuiniela(resultado, resultQuiniela, 5, 15);
+            MostrarQuiniela(resultados, resultQuiniela, 5, 15);
 
             Console.ReadLine();
         }

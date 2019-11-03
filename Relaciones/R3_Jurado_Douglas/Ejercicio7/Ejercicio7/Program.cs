@@ -16,10 +16,10 @@ namespace Ejercicio7
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Escribe por teclado. Voy a convertirlas en mayuscula. Para terminar pulsa [*].");
-
             char letra = 'a';
             string frase = string.Empty;
+
+            Console.WriteLine("Escribe por teclado. Voy a convertirlas en mayuscula. Para terminar pulsa [*].");
 
             do
             {

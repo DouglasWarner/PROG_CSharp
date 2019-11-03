@@ -31,6 +31,10 @@ namespace Ejercicio14
             Console.WriteLine("{0}", s1);
             Console.WriteLine("{0:N2}", s4);
             Console.WriteLine("{0:X}", s3);
+
+            string x = "hola caracola";
+
+            Console.WriteLine("{0:*}",x);
             Console.ReadLine();
         }
     }
