@@ -12,13 +12,28 @@ namespace Ejemplo_DisplayContador
     {
         static void Main(string[] args)
         {
+            ConsoleKeyInfo tecla = new ConsoleKeyInfo();
 
+            do
+            {
+                ActivarContador();
+
+                Console.WriteLine("Resetear el contador? [s] [n]");
+                tecla = Console.ReadKey();
+                Console.ReadLine();
+
+            } while (tecla.KeyChar != 'n');
+
+
+            Console.ReadLine();
+        }
+
+        private static void ActivarContador()
+        {
             for (int i = 0; i <= 99; i++)
             {
                 Contador(i, 5, 5, 10);
             }
-            
-            Console.ReadLine();
         }
 
         static void Contador(int num, int fil, int col, int retardo)
