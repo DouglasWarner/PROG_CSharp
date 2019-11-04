@@ -17,10 +17,11 @@ namespace Ejercicio5
                                 "\ndeseaba recompensar a un estudiante por su servicio.");
             Console.WriteLine("Muestra la cantidad correspondiente en las casillas multiplos de 8.\n");
 
+            Console.WriteLine("Casillas        Granos");
             for (int i = 1; i <= CASILLAS; i++)
             {
                 if (i % 8 == 0)
-                    Console.WriteLine("{0} -> {1:N}", i, granos);
+                    Console.WriteLine("{0} -> {1:N}", i.ToString().PadLeft(2), granos.ToString("0,0").PadLeft(25));
                 granos *= 2;
             }
             Console.ReadLine();

@@ -21,7 +21,7 @@ namespace Ejercicio12
             int numero = 0;
             Console.WriteLine("Esta aplicación cálcula todos los numeros primos hasta 10000 o hasta el número introducido menor de 10000.");
             Console.Write("Dime el número: ");
-            
+
             tmp = Console.ReadLine();
 
             if (!int.TryParse(tmp, out numero))
@@ -44,18 +44,14 @@ namespace Ejercicio12
 
         static bool EsPrimo(int num)
         {
-            int contador = 0;
-
             if (num < 2)
                 return false;
             if (num == 2 || num == 3)
                 return true;
 
-            for (int i = 1; i <= num; i++)
+            for (int i = 2; i <= num/2; i++)
             {
                 if (num % i == 0)
-                    contador++;
-                if (contador > 2)
                     return false;
             }
 
