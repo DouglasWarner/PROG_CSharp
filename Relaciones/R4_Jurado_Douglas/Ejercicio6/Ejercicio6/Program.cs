@@ -37,17 +37,18 @@ namespace Ejercicio6
         static string ResolverEcuacionSegundoGrado(int a, int b, int c)
         {
             double raiz = (Math.Pow(b, 2) - (4 * a * c));
+            double denominador = 2 * a;
 
-            if (a == 0)
-                return "\nEl denominador no puede ser 0.";
+            if (denominador == 0)
+                return "\nERROR al dividir por 0. El denominador no puede ser 0.";
 
             if(raiz < 0)
                 return "\nLa raíz es negativa. No tiene solución.";
 
             if (raiz == 0)
-                return string.Format("\nLa ecuación tiene solo una solución. x -> {0}.", -b / 2 * a);
+                return string.Format("\nLa ecuación tiene solo una solución. x -> {0}.", -b / denominador);
             else
-                return string.Format("\nx1 -> {0} \nx2 -> {1}", (-b + Math.Sqrt(raiz)) / (2 * a), (-b - Math.Sqrt(raiz)) / (2 * a));
+                return string.Format("\nx1 -> {0} \nx2 -> {1}", (-b + Math.Sqrt(raiz)) / denominador, (-b - Math.Sqrt(raiz)) / denominador);
         }
     }
 }

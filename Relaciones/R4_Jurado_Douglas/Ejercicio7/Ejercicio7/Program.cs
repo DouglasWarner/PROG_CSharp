@@ -26,6 +26,7 @@ namespace Ejercicio7
             catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
+                return;
             }
 
             while (numero != 0)
@@ -40,7 +41,7 @@ namespace Ejercicio7
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.StackTrace);
+                    Console.WriteLine(e.Message);
                 }
             }
 

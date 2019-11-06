@@ -10,29 +10,27 @@ namespace Ejercicio9
     {
         static void Main(string[] args)
         {
-            double numero = 0;
+            double numero = 1;
             double sumatoria = 0;
-            double nCantidad = 0;
+            double nCantidad = -1;
             Console.WriteLine("Esta aplicación cálcula la media de la serie de números introducidos.");
             Console.WriteLine("Introduce los números.");
 
-            do
+            while (numero != 0)
             {
                 try
-                {
-                    nCantidad++;
+                {   
                     numero = double.Parse(Console.ReadLine());
+                    nCantidad++;
                     sumatoria += numero;
-
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                     Console.ReadLine();
                     return;
                 }
             }
-            while (numero != 0);
-
             Console.WriteLine("La media de los números introducidos: {0:F}", sumatoria / nCantidad);
             Console.ReadLine();
         }
