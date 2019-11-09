@@ -1,0 +1,6 @@
+/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio15
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 10/10/2019						VERSION: 1.0
+ * COMENTARIO: Resuelve el área de una circunferencia.
+ *---------------------------------------------------------------------- */

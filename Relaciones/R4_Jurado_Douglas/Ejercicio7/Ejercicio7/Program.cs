@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio7
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 09/11/2019						VERSION: 1.0
+ * COMENTARIO: Halla el número máximo y el mínimode los introducidos por teclado.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

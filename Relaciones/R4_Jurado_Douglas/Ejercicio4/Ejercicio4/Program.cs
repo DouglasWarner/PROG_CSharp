@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio4
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 09/11/2019						VERSION: 1.0
+ * COMENTARIO: Dado un número pasado por teclado, comprueba si es primo o no.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

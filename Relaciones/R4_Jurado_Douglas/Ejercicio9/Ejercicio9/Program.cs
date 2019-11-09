@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio9
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 09/11/2019						VERSION: 1.0
+ * COMENTARIO: Halla la media de una serie de números introducidos por teclado, hasta introducir un 0.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio6
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 09/11/2019						VERSION: 1.0
+ * COMENTARIO: Resuelve una ecuación de segundo grado.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

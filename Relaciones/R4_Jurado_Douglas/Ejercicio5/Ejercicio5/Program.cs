@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio5
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 09/11/2019						VERSION: 1.0
+ * COMENTARIO: Algoritmo que muestra los granos de trigo que hay en las casillas multiplos de 8.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +23,7 @@ namespace Ejercicio5
                                 "\ndeseaba recompensar a un estudiante por su servicio.");
             Console.WriteLine("Muestra la cantidad correspondiente en las casillas multiplos de 8.\n");
 
-            Console.WriteLine("Casillas        Granos");
+            Console.WriteLine("Casillas        Granos de trigo");
             for (int i = 1; i <= CASILLAS; i++)
             {
                 if (i % 8 == 0)
