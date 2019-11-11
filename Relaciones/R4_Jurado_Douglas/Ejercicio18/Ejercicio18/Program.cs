@@ -17,16 +17,14 @@ namespace Ejercicio18
         static void Main(string[] args)
         {
             int anio = 0;
-
             try
             {
                 Console.WriteLine("Esta aplicación cálcula si el año pasado es bisiesto o no");
-                Console.Write("Dime el año: ");
-                anio = int.Parse(Console.ReadLine());
+                Console.Write("Dime el año: ");anio = int.Parse(Console.ReadLine());
                 if(EsBisiesto(anio))
-                    Console.WriteLine("El año {0} es bisiesto",anio);
+                    Console.WriteLine("El año {0} es bisiesto y tiene {1} días en Febrero",anio, DateTime.DaysInMonth(anio,2));
                 else
-                    Console.WriteLine("El año {0} no es bisiesto",anio);
+                    Console.WriteLine("El año {0} no es bisiesto y tiene {1} días en Febrero", anio, DateTime.DaysInMonth(anio, 2));
             }
             catch (Exception ex)
             {
@@ -38,7 +36,7 @@ namespace Ejercicio18
 
         static bool EsBisiesto(int anio)
         {
-            return ((anio % 4 == 0 && !(anio % 100 == 0)) || anio % 400 == 0) ? true : false;
+            return ((anio % 4 == 0 && !(anio % 100 == 0)) || (anio % 400 == 0)) ? true : false;
         }
     }
 }
