@@ -12,8 +12,8 @@ namespace Practica_Examen_1º
         {
             int tiradas = 6;
             Random rnd = new Random();
-            int num = 2;
-            int exponente = 2;
+            int num = 5;
+            int exponente = 5;
 
             Console.WriteLine("                 Practica examen");
             Console.WriteLine("===================================================================");
@@ -72,8 +72,8 @@ namespace Practica_Examen_1º
             Console.WriteLine("===================================================================");
 
             Console.WriteLine("Suma de los número entre un mínimo y un máximo");
-            Console.WriteLine("Recursiva: {0}", SumaRecursiva(15, 15));
-            Console.WriteLine("Iterativa: {0}", SumaIterativa(15, 15));
+            Console.WriteLine("Recursiva: {0}", SumaRecursiva(5, 15));
+            Console.WriteLine("Iterativa: {0}", SumaIterativa(5, 15));
 
             Console.WriteLine("===================================================================");
 
@@ -84,6 +84,16 @@ namespace Practica_Examen_1º
                 Console.WriteLine(Horoscopo(fechaNac.Day, fechaNac.Month));
             else
                 Console.WriteLine("Fecha de nacimiento erronea.");
+
+            Console.WriteLine("===================================================================");
+
+            Console.WriteLine("Comprobaciones varias");
+            Console.WriteLine(Convert.ToBoolean(1));    // True
+            Console.WriteLine(Convert.ToBoolean(0));    // False
+
+            char leer = (char)Console.Read();
+            Console.ReadLine();
+            Console.WriteLine(leer);
 
             Console.ReadLine();
         }
@@ -118,7 +128,7 @@ namespace Practica_Examen_1º
             if (exponente == 0)
                 return 1;
 
-            return num * PotenciaRecursiva(num, exponente-1);
+            return num * PotenciaRecursiva(num, --exponente);
         }
 
         static int PotenciaIterativa(int num, int exponente)
@@ -187,7 +197,7 @@ namespace Practica_Examen_1º
             if (numMin == numMax)
                 return numMax;
 
-            return numMin + SumaRecursiva(numMin + 1, numMax);
+            return numMin + SumaRecursiva(++numMin, numMax);
         }
 
         static int SumaIterativa(int numMin, int numMax)
