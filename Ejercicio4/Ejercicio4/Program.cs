@@ -23,7 +23,11 @@ namespace Ejercicio4
             MostrarArray(array);
 
             if (OrdenarBurbuja(array))
+            {
+                Console.WriteLine("\nArray Ordenado con el algoritmo de la burbuja");
+                Console.WriteLine("----------------------------------------------------------");
                 MostrarArray(array);
+            }
             else
                 Console.WriteLine("Error al ordenar el array");
 
@@ -37,7 +41,7 @@ namespace Ejercicio4
 
             for (int i = 0; i < a.Length; i++)
             {
-                a[i] = rnd.Next(numAlea+1);
+                a[i] = rnd.Next(numAlea);
             }
 
             return a;
@@ -49,17 +53,18 @@ namespace Ejercicio4
 
             for (int i = 0; i < a.Length; i++)
             {
-                for (int j = 0; j < a.Length-1; j++)
+                for (int j = i; j < a.Length; j++)
                 {
-                    if (a[i] > a[j + 1])
+                    if (a[i] > a[j])
                     {
                         aux = a[i];
-                        a[i] = a[j + 1];
-                        a[j + 1] = aux;
+                        a[i] = a[j];
+                        a[j] = aux;
                     }
                 }
             }
-            return true;
+
+            return (a[0] < a[a.Length-1]) ? true : false;
         }
 
         static void MostrarArray(int[] a)

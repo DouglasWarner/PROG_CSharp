@@ -56,7 +56,6 @@ namespace Ejemplo_18_11_RecorrerModulo
         {
             int posInferior = 0;
             int posSuperior = a.Length - 1;
-            int tamano = a.Length;
             int indice = (posInferior + posSuperior) / 2;
 
             while (a[indice] != datoBuscar && posInferior <= posSuperior)
