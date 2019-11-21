@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{281EF93F-CCA7-458C-A5A4-DE129C4C8BC5}</ProjectGuid>
+    <ProjectGuid>{1F7E5B91-B8CB-4698-A68A-9478B5FC402F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ejemplo_GestionNaipes</RootNamespace>
-    <AssemblyName>Ejemplo_GestionNaipes</AssemblyName>
+    <RootNamespace>Ejemplo_21_11_ArrayInsertar_Borrado</RootNamespace>
+    <AssemblyName>Ejemplo_21-11_ArrayInsertar_Borrado</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GestionBaraja.cs" />
+    <Compile Include="GestionArray.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

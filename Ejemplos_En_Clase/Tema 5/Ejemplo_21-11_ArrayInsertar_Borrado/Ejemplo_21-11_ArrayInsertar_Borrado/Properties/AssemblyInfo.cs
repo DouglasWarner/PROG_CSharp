@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general sobre un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos atributos para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Ejemplo_GestionNaipes")]
+[assembly: AssemblyTitle("Ejemplo_21-11_ArrayInsertar_Borrado")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Ejemplo_GestionNaipes")]
+[assembly: AssemblyProduct("Ejemplo_21-11_ArrayInsertar_Borrado")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como identificador de typelib si este proyecto se expone a COM
-[assembly: Guid("c106f6e6-9259-43c6-b19e-e77b9881436c")]
+[assembly: Guid("24023b98-56a5-44c8-8f8a-a1043fa66ca3")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
