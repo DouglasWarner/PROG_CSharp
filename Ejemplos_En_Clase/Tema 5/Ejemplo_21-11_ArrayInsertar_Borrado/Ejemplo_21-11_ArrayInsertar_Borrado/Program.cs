@@ -22,6 +22,7 @@ namespace Ejemplo_21_11_ArrayInsertar_Borrado
             a1.Borrar(0);
             a1.VerArray();
 
+            
             try
             {
                 Console.Write("Se busca un dato, dime su valor: ");
@@ -33,6 +34,16 @@ namespace Ejemplo_21_11_ArrayInsertar_Borrado
             {
                 Console.WriteLine(ex.Message);
             }
+            
+            Console.WriteLine("==========================================\n");
+            Console.WriteLine("Método de ordenamiento de burbuja\n");
+            GestionArray a3 = new GestionArray(40);
+            a3.InsertarValores(40);
+            a3.VerArray();
+            Console.WriteLine("\n\n");
+            Console.WriteLine(" Ordenado\n");
+            a3.OrdBurbuja();
+            a3.VerArray();
 
             Console.ReadLine();
         }

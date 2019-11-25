@@ -19,6 +19,7 @@ namespace Ejemplo_21_11_ArrayInsertar_Borrado
         {
             this._datos = new int[TAMANO];
         }
+
         /// <summary>
         /// Crea el array de enteros con el tamaño que se indique
         /// </summary>
@@ -27,6 +28,31 @@ namespace Ejemplo_21_11_ArrayInsertar_Borrado
         {
             this._datos = new int[t];
         }
+
+        #region Métodos de ordenación
+
+        public void OrdBurbuja()
+        {
+            int i;
+            int j;
+            int tmp;
+
+            for (i = 1; i < _nDatos; i++)
+            {
+                for (j = _nDatos-1; j >= i; j--)
+                {
+                    if (_datos[j] < _datos[j - 1])
+                    {
+                        tmp = _datos[j];
+                        _datos[j] = _datos[j - 1];
+                        _datos[j - 1] = tmp;
+                    }
+                }
+            }
+
+        }
+
+        #endregion
 
         public void VerArray()
         {

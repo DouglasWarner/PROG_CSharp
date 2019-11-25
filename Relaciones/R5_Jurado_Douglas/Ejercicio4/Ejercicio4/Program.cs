@@ -31,7 +31,6 @@ namespace Ejercicio4
             else
                 Console.WriteLine("Error al ordenar el array");
 
-
             Console.ReadLine();
         }
 
@@ -53,12 +52,12 @@ namespace Ejercicio4
 
             for (int i = 0; i < a.Length; i++)
             {
-                for (int j = i; j < a.Length; j++)
+                for (int j = 0; j < a.Length-1; j++)
                 {
-                    if (a[i] > a[j])
+                    if (a[j] > a[j+1])
                     {
-                        aux = a[i];
-                        a[i] = a[j];
+                        aux = a[j+1];
+                        a[j+1] = a[j];
                         a[j] = aux;
                     }
                 }

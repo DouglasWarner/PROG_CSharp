@@ -14,12 +14,14 @@ namespace Ejercicio6
 {
     class Program
     {
+        static int[,] array2D = null;
+
         static void Main(string[] args)
         {
             const int X = 20;
             const int Y = 20;
-            int[,] array2D = new int[X, Y];
-            int[,] array2DDestino = new int[X, Y];
+            array2D = new int[X, Y];
+            int[,] array2DDestino = null;
 
             Console.WriteLine("Esta aplicación iniciliza y muestra un array de 2 dimensiones. Y la copia a otra array.");
             Console.WriteLine();
@@ -35,7 +37,7 @@ namespace Ejercicio6
             Console.WriteLine(" Array Destino");
             MostrarArray(array2DDestino);
             Console.WriteLine();
-            CopiarArray(array2D, array2DDestino);
+            array2DDestino = CopiarArray();
             Console.WriteLine(" Array copiado");
             MostrarArray(array2DDestino);
 
@@ -69,6 +71,21 @@ namespace Ejercicio6
             return true;
         }
 
+        static int[,] CopiarArray()
+        {
+            int[,] arrayTmp = null;
+
+            if (array2D == null)
+                return null;
+                
+            arrayTmp = new int[array2D.GetLength(0),array2D.GetLength(1)];
+
+            for (int i = 0; i < arrayTmp.GetLength(0); i++)
+                for (int j = 0; j < arrayTmp.GetLength(1); j++)
+                    arrayTmp[i,j] = array2D[i,j];
+
+            return arrayTmp;
+        }
         static bool CopiarArray(int[,] arrayOriginal, int[,] arrayDestino)
         {
             for (int i = 0; i < arrayOriginal.GetLength(0); i++)
