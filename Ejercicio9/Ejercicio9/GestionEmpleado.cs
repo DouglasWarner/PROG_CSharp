@@ -8,13 +8,14 @@ namespace Ejercicio9
 {
     class GestionEmpleado
     {
-        struct Empleado
+        public struct Empleado
         {
             private string _apellidos;
             private string _nombre;
             private int _edad;
             private double _sueldo;
             private DateTime _fechaContrato;
+            private bool _borrado;
 
             public string getNombre()
             {
@@ -36,6 +37,14 @@ namespace Ejercicio9
             {
                 return this._fechaContrato;
             }
+            public void setBorrado(bool value)
+            {
+                this._borrado = value;
+            }
+            public bool getBorrado()
+            {
+                return this._borrado;
+            }
 
             public Empleado(string nom, string ape, int edad, double sueldo, string fecha)
             {
@@ -44,6 +53,7 @@ namespace Ejercicio9
                 this._edad = edad;
                 this._sueldo = sueldo;
                 this._fechaContrato = DateTime.Parse(fecha);
+                this._borrado = false;
             }
 
             public override string ToString()
@@ -52,15 +62,57 @@ namespace Ejercicio9
             }
 
         }
-
-        Empleado[] _empleado = new Empleado[10];
+        const int TAMANO = 10;
+        Empleado[] _empleado;
         int _nDatosEmp = 0;
 
-        public GestionEmpleado() { }
-
-        public GestionEmpleado(Empleado emp)
+        public GestionEmpleado() 
         {
-            _empleado[_nDatosEmp] = emp;
+            this._empleado = new Empleado[TAMANO];
+        }
+
+        public GestionEmpleado(int nEmp)
+        {
+            this._empleado = new Empleado[nEmp];
+        }
+
+        public bool Anadir(Empleado emp)
+        {
+            if (_nDatosEmp > _empleado.Length-1)
+                return false;
+            
+            this._empleado[_nDatosEmp++] = emp;
+
+            return true;
+        }
+
+        public int Buscar(int pos)
+        {
+            if (pos < 0 || pos > this._nDatosEmp)
+                return -1;
+            if (this._empleado[pos].getBorrado())
+                return -1;
+
+            return pos;
+        }
+
+        public bool Borrar(int pos)
+        {
+            if (Buscar(pos) == -1)
+                return false;
+
+            this._empleado[pos].setBorrado(true);
+
+            return true;
+        }
+
+        public void Listar()
+        {
+            for (int i = 1; i < _nDatosEmp; i++)
+            {
+                if(!(this._empleado[i].getBorrado()))
+                    Console.WriteLine(this._empleado[i]);
+            }
         }
     }
 }

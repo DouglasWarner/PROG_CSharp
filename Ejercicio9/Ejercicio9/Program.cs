@@ -10,6 +10,24 @@ namespace Ejercicio9
     {
         static void Main(string[] args)
         {
+            GestionEmpleado gEmp = new GestionEmpleado(10);
+            GestionEmpleado.Empleado empleado = new GestionEmpleado.Empleado("Douglas", "Jurado", 40, 2000, "2010-11-21");
+            GestionEmpleado.Empleado empleado2 = new GestionEmpleado.Empleado("Juan", "Paco", 40, 2000, "2010-11-21");
+
+            gEmp.Anadir(empleado);
+            gEmp.Anadir(empleado2);
+
+            gEmp.Borrar(1);
+            
+            gEmp.Listar();
+
+            gEmp.Anadir(empleado);
+
+            gEmp.Listar();
+
+            Console.WriteLine(" El empleado esta en la posicion " + gEmp.Buscar(2));
+            if(gEmp.Buscar(4) == -1)
+                Console.WriteLine("El empleado no se encuentra");
 
             Console.ReadLine();
         }
