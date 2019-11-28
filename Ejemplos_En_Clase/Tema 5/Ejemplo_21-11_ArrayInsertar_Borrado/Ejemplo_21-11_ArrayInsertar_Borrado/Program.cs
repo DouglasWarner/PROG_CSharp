@@ -8,21 +8,24 @@ namespace Ejemplo_21_11_ArrayInsertar_Borrado
 {
     class Program
     {
+        // Hay que tener en cuenta que se insertan como maximo la misma cantidad que la longitud del array creado
+        // Porque si no se tiene en cuenta, se perderia información.
         static void Main(string[] args)
         {
             int datoABuscar = 0;
-            GestionArray a1 = new GestionArray(1000);
+            GestionArray a1 = new GestionArray(5);
             GestionArray a2 = new GestionArray();
 
             Console.WriteLine("Soy el a1 con tamaño por 1000");
             a1.VerArray();
-            a1.InsertarValores(25);
+            a1.InsertarValores(10);
             a1.VerArray();
-            a1.Borrar(0);
-            a1.Borrar(0);
+            Console.WriteLine("Inserto");
+            a1.Insertar(0, 8);
+            //a1.Borrar(0);
+            //a1.Borrar(0);
             a1.VerArray();
 
-            
             try
             {
                 Console.Write("Se busca un dato, dime su valor: ");
