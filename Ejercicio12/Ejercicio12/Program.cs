@@ -20,8 +20,8 @@ namespace Ejercicio12
             BarajaEspanola baraja = new BarajaEspanola();
 
             baraja.MostrarBaraja();
-            /*Console.WriteLine("\n====================================\n");
-            baraja.SacarCartas();*/
+            Console.WriteLine("\n====================================\n");
+            baraja.SacarCartas();
             Console.ReadLine();
         }
     }

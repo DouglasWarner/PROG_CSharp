@@ -7,63 +7,51 @@ using System.Threading;
 
 namespace Ejercicio12
 {
-    
     class BarajaEspanola
     {
-        public struct Carta
+        public enum Valor
         {
-            public enum Valor
-            {
-                Uno, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho, Nueve, Sota, Caballo, Rey
-            }
+            Uno, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho, Nueve, Sota, Caballo, Rey
+        }
 
-            public enum Palo
-            {
-                Or, Co, Es, Ba
-            }
-
-            Valor valor;
-            Palo palo;
-
-            public Carta(Palo p, Valor v)
-            {
-                valor = v;
-                palo = p;
-            }
-
-            public void VerCarta()
-            {
-                Console.Write("[{0}, {1}]   ", valor, palo);
-            }
-            
+        public enum Palo
+        {
+            Or, Co, Es, Ba
         }
         
-        int _nDatosValor = Enum.GetNames(typeof(Carta.Valor)).Length;
-        int _nDatosPalo = Enum.GetNames(typeof(Carta.Palo)).Length;
-        Carta[] _baraja = null;
-        const int TAMANOBARAJA = 48;
+        int _nDatosValor = Enum.GetNames(typeof(Valor)).Length;
+        int _nDatosPalo = Enum.GetNames(typeof(Palo)).Length;
+
+        string[,] _baraja = null;
 
         public BarajaEspanola()
         {
-            _baraja = new Carta[TAMANOBARAJA];
+            _baraja = new string[_nDatosPalo, _nDatosValor];
             LlenarBaraja();
         }
 
         private void LlenarBaraja()
         {
-            int j = 0;
-
-            for (int i = 0; i < TAMANOBARAJA; i++)
+            for (int i = 0; i < _nDatosPalo; i++)
             {
-                _baraja[i] = new Carta((Carta.Palo)i, (Carta.Valor)j);
+                for (int j = 0; j < _nDatosValor; j++)
+                {
+                    _baraja[i, j] = string.Format("[{0}, {1}]  ", (Palo)i, (Valor)j);
+                }
             }
         }
 
         public void MostrarBaraja()
         {
-            for (int i = 0; i < TAMANOBARAJA; i++)
+            for (int i = 0; i < _nDatosPalo; i++)
             {
-                _baraja[i].VerCarta();
+                for (int j = 0; j < _nDatosValor; j++)
+                {
+                    if(j == _nDatosValor/2 )
+                        Console.WriteLine();    // Para darle formato al mostrarlo en consola.
+                    Console.Write(_baraja[i,j].PadLeft(15));
+                }
+                Console.WriteLine("\n");
             }
         }
         
@@ -80,7 +68,7 @@ namespace Ejercicio12
                         return;
 
                     Console.Write(baraja[i,j].PadLeft(15));
-                    if (j == nDatosValor / 2)
+                    if (j == nDatosValor / 2)   // Para darle formato al mostrarlo en consola.
                         Console.WriteLine();
                 }
                 Console.WriteLine("\n");
@@ -89,6 +77,9 @@ namespace Ejercicio12
 
         private int ComprobarCarta(int posPalo, int posValor)
         {
+            if (_baraja[posPalo, posValor] == "")
+                return -1;
+
             return 1;
         }
 
@@ -99,8 +90,6 @@ namespace Ejercicio12
             int aleaPalo = 0;
             int aleaValor = 0;
             int pausa = 100;
-            int posPalo = _nDatosPalo;
-            int posValor = _nDatosValor;
 
             for (int i = 0; i < _nDatosPalo; i++)
             {
@@ -109,10 +98,10 @@ namespace Ejercicio12
                     aleaPalo = rnd.Next(_nDatosPalo);
                     aleaValor = rnd.Next(_nDatosValor);
 
-                    if (ComprobarCarta(aleaPalo, aleaValor) == 1)
+                    if (_baraja[aleaPalo,aleaValor] != "")
                     {
-                        //tmpBaraja[i, j] = _baraja[aleaPalo, aleaValor];
-                        //_baraja[aleaPalo, aleaValor] = "";
+                        tmpBaraja[i, j] = _baraja[aleaPalo, aleaValor];
+                        _baraja[aleaPalo, aleaValor] = "";
                     }
                     else
                         j--;
