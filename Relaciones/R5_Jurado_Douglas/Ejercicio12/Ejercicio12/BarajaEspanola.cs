@@ -21,12 +21,12 @@ namespace Ejercicio12
         
         int _nDatosValor = Enum.GetNames(typeof(Valor)).Length;
         int _nDatosPalo = Enum.GetNames(typeof(Palo)).Length;
-
-        string[,] _baraja = null;
+        string[] _baraja = null;
+        const int TAMANOBARAJA = 48;
 
         public BarajaEspanola()
-        {
-            _baraja = new string[_nDatosPalo, _nDatosValor];
+        {   
+            _baraja = new string[TAMANOBARAJA];
             LlenarBaraja();
         }
 
@@ -36,7 +36,7 @@ namespace Ejercicio12
             {
                 for (int j = 0; j < _nDatosValor; j++)
                 {
-                    _baraja[i, j] = string.Format("[{0}, {1}]  ", (Palo)i, (Valor)j);
+                    _baraja[j] = string.Format("[{0}, {1}]  ", (Palo)i, (Valor)j);
                 }
             }
         }
@@ -49,7 +49,7 @@ namespace Ejercicio12
                 {
                     if(j == _nDatosValor/2 )
                         Console.WriteLine();    // Para darle formato al mostrarlo en consola.
-                    Console.Write(_baraja[i,j].PadLeft(15));
+                    Console.Write(_baraja[i].PadLeft(15));
                 }
                 Console.WriteLine("\n");
             }
@@ -87,25 +87,25 @@ namespace Ejercicio12
         {
             Random rnd = new Random();
             string[,] tmpBaraja = new string[_nDatosPalo, _nDatosValor];
-            int aleaPalo = 0;
-            int aleaValor = 0;
+            int posAleaPalo = 0;
+            int posAleaValor = 0;
             int pausa = 100;
 
             for (int i = 0; i < _nDatosPalo; i++)
             {
                 for (int j = 0; j < _nDatosValor; j++)
                 {
-                    aleaPalo = rnd.Next(_nDatosPalo);
-                    aleaValor = rnd.Next(_nDatosValor);
+                    posAleaPalo = rnd.Next(_nDatosPalo);
+                    posAleaValor = rnd.Next(_nDatosValor);
 
-                    if (_baraja[aleaPalo,aleaValor] != "")
+                    if (_baraja[posAleaPalo, posAleaValor] != "")
                     {
-                        tmpBaraja[i, j] = _baraja[aleaPalo, aleaValor];
-                        _baraja[aleaPalo, aleaValor] = "";
+                        tmpBaraja[i, j] = _baraja[posAleaPalo, posAleaValor];
+                        _baraja[posAleaPalo, posAleaValor] = "";
                     }
                     else
                         j--;
-                    
+
                     Console.Clear();
                     MostrarBaraja();
                     Console.WriteLine("==============================");
@@ -114,6 +114,7 @@ namespace Ejercicio12
                     Thread.Sleep(pausa);
                 }
             }
+                
             return tmpBaraja;
         }
     }
