@@ -20,7 +20,7 @@ namespace Ejercicio12
             BarajaEspanola baraja = new BarajaEspanola();
 
             baraja.MostrarBaraja();
-            Console.WriteLine("\n====================================\n");
+            Console.WriteLine("\n" + new string('=',100));
             baraja.SacarCartas();
             Console.ReadLine();
         }

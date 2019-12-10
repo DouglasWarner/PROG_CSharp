@@ -11,16 +11,16 @@ namespace Ejercicio12
     {
         public enum Valor
         {
-            Uno, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho, Nueve, Sota, Caballo, Rey
+            Uno = 1, Dos, Tres, Cuatro, Cinco, Seis, Siete, Ocho, Nueve, Sota, Caballo, Rey
         }
 
         public enum Palo
         {
-            Or, Co, Es, Ba
+            Or = 1, Co, Es, Ba
         }
         
-        int _nDatosValor = Enum.GetNames(typeof(Valor)).Length;
-        int _nDatosPalo = Enum.GetNames(typeof(Palo)).Length;
+        int _nDatosValor = Enum.GetNames(typeof(Valor)).Length+1;
+        int _nDatosPalo = Enum.GetNames(typeof(Palo)).Length+1;
         string[] _baraja = null;
         const int TAMANOBARAJA = 48;
 
@@ -30,92 +30,93 @@ namespace Ejercicio12
             LlenarBaraja();
         }
 
-        private void LlenarBaraja()
-        {
-            for (int i = 0; i < _nDatosPalo; i++)
-            {
-                for (int j = 0; j < _nDatosValor; j++)
-                {
-                    _baraja[j] = string.Format("[{0}, {1}]  ", (Palo)i, (Valor)j);
-                }
-            }
-        }
-
         public void MostrarBaraja()
         {
-            for (int i = 0; i < _nDatosPalo; i++)
-            {
-                for (int j = 0; j < _nDatosValor; j++)
-                {
-                    if(j == _nDatosValor/2 )
-                        Console.WriteLine();    // Para darle formato al mostrarlo en consola.
-                    Console.Write(_baraja[i].PadLeft(15));
-                }
-                Console.WriteLine("\n");
-            }
-        }
-        
-        public void MostrarBaraja(string[,] baraja)
-        {
-            int nDatosPalo = baraja.GetLength(0);
-            int nDatosValor = baraja.GetLength(1);
+            Console.CursorLeft = 3;
 
-            for (int i = 0; i < nDatosPalo; i++)
+            for (int i = 0; i < TAMANOBARAJA; i++)
             {
-                for (int j = 0; j < nDatosValor; j++)
+                if (i % 7 == 0)
                 {
-                    if (baraja[i, j] == null)
-                        return;
-
-                    Console.Write(baraja[i,j].PadLeft(15));
-                    if (j == nDatosValor / 2)   // Para darle formato al mostrarlo en consola.
-                        Console.WriteLine();
+                    Console.WriteLine("\n");
+                    Console.CursorLeft = 3;
                 }
-                Console.WriteLine("\n");
+                Console.Write("{0} ", _baraja[i].ToString().PadLeft(15));
             }
         }
 
-        private int ComprobarCarta(int posPalo, int posValor)
-        {
-            if (_baraja[posPalo, posValor] == "")
-                return -1;
-
-            return 1;
-        }
-
-        public string[,] SacarCartas()
+        public string[] SacarCartas()
         {
             Random rnd = new Random();
-            string[,] tmpBaraja = new string[_nDatosPalo, _nDatosValor];
+            string[] tmpBaraja = new string[TAMANOBARAJA];
             int posAleaPalo = 0;
             int posAleaValor = 0;
-            int pausa = 100;
+            int posicion = 0;
+            int pausa = 10;
+            int tamano = TAMANOBARAJA;
 
-            for (int i = 0; i < _nDatosPalo; i++)
+            for (int i = 0; i < TAMANOBARAJA; i++)
             {
-                for (int j = 0; j < _nDatosValor; j++)
+                posAleaPalo = rnd.Next(_nDatosPalo);
+                posAleaValor = rnd.Next(_nDatosValor);
+                posicion = posAleaPalo * posAleaValor;
+                if (posicion <= tamano && _baraja[posicion] != "")
                 {
-                    posAleaPalo = rnd.Next(_nDatosPalo);
-                    posAleaValor = rnd.Next(_nDatosValor);
-
-                    if (_baraja[posAleaPalo, posAleaValor] != "")
-                    {
-                        tmpBaraja[i, j] = _baraja[posAleaPalo, posAleaValor];
-                        _baraja[posAleaPalo, posAleaValor] = "";
-                    }
-                    else
-                        j--;
-
-                    Console.Clear();
-                    MostrarBaraja();
-                    Console.WriteLine("==============================");
-                    MostrarBaraja(tmpBaraja);
-
-                    Thread.Sleep(pausa);
+                    tmpBaraja[i] = _baraja[posicion];
+                    _baraja[posicion] = "";
+                    tamano = ExtraerCarta(posicion, tamano);
+                    MostrarExtraerCarta(tmpBaraja, pausa, i);
                 }
+                else
+                    i--;
             }
-                
+
+            Console.Write("Eso es todo... ");
+            LlenarBaraja();
             return tmpBaraja;
         }
+
+        #region Mis Metodos Privados
+        private void LlenarBaraja()
+        {
+            int posicion = 0;
+
+            for (int i = 1; i < _nDatosPalo; i++)
+            {
+                for (int j = 1; j < _nDatosValor; j++)
+                {
+                    _baraja[posicion++] = string.Format("[{0}, {1}]  ", (Valor)j, (Palo)i);
+                }
+            }
+        }
+        private void MostrarBaraja(string[] baraja, int posHasta)
+        {
+            Console.CursorLeft = 3;
+            Console.WriteLine("     Extrallendo Cartas  ");
+            for (int i = 0; i <= posHasta; i++)
+            {
+                if (i % 7 == 0)
+                    Console.WriteLine("\n");
+                Console.Write("{0} ", baraja[i].ToString().PadLeft(15));
+            }
+        }
+        private void MostrarExtraerCarta(string[] tmpBaraja, int pausa, int i)
+        {
+            Console.Clear();
+            MostrarBaraja();
+            Console.WriteLine("\n" + new string('=', 100));
+            MostrarBaraja(tmpBaraja, i);
+            Thread.Sleep(pausa);
+        }
+        private int ExtraerCarta(int posicion, int tamano)
+        {
+            for (int j = posicion; j < tamano - 1; j++)
+            {
+                _baraja[j] = _baraja[j + 1];
+            }
+            _baraja[--tamano] = "";
+            return tamano;
+        }
+        #endregion
     }
 }
