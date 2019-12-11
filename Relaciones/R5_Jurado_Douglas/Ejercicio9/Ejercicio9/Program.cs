@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio9
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 25/11/2019						VERSION: 1.0
+ * COMENTARIO: Gestiona un array de una estructura de empleados.
+ *---------------------------------------------------------------------- */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +27,7 @@ namespace Ejercicio9
             gEmp.Borrar(1);
             
             gEmp.Listar();
-
+            Console.WriteLine("==========");
             gEmp.Anadir(empleado);
 
             gEmp.Listar();
@@ -32,4 +39,9 @@ namespace Ejercicio9
             Console.ReadLine();
         }
     }
+
+    class miclase
+    {
+    }
+
 }

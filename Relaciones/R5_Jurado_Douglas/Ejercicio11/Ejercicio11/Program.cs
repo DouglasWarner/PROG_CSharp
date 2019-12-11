@@ -44,7 +44,7 @@ namespace Ejercicio11
                         totalTiradas += tirada;
                         Console.WriteLine("         DADOS       ");
                         Console.WriteLine("====================================");
-                        TirarDados(tirada);
+                        Tirar(tirada);
                         MostrarDadosTirados();
 
                         Console.WriteLine("\nLlevas {0} tiradas", totalTiradas);
@@ -78,7 +78,7 @@ namespace Ejercicio11
             return (dados[caraDelDado]*100) / totalTiradas;
         }
 
-        static bool TirarDados(int tirar)
+        static bool Tirar(int tirar)
         {
             Random rnd = new Random();
             int maxDado = 7;

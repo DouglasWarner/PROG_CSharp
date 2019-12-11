@@ -10,6 +10,8 @@ namespace Ejercicio9
     {
         public struct Empleado
         {
+            static int codigo = 0;
+            private int _id;
             private string _apellidos;
             private string _nombre;
             private int _edad;
@@ -17,6 +19,10 @@ namespace Ejercicio9
             private DateTime _fechaContrato;
             private bool _borrado;
 
+            public int getID()
+            {
+                return this._id;
+            }
             public string getNombre()
             {
                 return this._nombre;
@@ -48,6 +54,7 @@ namespace Ejercicio9
 
             public Empleado(string nom, string ape, int edad, double sueldo, string fecha)
             {
+                this._id = ++codigo;
                 this._nombre = nom;
                 this._apellidos = ape;
                 this._edad = edad;
@@ -58,7 +65,7 @@ namespace Ejercicio9
 
             public override string ToString()
             {
-                return getNombre().PadLeft(10) + getApellidos().PadLeft(10) + getEdad().ToString().PadLeft(5) + getSueldo().ToString().PadLeft(10) + getFechaContrato().ToShortDateString().PadLeft(20);
+                return getID().ToString().PadLeft(5) + getNombre().PadLeft(10) + getApellidos().PadLeft(10) + getEdad().ToString().PadLeft(5) + getSueldo().ToString().PadLeft(10) + getFechaContrato().ToShortDateString().PadLeft(20);
             }
 
         }
@@ -80,7 +87,7 @@ namespace Ejercicio9
         {
             if (_nDatosEmp > _empleado.Length-1)
                 return false;
-            
+
             this._empleado[_nDatosEmp++] = emp;
 
             return true;
@@ -101,14 +108,14 @@ namespace Ejercicio9
             if (Buscar(pos) == -1)
                 return false;
 
-            this._empleado[pos].setBorrado(true);
+            this._empleado[pos - 1].setBorrado(true);
 
             return true;
         }
 
         public void Listar()
         {
-            for (int i = 1; i < _nDatosEmp; i++)
+            for (int i = 0; i < _nDatosEmp; i++)
             {
                 if(!(this._empleado[i].getBorrado()))
                     Console.WriteLine(this._empleado[i]);

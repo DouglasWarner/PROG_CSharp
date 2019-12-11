@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio2
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 14/11/2019						VERSION: 1.0
+ * COMENTARIO: Dado un array de 100 entero aleatorios entre -99 y 99, cuenta los positivos, negativos, pares, impares y los ceros.
+ *---------------------------------------------------------------------- */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*----------------------------------------------------------------------
+ *   PROGRAMA: App_Ejercicio10
+ *	    AUTOR: Douglas Warner Jurado Peña
+ * 	    FECHA: 02/12/2019						VERSION: 1.0
+ * COMENTARIO: Programa que cálcula y muestra el tríangulo de pascal con un nivel dado.
+ *---------------------------------------------------------------------- */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

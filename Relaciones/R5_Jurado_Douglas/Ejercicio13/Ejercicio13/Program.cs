@@ -1,5 +1,5 @@
 ﻿/*----------------------------------------------------------------------
- *   PROGRAMA: App_Ejercicio12
+ *   PROGRAMA: App_Ejercicio13
  *	    AUTOR: Douglas Warner Jurado Peña
  * 	    FECHA: 01/12/2019						VERSION: 1.0
  * COMENTARIO: Simula el Juego de la Vida de John Horton Conway. Pudiendo guardar y cargar una generación por fichero.
