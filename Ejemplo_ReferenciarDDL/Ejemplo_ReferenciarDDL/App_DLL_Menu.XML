@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>App_DLL_Menu</name>
+    </assembly>
+    <members>
+        <member name="T:Sebas.App_DLL_Menu.Menu">
+            <summary>
+            Librería de clase para la realización de MENUS de consola
+            Hay varios constructores, todos ellos reciben tres parámetros
+            Titulo del menu, Contenido a mostrar y la zona de los mensajes.
+            Además puede recibir un parametro de tipo ConsoleColor para
+            cambiar el color de fondo y el color del texto mostrado 7
+            otro para el ancho del menú que se centrará en pantalla
+            </summary>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.MostrarMenu">
+            <summary>
+            Dibuja un Menú centrado en la Consola con tres marcos: TITULO, CONTENIDO y MENSAJES
+            </summary>
+            <param name="titulo"> Muestra un título en el Menu</param>
+            <param name="contenido"> Zona para las opciones del menu o para mostrar información</param>
+            <param name="mensaje"> Mensajes que se mostrará a los usuarios </param>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.MostrarMenu(System.String,System.String[],System.String,System.Int32)">
+            <summary>
+            Dibuja un Menú con tres marcos en pantallas para TITULO, CONTENIDO y MENSAJES con el ancho pasado
+            </summary>
+            <param name="titulo">Título a mostrar</param>
+            <param name="contenido">Lista con las opciones del menú</param>
+            <param name="mensaje">Marco donde se muestran los mensajes</param>
+            <param name="ancho">Ancho del menú</param>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.MostrarMenu(System.String,System.String[],System.String,System.ConsoleColor)">
+            <summary>
+            Dibuja un Menú con tres marcos en pantallas para TITULO, CONTENIDO y MENSAJES con el ancho pasado
+            </summary>
+            <param name="titulo">Título a mostrar</param>
+            <param name="contenido">Lista con las opciones del menú</param>
+            <param name="mensaje">Marco donde se muestran los mensajes</param>
+            <param name="colorFondo">Color de fondo del menú</param>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.MostrarMenu(System.String,System.String[],System.String,System.ConsoleColor,System.Int32)">
+            <summary>
+            Dibuja un Menú con tres marcos en pantallas para TITULO, CONTENIDO y MENSAJES con el ancho pasado
+            </summary>
+            <param name="titulo">Título a mostrar</param>
+            <param name="contenido">Lista con las opciones del menú</param>
+            <param name="mensaje">Marco donde se muestran los mensajes</param>
+            <param name="colorFondo">Color de fondo del menú</param>
+            <param name="ancho">Ancho del menú</param>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.MostrarMenu(System.String,System.String[],System.String,System.ConsoleColor,System.ConsoleColor)">
+            <summary>
+            Dibuja un Menú con tres marcos en pantallas para TITULO, CONTENIDO y MENSAJES con el ancho pasado
+            </summary>
+            <param name="titulo">Título a mostrar</param>
+            <param name="contenido">Lista con las opciones del menú</param>
+            <param name="mensaje">Marco donde se muestran los mensajes</param>
+            <param name="colorFondo">Color de fondo del menú</param>
+            <param name="colorTexto">Color del texto</param>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.MostrarMenu(System.String,System.String[],System.String,System.ConsoleColor,System.ConsoleColor,System.Int32)">
+            <summary>
+            Dibuja un Menú con tres marcos en pantallas para TITULO, CONTENIDO y MENSAJES con el ancho pasado
+            </summary>
+            <param name="titulo">Título a mostrar</param>
+            <param name="contenido">Lista con las opciones del menú</param>
+            <param name="mensaje">Marco donde se muestran los mensajes</param>
+            <param name="colorFondo">Color de fondo del menú</param>
+            <param name="colorTexto">Color del texto</param>
+            <param name="ancho">Color del texto</param>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.MostrarContenido(System.String[])">
+            <summary>
+            Borra la zona del contenido de la pantalla y muestra la lista de string s
+            </summary>
+            <param name="s">Lista a mostrar. Máximo 14 elementos</param>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.MostrarTitulo(System.String)">
+            <summary>
+            Borra la zona del titulo de la pantalla y muestra la cadena s
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.MostrarMensaje(System.String)">
+            <summary>
+            Borra la zona del mensaje de la pantalla y muestra la cadena s
+            </summary>
+            <param name="s">Texto a mostrar</param>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.BorrarTitulo">
+            <summary>
+            Borra la zona del titulo de la pantalla
+            </summary>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.BorrarContenido">
+            <summary>
+            Borra la zona del contenido de la pantalla
+            </summary>
+        </member>
+        <member name="M:Sebas.App_DLL_Menu.Menu.BorrarMensaje">
+            <summary>
+            Borra la zona del Mensaje de la pantalla
+            </summary>
+        </member>
+    </members>
+</doc>
