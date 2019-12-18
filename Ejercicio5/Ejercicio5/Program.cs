@@ -17,11 +17,32 @@ namespace Ejercicio5
     {
         static void Main(string[] args)
         {
+            string texto = string.Empty;
+            string[] palabras = null;
+            char separador = ' ';
+
+            Console.WriteLine("     Esta aplicación cuenta las palabras de un texto según un separador.");
+            Console.WriteLine("".PadLeft(40, '-'));
+            Console.Write(" Escribe el texto: ");
+            texto = Console.ReadLine();
+            Console.Write(" Dime el separador: ");
+            separador = Console.ReadLine()[0];      // Coje el primer char que se escribe.
+
+            palabras = SepararPalabras(texto, separador);
+
+            Console.WriteLine("\n\n");
+            Console.WriteLine("\t Texto");
+            Console.WriteLine("".PadLeft(40,'-'));
+            Console.WriteLine("\t" + texto);
+            Console.WriteLine("".PadLeft(40, '-'));
+            Console.WriteLine(" Cantidad de palabras: {0}", palabras.Length);
+
+            Console.ReadLine();
         }
 
-        static string[] SepararPalabras(string texto, char[] separadores)
+        static string[] SepararPalabras(string texto, char separadores)
         {
-            return texto.Split(separadores);
+            return texto.Split(new char[] {separadores}, StringSplitOptions.RemoveEmptyEntries);
         }
 
     }
