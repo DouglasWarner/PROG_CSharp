@@ -31,14 +31,14 @@ namespace Ejercicio7
                     return;
 
                 if (!ValidarISBN(QuitarGuiones(isbn, separador)))
-                    Console.WriteLine("\n\t Error: Algo ocurrio con el ISBN introducido.");
+                    Console.WriteLine("\n\tEl ISBN no es correcto. Vuelva a intertarlo.");
                 else
                 {
-                    Console.Write("El ISBN ");
+                    Console.Write("\n\tEl ISBN ");
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write(isbn);
                     Console.ResetColor();
-                    Console.Write(" es correcto.");
+                    Console.Write(" es correcto.\n");
                 }
 
             } while (true);
@@ -51,10 +51,32 @@ namespace Ejercicio7
             // MOD 11. Si el resultado es 10 el dc es X;
 
             char dc = ' ';
-            if (isbn.Length < 0 && isbn.Length > 9)
+            int nVueltas = 9;
+            long resultado = 0;
+
+            if (isbn.Length < 0 || isbn.Length > 10)
                 return false;
 
-            return false;
+            try
+            {
+                dc = char.ToUpper(isbn[isbn.Length - 1]);
+
+                for (int i = 0; i < nVueltas; i++)
+                {
+                    resultado += int.Parse(isbn[i].ToString()) * (i + 1);
+                }
+
+                resultado %= 11;
+
+                if (resultado == 10 && dc == 'X')
+                    return true;
+
+                return String.Equals(resultado.ToString(), dc.ToString());
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         static string QuitarGuiones(string isbn, char separador)

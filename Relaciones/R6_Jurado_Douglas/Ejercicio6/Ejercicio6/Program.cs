@@ -31,11 +31,13 @@ namespace Ejercicio6
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Console.ReadLine();
                 return;
             }
             if (dni.ToString().Length != 8)
             {
                 Console.WriteLine("Error: Algo ocurrio con el DNI introducido.");
+                Console.ReadLine();
                 return;
             }
 
