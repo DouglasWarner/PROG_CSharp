@@ -16,10 +16,7 @@ namespace Ejercicio19
 
         public bool AnadirPersona(Personas persona)
         {
-            if (!_dicPersonas.ContainsKey(_dicCodigo))
-                _dicPersonas.Add(_dicCodigo, persona);
-            else
-                return false;
+            _dicPersonas.Add(_dicCodigo++, persona);
 
             return true;
         }
@@ -32,30 +29,51 @@ namespace Ejercicio19
             return true;
         }
 
-        public void MostrarPersona(int cod)
+        public bool MostrarPersona(int cod)
         {
             string mensaje = string.Format("\tError: No exite la persona con código {0}", cod);
 
             if (_dicPersonas.ContainsKey(cod))
             {
-                Console.Write(_dicPersonas[cod].Borrado ? mensaje : "\n\t"+cod.ToString() + _dicPersonas[cod].VerPersona());
+                Console.Write(_dicPersonas[cod].Borrado ? mensaje : "\n\t" + cod.ToString() + _dicPersonas[cod].VerPersona());
+                return true;
             }
             else
+            {
                 Console.Write(mensaje);
+                Console.Write("\n\nPulsa cualquier tecla...");
+                Console.ReadLine();
+                return false;
+            }
+        }
+
+        public void MostrarListado()
+        {
+            Console.WriteLine(" Lista de Personas");
+            Console.WriteLine("".PadLeft(30,'-'));
+            foreach (KeyValuePair<int,Personas> item in _dicPersonas)
+            {
+                if(!item.Value.Borrado)
+                    Console.WriteLine("\n\t{0}   {1}", item.Key, item.Value.VerPersona());
+            }
 
             Console.Write("\n\nPulsa cualquier tecla...");
             Console.ReadLine();
         }
 
-        public void MostrarListado()
+        public bool ModificarPersona(int codigo)
         {
-            foreach (KeyValuePair<int,Personas> item in _dicPersonas)
-            {
-                Console.WriteLine("\n\t{0}\t{1}", item.Key, item.Value.VerPersona());
-            }
+            if (!MostrarPersona(codigo))
+               return false;
 
-            Console.Write("\nPulsa cualquier tecla...");
-            Console.ReadLine();
+            Console.Write(" Dime el nombre: ");
+            _dicPersonas[codigo].Nombre = Console.ReadLine();
+            Console.Write(" Dime los apellidos: ");
+            _dicPersonas[codigo].Apellidos = Console.ReadLine();
+            Console.Write(" Dime el telefono: ");
+            _dicPersonas[codigo].Telefono = Console.ReadLine();
+
+            return true;
         }
     }
 }

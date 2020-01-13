@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Ejemplo_09_01_ConceptosPOO
 {
-    class Coche : Vehiculo
+    class Moto : Vehiculo
     {
         public string Marca;
 
-        public Coche(string nombre, int potencia, string marca)
-            : base(nombre, potencia)
+        public Moto(string nombre, int potencia, string marca) : base(nombre,potencia)
         {
             Marca = marca;
-            Console.WriteLine("Ejecutando coche");
+            Console.WriteLine("Ejecutando moto");
         }
 
         /*public void Andar()

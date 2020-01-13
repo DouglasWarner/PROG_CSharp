@@ -55,15 +55,6 @@ namespace Ejercicio19
             Borrado = false;
         }
 
-        public Personas(int cod, string nom, string ape, string tlf)
-        {
-            Codigo = cod;
-            Nombre = nom;
-            Apellidos = ape;
-            Telefono = tlf;
-            Borrado = false;
-        }
-
         public string VerPersona()
         {
             return String.Format("\t{0}\t{1}\t{2}", Nombre, Apellidos, Telefono);
