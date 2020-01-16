@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Douglas.Ejemplo_15_01_ClasePOJO
 {
-    class Program
+    class Program : Persona
     {
         static void Main(string[] args)
         {
@@ -14,7 +14,15 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
 
             Console.WriteLine(yo);
 
+            Program p = new Program();
+            p.Persona();
+
             Console.ReadLine();
+        }
+
+        public void Persona()
+        {
+            Console.WriteLine("yoquese");
         }
     }
 }

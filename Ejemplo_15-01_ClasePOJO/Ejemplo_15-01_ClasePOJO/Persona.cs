@@ -47,9 +47,16 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
                     FechaNacimiento.ToShortDateString().PadLeft(15) + sep + 
                     SueldoAnual.ToString().PadLeft(10);
         }
+
+        public void Saluda()
+        {
+            Console.WriteLine("hola");
+        }
         #endregion
 
         #region Propiedades
+        
+        public int Dia { get; set; }
         /// <summary>
         /// Obtiene el codigo de la persona.
         /// </summary>
