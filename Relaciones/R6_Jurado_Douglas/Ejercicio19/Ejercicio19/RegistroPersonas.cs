@@ -35,8 +35,39 @@ namespace Ejercicio19
 
             if (_dicPersonas.ContainsKey(cod))
             {
-                Console.Write(_dicPersonas[cod].Borrado ? mensaje : "\n\t" + cod.ToString() + _dicPersonas[cod].VerPersona());
-                return true;
+                if (_dicPersonas[cod].Borrado)
+                {
+                    Console.WriteLine(mensaje);
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("\n\t" + cod.ToString() + _dicPersonas[cod].VerPersona());
+                    return true;
+                }
+            }
+            else
+            {
+                Console.Write(mensaje);
+                Console.Write("\n\nPulsa cualquier tecla...");
+                Console.ReadLine();
+                return false;
+            }
+        }
+
+        public bool BuscarPersona(int cod)
+        {
+            string mensaje = string.Format("\tError: No exite la persona con código {0}", cod);
+
+            if (_dicPersonas.ContainsKey(cod))
+            {
+                if (_dicPersonas[cod].Borrado)
+                {
+                    Console.WriteLine(mensaje);
+                    return false;
+                }
+                else
+                    return true;
             }
             else
             {
@@ -49,8 +80,8 @@ namespace Ejercicio19
 
         public void MostrarListado()
         {
-            Console.WriteLine(" Lista de Personas");
-            Console.WriteLine("".PadLeft(30,'-'));
+            Console.WriteLine("\tLista de Personas");
+            Console.WriteLine("".PadLeft(40,'-'));
             foreach (KeyValuePair<int,Personas> item in _dicPersonas)
             {
                 if(!item.Value.Borrado)
@@ -63,7 +94,7 @@ namespace Ejercicio19
 
         public bool ModificarPersona(int codigo)
         {
-            if (!MostrarPersona(codigo))
+            if (!BuscarPersona(codigo))
                return false;
 
             Console.Write(" Dime el nombre: ");

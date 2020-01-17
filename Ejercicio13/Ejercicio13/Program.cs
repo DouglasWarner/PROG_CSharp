@@ -22,7 +22,32 @@ namespace Ejercicio13
             Console.WriteLine("".PadLeft(50,'-'));
             frase = Console.ReadLine();
 
+            Console.ForegroundColor = ConsoleColor.Blue;
+            MostrarListaPalabras(Palabras(frase));
+            Console.ResetColor();
+
             Console.ReadLine();
+        }
+
+        static void MostrarListaPalabras(string[] palabras)
+        {
+            foreach (string tmp in palabras)
+            {
+                Console.WriteLine("\n\t{0}", tmp);
+            }
+        }
+
+        static string[] Palabras(string frase)
+        {
+            char[] separadores = { ' ', '-', '|', ',', ';' };
+            string[] palabras = frase.Split(separadores);
+
+            for (int i = 0; i < palabras.Length; i++)
+            {
+                palabras[i] = palabras[i].Replace(palabras[i][0].ToString(), palabras[i][0].ToString().ToUpper());
+            }
+
+            return palabras;
         }
     }
 }

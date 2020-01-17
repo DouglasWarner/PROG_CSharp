@@ -21,10 +21,7 @@ namespace Ejercicio19
                 NavegarMenu(opcion, rgPer);
 
             } while (opcion != "0");
-
-
-            Console.ReadLine();
-
+            
         }
 
         static void NavegarMenu(string opcion, RegistroPersonas registro)
@@ -78,7 +75,7 @@ namespace Ejercicio19
 
                     Console.WriteLine("\n\t Estas seguro que quieres borrar?");
                     Console.Write("\n\t S / N  ");
-                    if(Console.ReadLine()[0].ToString().ToLower() == "s")
+                    if(Console.ReadLine().ToLower() == "s")
                         registro.BorrarPersona(codigo);
                     break;
                 case "4":
@@ -97,14 +94,38 @@ namespace Ejercicio19
                         return;
                     }
 
-                    Console.WriteLine("\n\tPersona ");
-                    Console.WriteLine("".PadLeft(30,'-'));
+                    Console.WriteLine("\n\t\tPersona ");
+                    Console.WriteLine("".PadLeft(40,'-'));
                     if (!registro.MostrarPersona(codigo))
                         return;
 
                     Console.ReadLine();
                     break;
                 case "5":
+                    Console.Clear();
+                    Console.CursorTop = posTop;
+                    Console.Write(" Dime el codigo: ");
+                    try
+                    {
+                        codigo = int.Parse(Console.ReadLine());
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(" Error: Algo ocurrio al introducir el codigo");
+                        Console.Write(" Pulsa cualquier tecla...");
+                        Console.ReadLine();
+                        return;
+                    }
+
+                    Console.WriteLine("\n\t\tPersona ");
+                    Console.WriteLine("".PadLeft(40, '-'));
+                    if (!registro.MostrarPersona(codigo))
+                        return;
+
+                    Console.WriteLine("\n\t Estas seguro de querer modificar?");
+                    Console.Write("\n\t S / N  ");
+                    if (Console.ReadLine().ToLower() == "s")
+                        registro.ModificarPersona(codigo);
 
                     break;
                 default:
