@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0C94CE2F-D04C-446A-9F0A-8CDC02177FE5}</ProjectGuid>
+    <ProjectGuid>{80C44C1C-6EC8-41C2-9E78-0DAD8D948478}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ejercicio12</RootNamespace>
-    <AssemblyName>Ejercicio12</AssemblyName>
+    <RootNamespace>Ejercicio1</RootNamespace>
+    <AssemblyName>Ejercicio1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Marco.cs" />
+    <Compile Include="MenuPrincipal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

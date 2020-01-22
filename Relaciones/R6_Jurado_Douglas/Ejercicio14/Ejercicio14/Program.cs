@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿/*----------------------------------------------------------------------
  *   PROGRAMA: App_Ejercicio14
  *	    AUTOR: Douglas Warner Jurado Peña
@@ -6,6 +7,9 @@
 teclado y a continuación imprima el resultado.
  *---------------------------------------------------------------------- */
 using System;
+=======
+﻿using System;
+>>>>>>> origin/master
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +19,13 @@ namespace Ejercicio14
 {
     class Program
     {
+<<<<<<< HEAD
+=======
+        /*Escribir un programa que cuente el número de veces que aparece cada una de las letras de un texto introducido por el
+teclado y a continuación imprima el resultado. Para hacer el ejemplo sencillo, vamos a suponer que el texto sólo contiene
+letras minúsculas del alfabeto inglés (no hay ni letras acentuadas, ni la //, ni la ñ). La solución podría ser de la forma
+siguiente:*/
+>>>>>>> origin/master
         static void Main(string[] args)
         {
             string texto = string.Empty;
