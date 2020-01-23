@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6D9BE8B2-5EB3-4A17-A12C-BC8773F0B4AD}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ejemplo_16_01_RandomSinRep</RootNamespace>
     <AssemblyName>Ejemplo_16-01_RandomSinRep</AssemblyName>

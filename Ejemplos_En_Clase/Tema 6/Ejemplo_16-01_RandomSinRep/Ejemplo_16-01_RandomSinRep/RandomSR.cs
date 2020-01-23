@@ -17,18 +17,25 @@ namespace Douglas.Ejemplo_16_01_RandomSinRep
     {
         
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
     public class RandomSR
     {
         Random alea;
         // Colección de números que han salido
         List<int> nGenerados = new List<int>();
-
+        /// <summary>
+        /// 
+        /// </summary>
         public RandomSR()
         {
             alea = new Random();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="semilla"></param>
         public RandomSR(int semilla)
         {
             alea = new Random(semilla);
@@ -54,7 +61,12 @@ namespace Douglas.Ejemplo_16_01_RandomSinRep
             nGenerados.Add(nAlea);
             return nAlea;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public int Siguiente(int min, int max)
         {
             bool estaRepe = false;
