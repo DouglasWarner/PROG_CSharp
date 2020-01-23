@@ -8,7 +8,7 @@ namespace Ejercicio1
 {
     class Marco
     {
-        enum Tipo
+        public enum Tipo
         {
             Simple, Doble
         }
@@ -54,7 +54,7 @@ namespace Ejercicio1
             VerticeIzquierda = izq;
             VerticeInferior = inf;
             VerticeDerecha = dcho;
-
+            Color = ConsoleColor.White;
         }
 
         public Marco(int top, int izq, int inf, int dcho, ConsoleColor color)
@@ -65,6 +65,7 @@ namespace Ejercicio1
             VerticeDerecha = dcho;
             Color = color;
         }
+
 
         /*       196
          * 218 ┌  ─  ┐ 191 
@@ -80,15 +81,14 @@ namespace Ejercicio1
          *       205
          * 204 ╠  ═  ╣ 185
          */
-        public void DibujarMarco()
+        public void DibujarMarcoSimple()
         {
+            Console.ForegroundColor = Color;
+
             Console.CursorTop = VerticeSuperior;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('┌');
-            for (int i = 0; i < VerticeDerecha-1; i++)
-            {
-                Console.Write('─');
-            }
+            Console.Write("".PadLeft(VerticeDerecha-1,'─'));
             Console.Write('┐');
 
             Console.CursorTop++;
@@ -100,18 +100,40 @@ namespace Ejercicio1
                 Console.Write('│');
                 Console.CursorTop++;
             }
+
+            Console.CursorTop++;
+            Console.CursorTop = VerticeSuperior + VerticeInferior;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('└');
-            Console.CursorLeft = VerticeIzquierda + VerticeDerecha;
+            Console.Write("".PadLeft(VerticeDerecha - 1, '─'));
             Console.Write('┘');
+        }
+
+        public void DibujarMarcoDoble()
+        {
+            Console.ForegroundColor = Color;
+
+            Console.CursorTop = VerticeSuperior;
+            Console.CursorLeft = VerticeIzquierda;
+            Console.Write('╔');
+            Console.Write("".PadLeft(VerticeDerecha - 1, '═'));
+            Console.Write('╗');
+
+            Console.CursorTop++;
+            for (int i = 0; i < VerticeInferior - 1; i++)
+            {
+                Console.CursorLeft = VerticeIzquierda;
+                Console.Write('║');
+                Console.CursorLeft = VerticeIzquierda + VerticeDerecha;
+                Console.Write('║');
+                Console.CursorTop++;
+            }
 
             Console.CursorTop = VerticeSuperior + VerticeInferior;
-            Console.Write('└');
-            for (int i = 0; i < VerticeDerecha - 1; i++)
-            {
-                Console.Write('─');
-            }
-            Console.Write('┘');
+            Console.CursorLeft = VerticeIzquierda;
+            Console.Write('╚');
+            Console.Write("".PadLeft(VerticeDerecha - 1, '═'));
+            Console.Write('╝');
         }
     }
 }
