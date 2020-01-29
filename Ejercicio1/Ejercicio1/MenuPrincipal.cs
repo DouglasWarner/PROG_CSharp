@@ -61,37 +61,269 @@ namespace Ejercicio1
 
         public void MostrarMenu(int posInicialArriba, int posInicialIzquierda)
         {
-            int posDerecha = 0;
-            int posArriba = Opciones.Length + 3;
+            int anchura = 3;
+            int altura = Opciones.Length + 3;
             int longitudMaxOpciones = Opciones.Max(x => x.Length);
 
             if (longitudMaxOpciones > Titulo.Length && longitudMaxOpciones > Mensaje.Length)
-                posDerecha = longitudMaxOpciones;
+                anchura += longitudMaxOpciones;
             else if (Mensaje.Length > Titulo.Length)
-                posDerecha = Mensaje.Length;
+                anchura += Mensaje.Length;
             else
-                posDerecha = Titulo.Length;
+                anchura += Titulo.Length;
 
-            Marco marco = new Marco(posInicialArriba, posInicialIzquierda, posArriba, posDerecha);
+            Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
 
             if (_tipo == Marco.Tipo.Doble)
                 marco.DibujarMarcoDoble();
             else
                 marco.DibujarMarcoSimple();
 
-            Console.SetCursorPosition(++posInicialIzquierda, ++posInicialArriba);
+            Console.SetCursorPosition(posInicialIzquierda + 1, posInicialArriba + 1);
             Console.WriteLine(Titulo);
 
-            posInicialArriba = Console.CursorTop;
+            if (_tipo == Marco.Tipo.Doble)
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('╠');
+                Console.Write("".PadLeft(anchura - 1, '═'));
+                Console.WriteLine('╣');
+            }
+            else
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('├');
+                Console.Write("".PadLeft(anchura - 1, '─'));
+                Console.WriteLine('┤');
+            }
+
+            //posInicialArriba = Console.CursorTop;
 
             for (int i = 0; i < Opciones.Length; i++)
             {
-                Console.CursorLeft = posInicialIzquierda;
-                Console.WriteLine(Opciones[i].PadLeft(Opciones.Max(x => x.Length)));
+                Console.CursorLeft = posInicialIzquierda + 1;
+                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
             }
 
-            Console.CursorLeft = posInicialIzquierda;
+            if (_tipo == Marco.Tipo.Doble)
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('╠');
+                Console.Write("".PadLeft(anchura - 1, '═'));
+                Console.WriteLine('╣');
+            }
+            else
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('├');
+                Console.Write("".PadLeft(anchura - 1, '─'));
+                Console.WriteLine('┤');
+            }
+
+            Console.CursorLeft = posInicialIzquierda + 1;
             Console.Write(Mensaje);
        }
+
+        public void MostrarMenu(int posInicialArriba, int posInicialIzquierda, ConsoleColor colorFondo)
+        {
+            Console.BackgroundColor = colorFondo;
+
+            int anchura = 3;
+            int altura = Opciones.Length + 3;
+            int longitudMaxOpciones = Opciones.Max(x => x.Length);
+
+            if (longitudMaxOpciones > Titulo.Length && longitudMaxOpciones > Mensaje.Length)
+                anchura += longitudMaxOpciones;
+            else if (Mensaje.Length > Titulo.Length)
+                anchura += Mensaje.Length;
+            else
+                anchura += Titulo.Length;
+
+            Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+
+            if (_tipo == Marco.Tipo.Doble)
+                marco.DibujarMarcoDoble(colorFondo);
+            else
+                marco.DibujarMarcoSimple(colorFondo);
+
+            Console.SetCursorPosition(posInicialIzquierda + 1, posInicialArriba + 1);
+            Console.WriteLine(Titulo);
+
+            if (_tipo == Marco.Tipo.Doble)
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('╠');
+                Console.Write("".PadLeft(anchura - 1, '═'));
+                Console.WriteLine('╣');
+            }
+            else
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('├');
+                Console.Write("".PadLeft(anchura - 1, '─'));
+                Console.WriteLine('┤');
+            }
+
+            //posInicialArriba = Console.CursorTop;
+
+            for (int i = 0; i < Opciones.Length; i++)
+            {
+                Console.CursorLeft = posInicialIzquierda + 1;
+                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+            }
+
+            if (_tipo == Marco.Tipo.Doble)
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('╠');
+                Console.Write("".PadLeft(anchura - 1, '═'));
+                Console.WriteLine('╣');
+            }
+            else
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('├');
+                Console.Write("".PadLeft(anchura - 1, '─'));
+                Console.WriteLine('┤');
+            }
+
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.Write(Mensaje);
+        }
+        
+        public void MostrarMenu(int posInicialArriba, int posInicialIzquierda, int anchoMenu)
+        {
+            int anchura = 3;
+            int altura = Opciones.Length + 3;
+            int longitudMaxOpciones = Opciones.Max(x => x.Length);
+
+            if (longitudMaxOpciones > Titulo.Length && longitudMaxOpciones > Mensaje.Length)
+                anchura += longitudMaxOpciones;
+            else if (Mensaje.Length > Titulo.Length)
+                anchura += Mensaje.Length;
+            else
+                anchura += Titulo.Length;
+
+            anchura = (anchoMenu > anchura) ? anchoMenu : anchura;
+
+            Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+
+            if (_tipo == Marco.Tipo.Doble)
+                marco.DibujarMarcoDoble();
+            else
+                marco.DibujarMarcoSimple();
+
+            Console.SetCursorPosition(posInicialIzquierda + 1, posInicialArriba + 1);
+            Console.WriteLine(Titulo);
+
+            if (_tipo == Marco.Tipo.Doble)
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('╠');
+                Console.Write("".PadLeft(anchura - 1, '═'));
+                Console.WriteLine('╣');
+            }
+            else
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('├');
+                Console.Write("".PadLeft(anchura - 1, '─'));
+                Console.WriteLine('┤');
+            }
+
+            //posInicialArriba = Console.CursorTop;
+
+            for (int i = 0; i < Opciones.Length; i++)
+            {
+                Console.CursorLeft = posInicialIzquierda + 1;
+                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+            }
+
+            if (_tipo == Marco.Tipo.Doble)
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('╠');
+                Console.Write("".PadLeft(anchura - 1, '═'));
+                Console.WriteLine('╣');
+            }
+            else
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('├');
+                Console.Write("".PadLeft(anchura - 1, '─'));
+                Console.WriteLine('┤');
+            }
+
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.Write(Mensaje);
+        }
+
+        public void MostrarMenu(int posInicialArriba, int posInicialIzquierda, ConsoleColor colorFondo, ConsoleColor colorLetra)
+        {
+            Console.BackgroundColor = colorFondo;
+            Console.ForegroundColor = colorLetra;
+
+            int anchura = 3;
+            int altura = Opciones.Length + 3;
+            int longitudMaxOpciones = Opciones.Max(x => x.Length);
+
+            if (longitudMaxOpciones > Titulo.Length && longitudMaxOpciones > Mensaje.Length)
+                anchura += longitudMaxOpciones;
+            else if (Mensaje.Length > Titulo.Length)
+                anchura += Mensaje.Length;
+            else
+                anchura += Titulo.Length;
+
+            Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+
+            if (_tipo == Marco.Tipo.Doble)
+                marco.DibujarMarcoDoble(colorFondo);
+            else
+                marco.DibujarMarcoSimple(colorFondo);
+
+            Console.SetCursorPosition(posInicialIzquierda + 1, posInicialArriba + 1);
+            Console.WriteLine(Titulo);
+
+            if (_tipo == Marco.Tipo.Doble)
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('╠');
+                Console.Write("".PadLeft(anchura - 1, '═'));
+                Console.WriteLine('╣');
+            }
+            else
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('├');
+                Console.Write("".PadLeft(anchura - 1, '─'));
+                Console.WriteLine('┤');
+            }
+
+            //posInicialArriba = Console.CursorTop;
+
+            for (int i = 0; i < Opciones.Length; i++)
+            {
+                Console.CursorLeft = posInicialIzquierda + 1;
+                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+            }
+
+            if (_tipo == Marco.Tipo.Doble)
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('╠');
+                Console.Write("".PadLeft(anchura - 1, '═'));
+                Console.WriteLine('╣');
+            }
+            else
+            {
+                Console.CursorLeft = posInicialIzquierda;
+                Console.Write('├');
+                Console.Write("".PadLeft(anchura - 1, '─'));
+                Console.WriteLine('┤');
+            }
+
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.Write(Mensaje);
+        }
     }
 }

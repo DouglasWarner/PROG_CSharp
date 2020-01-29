@@ -13,17 +13,11 @@ namespace Ejercicio1
             Simple, Doble
         }
 
-        private ConsoleColor _color;
         private int _verticeSuperior;
         private int _verticeIzquierda;
         private int _verticeInferior;
         private int _verticeDerecha;
 
-        public ConsoleColor Color
-        {
-            get { return _color; }
-            set { _color = value; }
-        }
         public int VerticeSuperior
         {
             get { return _verticeSuperior; }
@@ -54,18 +48,7 @@ namespace Ejercicio1
             VerticeIzquierda = izq;
             VerticeInferior = inf;
             VerticeDerecha = dcho;
-            Color = ConsoleColor.White;
         }
-
-        public Marco(int top, int izq, int inf, int dcho, ConsoleColor color)
-        {
-            VerticeSuperior = top;
-            VerticeIzquierda = izq;
-            VerticeInferior = inf;
-            VerticeDerecha = dcho;
-            Color = color;
-        }
-
 
         /*       196
          * 218 ┌  ─  ┐ 191 
@@ -83,8 +66,6 @@ namespace Ejercicio1
          */
         public void DibujarMarcoSimple()
         {
-            Console.ForegroundColor = Color;
-
             Console.CursorTop = VerticeSuperior;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('┌');
@@ -92,7 +73,7 @@ namespace Ejercicio1
             Console.Write('┐');
 
             Console.CursorTop++;
-            for (int i = 0; i < VerticeInferior-1; i++)
+            for (int i = 0; i <= VerticeInferior; i++)
             {
                 Console.CursorLeft = VerticeIzquierda;
                 Console.Write('│');
@@ -101,8 +82,8 @@ namespace Ejercicio1
                 Console.CursorTop++;
             }
 
-            Console.CursorTop++;
-            Console.CursorTop = VerticeSuperior + VerticeInferior;
+            //Console.CursorTop++;
+            //Console.CursorTop = VerticeSuperior + VerticeInferior;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('└');
             Console.Write("".PadLeft(VerticeDerecha - 1, '─'));
@@ -111,8 +92,6 @@ namespace Ejercicio1
 
         public void DibujarMarcoDoble()
         {
-            Console.ForegroundColor = Color;
-
             Console.CursorTop = VerticeSuperior;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('╔');
@@ -120,7 +99,7 @@ namespace Ejercicio1
             Console.Write('╗');
 
             Console.CursorTop++;
-            for (int i = 0; i < VerticeInferior - 1; i++)
+            for (int i = 0; i <= VerticeInferior; i++)
             {
                 Console.CursorLeft = VerticeIzquierda;
                 Console.Write('║');
@@ -129,11 +108,76 @@ namespace Ejercicio1
                 Console.CursorTop++;
             }
 
-            Console.CursorTop = VerticeSuperior + VerticeInferior;
+            //Console.CursorTop = VerticeSuperior + VerticeInferior;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('╚');
             Console.Write("".PadLeft(VerticeDerecha - 1, '═'));
             Console.Write('╝');
+        }
+
+        public void DibujarMarcoSimple(ConsoleColor colorFondo)
+        {
+            DibujarConsola(colorFondo);
+
+            Console.CursorTop = VerticeSuperior;
+            Console.CursorLeft = VerticeIzquierda;
+            Console.Write('┌');
+            Console.Write("".PadLeft(VerticeDerecha - 1, '─'));
+            Console.Write('┐');
+
+            Console.CursorTop++;
+            for (int i = 0; i <= VerticeInferior; i++)
+            {
+                Console.CursorLeft = VerticeIzquierda;
+                Console.Write('│');
+                Console.CursorLeft = VerticeIzquierda + VerticeDerecha;
+                Console.Write('│');
+                Console.CursorTop++;
+            }
+
+            //Console.CursorTop++;
+            //Console.CursorTop = VerticeSuperior + VerticeInferior;
+            Console.CursorLeft = VerticeIzquierda;
+            Console.Write('└');
+            Console.Write("".PadLeft(VerticeDerecha - 1, '─'));
+            Console.Write('┘');
+        }
+
+        public void DibujarMarcoDoble(ConsoleColor colorFondo)
+        {
+            DibujarConsola(colorFondo);
+
+            Console.CursorTop = VerticeSuperior;
+            Console.CursorLeft = VerticeIzquierda;
+            Console.Write('╔');
+            Console.Write("".PadLeft(VerticeDerecha - 1, '═'));
+            Console.Write('╗');
+
+            Console.CursorTop++;
+            for (int i = 0; i <= VerticeInferior; i++)
+            {
+                Console.CursorLeft = VerticeIzquierda;
+                Console.Write('║');
+                Console.CursorLeft = VerticeIzquierda + VerticeDerecha;
+                Console.Write('║');
+                Console.CursorTop++;
+            }
+
+            //Console.CursorTop = VerticeSuperior + VerticeInferior;
+            Console.CursorLeft = VerticeIzquierda;
+            Console.Write('╚');
+            Console.Write("".PadLeft(VerticeDerecha - 1, '═'));
+            Console.Write('╝');
+        }
+
+        private void DibujarConsola(ConsoleColor colorFondo)
+        {
+            Console.BackgroundColor = colorFondo;
+
+            for (int i = 0; i <= Console.WindowHeight; i++)
+            {
+                Console.Write("".PadLeft(Console.WindowWidth,' '));
+            }
         }
     }
 }
