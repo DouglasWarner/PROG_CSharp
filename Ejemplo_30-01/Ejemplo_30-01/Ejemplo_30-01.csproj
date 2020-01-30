@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D5C57520-8A1F-4A2A-9FC1-26DD188D4FA0}</ProjectGuid>
+    <ProjectGuid>{32320429-168A-4326-B947-9364010ECF26}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ejemplo_15_01_ClasePOJO</RootNamespace>
-    <AssemblyName>Ejemplo_15-01_ClasePOJO</AssemblyName>
+    <RootNamespace>Ejemplo_30_01</RootNamespace>
+    <AssemblyName>Ejemplo_30-01</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,8 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ListaPersonas.cs" />
-    <Compile Include="Persona.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
