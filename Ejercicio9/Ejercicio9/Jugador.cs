@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Ejercicio9
 {
-    class Jugador
+    class Jugador : GestionJuego
     {
         private int posX;
         private int posY;
-        private char icono;
+        private string icono;
 
         public int PosX
         {
@@ -22,14 +22,14 @@ namespace Ejercicio9
             get { return posY; }
             set { posY = value; }
         }
-        public char Icono
+        public string Icono
         {
             get { return icono; }
         }
 
         public Jugador(int posXInicial, int posYInicial)
         {
-            icono = 'J';
+            icono = "J";
             PosX = posXInicial;
             PosY = posYInicial;
         }
