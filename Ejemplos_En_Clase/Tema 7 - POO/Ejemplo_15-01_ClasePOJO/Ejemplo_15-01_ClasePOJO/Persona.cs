@@ -45,12 +45,17 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
 
         public override string ToString()
         {
-            string sep = ";";
-            return Codigo.ToString().PadLeft(5) + sep +
-                    Nombre.PadLeft(10) + sep +
-                    Apellidos.PadLeft(10) + sep +
+            string sep = "  ;  ";
+            return Codigo.ToString().PadLeft(15) + sep +
+                    Nombre.PadLeft(15) + sep +
+                    Apellidos.PadLeft(15) + sep +
                     FechaNacimiento.ToShortDateString().PadLeft(15) + sep + 
                     SueldoAnual.ToString().PadLeft(10);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this.Codigo == ((Persona)obj).Codigo && this.Nombre.Equals(((Persona)obj).Nombre);
         }
 
         public void Saluda()
@@ -69,6 +74,7 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
         public int Codigo
         {
             get { return _codigo; }
+            set { _codigo = value; }
         }
         /// <summary>
         /// Asigna y devuelve el nombre de la persona actual

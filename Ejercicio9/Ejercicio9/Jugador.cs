@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ejercicio9
 {
-    class Jugador : GestionJuego
+    class Jugador
     {
         private int posX;
         private int posY;

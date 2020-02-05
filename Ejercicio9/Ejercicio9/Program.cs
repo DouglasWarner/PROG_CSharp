@@ -13,9 +13,15 @@ namespace Ejercicio9
         static void Main(string[] args)
         {
             GestionJuego gj = new GestionJuego();
-
+            
             gj.Jugar();
 
+            /*Random rnd = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(rnd.Next(-1,2));
+                Console.WriteLine(rnd.Next(-1, 2));
+            }*/
             Console.ReadLine();
         }
     }
