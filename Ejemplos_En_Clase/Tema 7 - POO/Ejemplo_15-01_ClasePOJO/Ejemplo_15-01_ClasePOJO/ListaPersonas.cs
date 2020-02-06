@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Douglas.Ejemplo_15_01_ClasePOJO
 {
@@ -17,6 +20,17 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
     {
         private List<Persona> _listaPersona = new List<Persona>();
         private int _codigoPersona = 100;
+
+        public ListaPersonas()
+        {
+            Persona p = new Persona("aazz", "ggggggggg", DateTime.Parse("01/10/2000"), 9999.99);
+            p.Codigo = 9999;
+            _listaPersona.Add(p);
+
+            Persona p1 = new Persona("sssssssss", "jjjjjjjjj", DateTime.Parse("01/10/2000"), 9999.99);
+            p1.Codigo = 9999;
+            _listaPersona.Add(p1);
+        }
 
         public int Cuantos
         {
@@ -55,12 +69,23 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
             }
         }
 
+        public void Ordenar()
+        {
+            _listaPersona.Sort();
+        }
+
+        public void OrdenarPersonas(int i)
+        {
+            _listaPersona.Sort(new OrdenaPorNombre());
+            //_listaPersona.OrderBy(x => x.Nombre);
+        }
+
         //---------------------
         // Inicio del FORECH
         //---------------------
         int posicion = -1;
 
-        //       E S T O    E S    L A    O P C I O N    D E    O B J E C T
+        #region       E S T O    E S    L A    O P C I O N    D E    O B J E C T
         /*public Persona Current
         {
             get { return _listaPersona[posicion]; }
@@ -93,8 +118,9 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
             // Devuelvo el objeto
             return this;
         }*/
+        #endregion
 
-        //       E S T O    E S    L A    O P C I O N    D E    P E R S O N A
+        #region       E S T O    E S    L A    O P C I O N    D E    P E R S O N A
         public Persona Current
         {
             get { return _listaPersona[posicion]; }
@@ -144,6 +170,7 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
             // No hace falta
             throw new NotImplementedException();
         }
+        #endregion
 
         //-------------------
         // Fin del FORECH

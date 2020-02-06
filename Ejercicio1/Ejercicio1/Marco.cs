@@ -7,25 +7,26 @@ using System.Threading.Tasks;
 namespace Douglas.Ejercicio1
 {
     /// <summary>
+    /// El tipo del marco, simple o doble.
+    /// </summary>
+    public enum Tipo
+    {
+        /// <summary>
+        /// Tipo simple
+        /// </summary>
+        Simple,
+        /// <summary>
+        /// Tipo doble
+        /// </summary>
+        Doble
+    }
+
+    /// <summary>
     /// Clase que dibuja un marco
     /// </summary>
     internal class Marco
     {
-        /// <summary>
-        /// El tipo del marco, simple o doble.
-        /// </summary>
-        public enum Tipo
-        {
-        /// <summary>
-        /// Tipo simple
-        /// </summary>
-            Simple,
-        /// <summary>
-        /// Tipo doble
-        /// </summary>
-            Doble
-        }
-
+        
         private int _verticeSuperior;
         private int _verticeIzquierda;
         private int _verticeInferior;
@@ -60,7 +61,16 @@ namespace Douglas.Ejercicio1
         public int VerticeDerecha
         {
             get { return _verticeDerecha; }
-            set { _verticeDerecha = value; }
+            set 
+            {
+                if (value > Console.WindowWidth)
+                {
+                    value -= (value - Console.WindowWidth) - VerticeIzquierda;
+                    _verticeDerecha = value;
+                }
+                else
+                    _verticeDerecha = value; 
+            }
         }
         /// <summary>
         /// Crea una instancia de objeto Marco

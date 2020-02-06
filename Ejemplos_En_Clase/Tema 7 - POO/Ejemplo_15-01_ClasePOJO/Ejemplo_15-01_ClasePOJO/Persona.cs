@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Douglas.Ejemplo_15_01_ClasePOJO
 {
-    class Persona
+    class Persona : IComparable<Persona>
     {
         #region Datos Persona
 
@@ -116,5 +117,36 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
         }
 
         #endregion
+
+        public int CompareTo(Persona other)
+        {
+            return String.Compare(this.Nombre, other.Nombre);
+
+            /*  Comparar por C O D I G O
+            // Establece el criterio para ordenar las personas
+            // Ordena por: Codigo
+            if (this.Codigo == other.Codigo) // Iguales
+                return 0;  
+            if (this.Codigo > other.Codigo) // Mayor que
+                return 1;   
+            return -1;*/
+        }
+    }
+
+    // Para multiples campos de ordenación
+    public class OrdenaPorNombre : IComparer<Persona>
+    {
+        public int Compare(Persona x, Persona y)
+        {
+            return string.Compare(x.Nombre, y.Nombre);
+        }
+    }
+
+    public class OrdenaPorApellido : IComparer<Persona>
+    {
+        public int Compare(Persona x, Persona y)
+        {
+            return string.Compare(x.Apellidos, y.Apellidos);
+        }
     }
 }

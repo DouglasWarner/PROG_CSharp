@@ -13,6 +13,7 @@ namespace Douglas.Ejercicio1
             Console.WriteLine(mensaje);
         }
     }
+    
     /// <summary>
     /// Clase que muestra un menu
     /// </summary>
@@ -21,7 +22,7 @@ namespace Douglas.Ejercicio1
         private string _titulo;
         private string[] _opciones;
         private string _mensaje;
-        private Marco.Tipo _tipo;
+        private Tipo _tipo;
 
         /// <summary>
         /// Asigna y devuelve el titulo a mostrar en el menu
@@ -67,18 +68,18 @@ namespace Douglas.Ejercicio1
             Titulo = titulo;
             Opciones = opcion;
             Mensaje = mensaje;
-            _tipo = Marco.Tipo.Simple;
+            _tipo = Tipo.Simple;
         }
         /// <summary>
         /// Muestra el menu creado.
         /// </summary>
         /// <param name="tipo">El tipo del marco, simple o doble.</param>
-        public void MostrarMenu(Marco.Tipo tipo)
+        public void MostrarMenu(Tipo tipo)
         {
             if (Titulo == null || Opciones == null || Mensaje == null)
                 throw new ValoresNulosException("Error: Porfavor asigna el titulo, el contenido y el mensaje.");
 
-            int posDefecto = 25;
+            int posDefecto = 10;
             int anchura = 10;
             int altura = Opciones.Length + 3;
             int longitudMaxOpciones = Opciones.Max(x => x.Length);
@@ -92,7 +93,7 @@ namespace Douglas.Ejercicio1
 
             Marco marco = new Marco(posDefecto, posDefecto, altura, anchura);
 
-            if (_tipo == Marco.Tipo.Doble)
+            if (_tipo == Tipo.Doble)
                 marco.DibujarMarcoDoble();
             else
                 marco.DibujarMarcoSimple();
@@ -134,7 +135,7 @@ namespace Douglas.Ejercicio1
 
             Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
 
-            if (_tipo == Marco.Tipo.Doble)
+            if (_tipo == Tipo.Doble)
                 marco.DibujarMarcoDoble();
             else
                 marco.DibujarMarcoSimple();
@@ -179,7 +180,7 @@ namespace Douglas.Ejercicio1
 
             marco.DibujarConsola(colorFondo);
 
-            if (_tipo == Marco.Tipo.Doble)
+            if (_tipo ==Tipo.Doble)
                 marco.DibujarMarcoDoble();
             else
                 marco.DibujarMarcoSimple();
@@ -228,7 +229,7 @@ namespace Douglas.Ejercicio1
 
             Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
 
-            if (_tipo == Marco.Tipo.Doble)
+            if (_tipo == Tipo.Doble)
                 marco.DibujarMarcoDoble();
             else
                 marco.DibujarMarcoSimple();
@@ -278,7 +279,7 @@ namespace Douglas.Ejercicio1
 
             marco.DibujarConsola(colorFondo);
 
-            if (_tipo == Marco.Tipo.Doble)
+            if (_tipo == Tipo.Doble)
                 marco.DibujarMarcoDoble();
             else
                 marco.DibujarMarcoSimple();

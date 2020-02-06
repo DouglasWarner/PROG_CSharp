@@ -13,7 +13,7 @@ namespace Ejemplo_15_01_ClasePOJO
         {
             ListaPersonas _bomberos = new ListaPersonas();
 
-            //  EJEMPLO 02/02
+            #region  EJEMPLO 02/02
             /*Persona yo = new Persona("Risitas", "Jesus", DateTime.Now, 32600);
             Persona miniyo = new Persona("Risitas", "Jesus", DateTime.Now, 32600);
             Persona secundyo = new Persona("Risitas", "Jesus", DateTime.Now, 32600);
@@ -28,9 +28,10 @@ namespace Ejemplo_15_01_ClasePOJO
             Console.WriteLine("\n\t {0}", miniyo.ToString());
             Console.WriteLine("\n\t {0}", secundyo.ToString());
             */
+            #endregion
             
-            // EJEMPLO 05/02 IENUMERATOR, IENUMERABLE
-
+            #region EJEMPLO 05/02 IENUMERATOR, IENUMERABLE
+            /*
             _bomberos.Anadir("Risitas", "Jesus", DateTime.Now, 32600);
             _bomberos.Anadir("Risitas", "Jesus", DateTime.Now, 32600);
             _bomberos.Anadir("Risitas", "Jesus", DateTime.Now, 32600);
@@ -56,6 +57,21 @@ namespace Ejemplo_15_01_ClasePOJO
             b2.Codigo = 10;
 
             Console.WriteLine("b1 <=> b1  , {0}", b1.Equals(b2));
+            */
+            #endregion
+
+            #region EJEMPLO 05/02 ICOMPARABLE
+
+            _bomberos = new ListaPersonas();
+
+            _bomberos.AnadirVarios(20);
+            _bomberos.OrdenarPersonas(1);
+            _bomberos.Listar();
+
+            
+
+
+            #endregion
 
             Console.ReadLine();
         }
