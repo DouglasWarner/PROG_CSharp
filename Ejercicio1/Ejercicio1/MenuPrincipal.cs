@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Douglas.Ejercicio1
 {
-    sealed class ValoresNulosException : Exception
+    internal class ValoresNulosException : Exception
     {
         public ValoresNulosException(string mensaje) : base (mensaje)
         {
@@ -23,6 +23,7 @@ namespace Douglas.Ejercicio1
         private string[] _opciones;
         private string _mensaje;
         private Tipo _tipo;
+        private Marco marco;
 
         /// <summary>
         /// Asigna y devuelve el titulo a mostrar en el menu
@@ -63,7 +64,8 @@ namespace Douglas.Ejercicio1
         /// <param name="titulo">Titulo del menu</param>
         /// <param name="opcion">El contenido a elegir del menu</param>
         /// <param name="mensaje">El mensaje de seleccionar una opcion</param>
-        public MenuPrincipal(string titulo, string[] opcion, string mensaje)
+        /// <param name="tipo">El tipo del marco, simple o doble.</param>
+        public MenuPrincipal(string titulo, string[] opcion, string mensaje, Tipo tipo)
         {
             Titulo = titulo;
             Opciones = opcion;
@@ -71,10 +73,9 @@ namespace Douglas.Ejercicio1
             _tipo = Tipo.Simple;
         }
         /// <summary>
-        /// Muestra el menu creado.
+        /// Muestra el menu creado con la posición de inicio por defecto.
         /// </summary>
-        /// <param name="tipo">El tipo del marco, simple o doble.</param>
-        public void MostrarMenu(Tipo tipo)
+        public void MostrarMenu()
         {
             if (Titulo == null || Opciones == null || Mensaje == null)
                 throw new ValoresNulosException("Error: Porfavor asigna el titulo, el contenido y el mensaje.");
@@ -91,7 +92,7 @@ namespace Douglas.Ejercicio1
             else
                 anchura += Titulo.Length;
 
-            Marco marco = new Marco(posDefecto, posDefecto, altura, anchura);
+            marco = new Marco(posDefecto, posDefecto, altura, anchura);
 
             if (_tipo == Tipo.Doble)
                 marco.DibujarMarcoDoble();
@@ -113,7 +114,7 @@ namespace Douglas.Ejercicio1
             Console.Write(Mensaje);
         }
         /// <summary>
-        /// Muestra el menu creado.
+        /// Muestra el menu creado con una posición inicial predeterminada.
         /// </summary>
         /// <param name="posInicialArriba">posicion inicial superior</param>
         /// <param name="posInicialIzquierda">posicion inicial izquierda</param>
@@ -133,7 +134,7 @@ namespace Douglas.Ejercicio1
             else
                 anchura += Titulo.Length;
 
-            Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+            marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
 
             if (_tipo == Tipo.Doble)
                 marco.DibujarMarcoDoble();
@@ -155,7 +156,54 @@ namespace Douglas.Ejercicio1
             Console.Write(Mensaje);
        }
         /// <summary>
-        /// Muestra el menu creado.
+        /// Muestra el menu creado, con un ancho determinado.
+        /// </summary>
+        /// <param name="posInicialArriba">posicion inicial superior</param>
+        /// <param name="posInicialIzquierda">posicion inicial izquierda</param>
+        /// <param name="anchoMenu">El ancho de menu</param>
+        public void MostrarMenu(int posInicialArriba, int posInicialIzquierda, int anchoMenu)
+        {
+            if (Titulo == null || Opciones == null || Mensaje == null)
+                throw new ValoresNulosException("Error: Porfavor asigna el titulo, el contenido y el mensaje.");
+
+            int anchura = 10;
+            int altura = Opciones.Length + 3;
+            int longitudMaxOpciones = Opciones.Max(x => x.Length);
+
+            if (longitudMaxOpciones > Titulo.Length && longitudMaxOpciones > Mensaje.Length)
+                anchura += longitudMaxOpciones;
+            else if (Mensaje.Length > Titulo.Length)
+                anchura += Mensaje.Length;
+            else
+                anchura += Titulo.Length;
+
+            anchura = (anchoMenu > anchura) ? anchoMenu : anchura;
+
+            marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+
+            if (_tipo == Tipo.Doble)
+                marco.DibujarMarcoDoble();
+            else
+                marco.DibujarMarcoSimple();
+
+            Console.SetCursorPosition(posInicialIzquierda + 1, posInicialArriba + 1);
+            Console.WriteLine(Titulo.PadLeft(Titulo.Length + 5));
+
+            Console.CursorTop++;
+
+            for (int i = 0; i < Opciones.Length; i++)
+            {
+                Console.CursorLeft = posInicialIzquierda + 1;
+                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+            }
+
+            Console.CursorTop++;
+
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.Write(Mensaje);
+        }
+        /// <summary>
+        /// Muestra el menu creado con un color de fondo.
         /// </summary>
         /// <param name="posInicialArriba">posicion inicial superior</param>
         /// <param name="posInicialIzquierda">posicion inicial izquierda</param>
@@ -176,7 +224,7 @@ namespace Douglas.Ejercicio1
             else
                 anchura += Titulo.Length;
 
-            Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+            marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
 
             marco.DibujarConsola(colorFondo);
 
@@ -204,12 +252,13 @@ namespace Douglas.Ejercicio1
             Console.ResetColor();
         }
         /// <summary>
-        /// Muestra el menu creado.
+        /// Muestra el menu creado, con un ancho y color de fondo determinado.
         /// </summary>
         /// <param name="posInicialArriba">posicion inicial superior</param>
         /// <param name="posInicialIzquierda">posicion inicial izquierda</param>
         /// <param name="anchoMenu">El ancho de menu</param>
-        public void MostrarMenu(int posInicialArriba, int posInicialIzquierda, int anchoMenu)
+        /// <param name="colorFondo">El color que se va a pintar la consola</param>
+        public void MostrarMenu(int posInicialArriba, int posInicialIzquierda, int anchoMenu, ConsoleColor colorFondo)
         {
             if (Titulo == null || Opciones == null || Mensaje == null)
                 throw new ValoresNulosException("Error: Porfavor asigna el titulo, el contenido y el mensaje.");
@@ -227,7 +276,8 @@ namespace Douglas.Ejercicio1
 
             anchura = (anchoMenu > anchura) ? anchoMenu : anchura;
 
-            Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+            marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+            marco.DibujarConsola(colorFondo);
 
             if (_tipo == Tipo.Doble)
                 marco.DibujarMarcoDoble();
@@ -251,7 +301,7 @@ namespace Douglas.Ejercicio1
             Console.Write(Mensaje);
         }
         /// <summary>
-        /// Muestra el menu creado.
+        /// Muestra el menu creado con un color de fondo y de letra determinado.
         /// </summary>
         /// <param name="posInicialArriba">posicion inicial superior</param>
         /// <param name="posInicialIzquierda">posicion inicial izquierda</param>
@@ -275,7 +325,7 @@ namespace Douglas.Ejercicio1
             else
                 anchura += Titulo.Length;
 
-            Marco marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+            marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
 
             marco.DibujarConsola(colorFondo);
 
@@ -301,6 +351,70 @@ namespace Douglas.Ejercicio1
             Console.Write(Mensaje);
 
             Console.ResetColor();
+        }
+        /// <summary>
+        /// Muestra el menu creado, con un ancho, color de fondo y color de letra determinado.
+        /// </summary>
+        /// <param name="posInicialArriba">posicion inicial superior</param>
+        /// <param name="posInicialIzquierda">posicion inicial izquierda</param>
+        /// <param name="anchoMenu">El ancho de menu</param>
+        /// <param name="colorFondo">El color que se va a pintar la consola</param>
+        /// <param name="colorLetra">El color que se va a pintar las letras</param>
+        public void MostrarMenu(int posInicialArriba, int posInicialIzquierda, int anchoMenu, ConsoleColor colorFondo, ConsoleColor colorLetra)
+        {
+            if (Titulo == null || Opciones == null || Mensaje == null)
+                throw new ValoresNulosException("Error: Porfavor asigna el titulo, el contenido y el mensaje.");
+
+            Console.ForegroundColor = colorLetra;
+
+            int anchura = 10;
+            int altura = Opciones.Length + 3;
+            int longitudMaxOpciones = Opciones.Max(x => x.Length);
+
+            if (longitudMaxOpciones > Titulo.Length && longitudMaxOpciones > Mensaje.Length)
+                anchura += longitudMaxOpciones;
+            else if (Mensaje.Length > Titulo.Length)
+                anchura += Mensaje.Length;
+            else
+                anchura += Titulo.Length;
+
+            anchura = (anchoMenu > anchura) ? anchoMenu : anchura;
+
+            marco = new Marco(posInicialArriba, posInicialIzquierda, altura, anchura);
+            marco.DibujarConsola(colorFondo);
+
+            if (_tipo == Tipo.Doble)
+                marco.DibujarMarcoDoble();
+            else
+                marco.DibujarMarcoSimple();
+
+            Console.SetCursorPosition(posInicialIzquierda + 1, posInicialArriba + 1);
+            Console.WriteLine(Titulo.PadLeft(Titulo.Length + 5));
+
+            Console.CursorTop++;
+
+            for (int i = 0; i < Opciones.Length; i++)
+            {
+                Console.CursorLeft = posInicialIzquierda + 1;
+                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+            }
+
+            Console.CursorTop++;
+
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.Write(Mensaje);
+        }
+        /// <summary>
+        /// Borra la celda y muestra el mensaje determinado.
+        /// </summary>
+        /// <param name="mensaje"></param>
+        public void MostrarMensaje(string mensaje)
+        {
+            Console.CursorTop = marco.VerticeInferior-1;
+            Console.CursorLeft = marco.VerticeIzquierda + 1;
+            Console.Write("".PadLeft(marco.VerticeDerecha-1));
+            Console.CursorLeft = marco.VerticeIzquierda + 1;
+            Console.Write(mensaje);
         }
     }
 }

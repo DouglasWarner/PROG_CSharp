@@ -45,7 +45,10 @@ namespace Douglas.Ejercicio1
         public int VerticeIzquierda
         {
             get { return _verticeIzquierda; }
-            set { _verticeIzquierda = value; }
+            set {
+                if (value > Console.WindowWidth/2)
+                    throw new Exception("Error: La posición izquierda inicial debe ser menor que la mitad del ancho de la consola");
+                _verticeIzquierda = value; }
         }
         /// <summary>
         /// Asigna o devuelve el vertice inferior del marco
@@ -61,15 +64,11 @@ namespace Douglas.Ejercicio1
         public int VerticeDerecha
         {
             get { return _verticeDerecha; }
-            set 
+            set
             {
-                if (value > Console.WindowWidth)
-                {
-                    value -= (value - Console.WindowWidth) - VerticeIzquierda;
-                    _verticeDerecha = value;
-                }
-                else
-                    _verticeDerecha = value; 
+                if (value >= Console.WindowWidth)
+                    value = (Console.WindowWidth - VerticeIzquierda) - 2;
+                _verticeDerecha = value;
             }
         }
         /// <summary>
@@ -127,17 +126,17 @@ namespace Douglas.Ejercicio1
                 Console.CursorTop++;
             }
 
-            
+            VerticeInferior = Console.CursorTop;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('└');
             Console.Write("".PadLeft(VerticeDerecha - 1, '─'));
             Console.Write('┘');
 
-            Console.CursorTop = VerticeSuperior+2;
+            Console.CursorTop = VerticeSuperior + 2;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('├' + "".PadLeft(VerticeDerecha - 1, '─') + '┤');
 
-            Console.CursorTop = VerticeSuperior + VerticeInferior;
+            Console.CursorTop = VerticeInferior - 2;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('├' + "".PadLeft(VerticeDerecha - 1, '─') + '┤');
         }
@@ -161,7 +160,8 @@ namespace Douglas.Ejercicio1
                 Console.Write('║');
                 Console.CursorTop++;
             }
-            
+
+            VerticeInferior = Console.CursorTop;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('╚');
             Console.Write("".PadLeft(VerticeDerecha - 1, '═'));
@@ -171,7 +171,7 @@ namespace Douglas.Ejercicio1
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('╠' + "".PadLeft(VerticeDerecha - 1, '═') + '╣');
 
-            Console.CursorTop = VerticeSuperior + VerticeInferior;
+            Console.CursorTop = VerticeInferior - 2;
             Console.CursorLeft = VerticeIzquierda;
             Console.Write('╠' + "".PadLeft(VerticeDerecha - 1, '═') + '╣');
         }

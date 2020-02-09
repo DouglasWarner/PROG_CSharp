@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Douglas.Ejercicio1;
 
-namespace Basura
+namespace Ejercicio2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            MenuPrincipal m = new MenuPrincipal("hhhh", new string[] { "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaa" }, "holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", Tipo.Doble);
+
+            MenuPrincipal m = new MenuPrincipal("Titulo principal", new string[] { "Opcion 1", "Opcion 2", "Opcion 3", "Opcion 4" }, "Elije una opcion: ", Tipo.Doble);
 
             m.MostrarMenu();
 
