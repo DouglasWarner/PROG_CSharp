@@ -45,8 +45,10 @@ namespace Ejemplo_15_01_ClasePOJO
             {
                 Console.WriteLine(item.ToString());
             }
-
-
+            
+            
+            // EQUALS sobreescrito
+            
             Console.WriteLine("\n\n");
 
             Persona b1 = new Persona("Risitas", "Jesus", DateTime.Now, 32600);
@@ -61,15 +63,23 @@ namespace Ejemplo_15_01_ClasePOJO
             #endregion
 
             #region EJEMPLO 05/02 ICOMPARABLE
-
+            /*
             _bomberos = new ListaPersonas();
 
             _bomberos.AnadirVarios(20);
             _bomberos.OrdenarPersonas(1);
             _bomberos.Listar();
 
-            
+            Console.WriteLine("\n\n");
+            _bomberos.OrdenarPorApellidos();
+            _bomberos.Listar();
+            */
+            #endregion
 
+            #region EJEMPLO 10/02 INTERFACES
+            Dibuja dibujando = new Dibuja();
+
+            dibujando.Pinta();
 
             #endregion
 

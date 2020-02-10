@@ -69,17 +69,25 @@ namespace Douglas.Ejemplo_15_01_ClasePOJO
             }
         }
 
+        // C O M P A R A R  C O N  C O M P A R E T O  D E  P E R S O N A  ICOMPARABLE
+        // Metodo que compara con el metodo sort() SIN parametros.
         public void Ordenar()
         {
             _listaPersona.Sort();
         }
 
+        // C O M P A R A R  C O N  C O M P A R E  D E  P E R S O N A  ICOMPARER
+        // Metodos que comparan con el metodo sort() CON parametros.
         public void OrdenarPersonas(int i)
         {
             _listaPersona.Sort(new OrdenaPorNombre());
             //_listaPersona.OrderBy(x => x.Nombre);
         }
-
+        public void OrdenarPorApellidos()
+        {
+            _listaPersona.Sort(new OrdenaPorApellido());
+            //_listaPersona.OrderBy(x => x.Apellidos);
+        }
         //---------------------
         // Inicio del FORECH
         //---------------------

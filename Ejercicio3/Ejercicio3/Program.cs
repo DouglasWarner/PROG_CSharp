@@ -12,10 +12,10 @@ namespace PruebaGeometria
         static void Main(string[] args)
         {
             Punto p = new Punto(10,10);
+            Punto p1 = new Punto(25, 20);
+            Cuadrado c = new Cuadrado(p, p1);
 
-            Cuadrado c = new Cuadrado(p, 2);
-
-            c.DibujarCuadrado();
+            c.DibujarAleatorio();
 
             Console.ReadLine();
         }
