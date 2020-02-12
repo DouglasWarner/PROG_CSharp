@@ -10,6 +10,11 @@ namespace Ejercicio6
     {
         static void Main(string[] args)
         {
+            CFechas fecha = new CFechas();
+
+            fecha.ValidarFecha(30, 3, 2020);
+
+            Console.ReadLine();
         }
     }
 }
