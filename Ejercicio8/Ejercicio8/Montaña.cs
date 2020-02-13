@@ -8,5 +8,36 @@ namespace Ejercicio8
 {
     class Montaña : Bicicleta
     {
+        public enum TipoAmortiguacion
+        {
+            suave, medio, fuerte
+        }
+        private bool _kitReparacion;
+        private int _pulgadasRuedas;
+        private TipoAmortiguacion _amortiguacion;
+
+        public bool KitReparacion
+        {
+            get { return _kitReparacion; }
+        }
+        public int PulgadasRuedas
+        {
+            get { return _pulgadasRuedas; }
+        }
+        public TipoAmortiguacion Amortiguacion
+        {
+            get { return _amortiguacion; }
+        }
+
+        public Montaña() : base()
+        { }
+
+        public Montaña(string n, int nR, ConsoleColor c, TipoTraccion t, double pvp, DateTime fCompra, bool kitRepar, int pul, TipoAmortiguacion amort) 
+            : base(n, nR, c, t, pvp, fCompra)
+        {
+            _kitReparacion = kitRepar;
+            _pulgadasRuedas = pul;
+            _amortiguacion = amort;
+        }
     }
 }
