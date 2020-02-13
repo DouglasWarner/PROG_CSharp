@@ -18,8 +18,6 @@ namespace Ejercicio6
             get { return dia; }
             set 
             {
-                if (bisiesto && mes == 2 && (value > 0 && value <= 29))
-                    dia = value;
                 dia = ComprobarDiasDelMes(value);
             }
         }
@@ -29,7 +27,7 @@ namespace Ejercicio6
             set 
             {
                 if (value < 1 && value > 12)
-                    throw new Exception("Error: Mes incorrecto.");
+                    mes = 0;
 
                 mes = value;
             }
@@ -40,9 +38,12 @@ namespace Ejercicio6
             set 
             {
                 if (value < 1 && value > 3000)
-                    throw new Exception("Error: Año incorrecto. Solo esta permitido del año 1 al año 3000.");
-                anio = value;
-                bisiesto = EsAnioBisiesto();
+                    anio = 0;
+                else
+                {
+                    anio = value;
+                    bisiesto = EsAnioBisiesto();
+                }
             }
         }
 
@@ -54,19 +55,18 @@ namespace Ejercicio6
 
         public bool ValidarFecha()
         {
-            try
-            {
-                if (Anio == null || Mes == null || Dia == null)
-                    return false;
-            }
-            catch (Exception e)
+            if (Anio == 0 || Mes == 0 || Dia == 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n\n\t {0}", e.Message);
+                Console.WriteLine("\n\t La fecha es incorrecta.");
                 Console.ResetColor();
                 return false;
             }
 
+            Console.WriteLine("\n\n\t La fecha con formato corto, es correcta {0}", this);
+            Console.WriteLine("\n\n\t La fecha con formato largo, es correcto {0:00} de {1:00} del {2:0000}", Dia, Mes, Anio);
+            if (bisiesto)
+                Console.WriteLine("\n\t Ademas el año es bisiesto.");
             return true;
         }
         /// <summary>
@@ -83,6 +83,14 @@ namespace Ejercicio6
                 Anio = a;
                 Mes = m;
                 Dia = d;
+
+                if (Anio == 0 || Mes == 0 || Dia == 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n\t La fecha es incorrecta.");
+                    Console.ResetColor();
+                    return false;
+                }
             }
             catch (Exception e)
             {
@@ -93,9 +101,47 @@ namespace Ejercicio6
                 return false;
             }
 
-            Console.WriteLine("\n\n\t La fecha es correcta {0}-{1}-{2}", Dia, Mes, Anio);
+            Console.WriteLine("\n\n\t La fecha con formato corto, es correcta {0}", this);
+            Console.WriteLine("\n\n\t La fecha con formato largo, es correcto {0:00} de {1:00} del {2:0000}", Dia, Mes, Anio);
             if(bisiesto)
-                Console.WriteLine("\t Ademas el año es bisiesto");
+                Console.WriteLine("\n\t Ademas el año es bisiesto.");
+            return true;
+        }
+
+        public bool ValidarFecha(string fecha)
+        {
+            try
+            {
+                char[] separadores = { '-', '/' };
+                string[] tmp = fecha.Split(separadores, StringSplitOptions.RemoveEmptyEntries);
+
+                if (tmp.Length == 3)
+                {
+                    Anio = int.Parse(tmp[2]);
+                    Mes = int.Parse(tmp[1]);
+                    Dia = int.Parse(tmp[0]);
+                }
+
+                if (Anio == 0 || Mes == 0 || Dia == 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\n\t La fecha es incorrecta.");
+                    Console.ResetColor();
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n\n\t {0}", e.Message);
+                Console.ResetColor();
+                return false;
+            }
+
+            Console.WriteLine("\n\n\t La fecha con formato corto, es correcta {0}", this);
+            Console.WriteLine("\n\n\t La fecha con formato largo, es correcto {0:00} de {1:00} del {2:0000}", Dia, Mes, Anio);
+            if (bisiesto)
+                Console.WriteLine("\n\t Ademas el año es bisiesto.");
             return true;
         }
 
@@ -112,13 +158,25 @@ namespace Ejercicio6
                     if (dia > 0 && dia <= 31)
                         return dia;
                     else
-                        throw new Exception("Error: Dia incorrecto para dado el mes " + this.mes.ToString("00"));
-                default:
-                     if (dia > 0 && dia <= 30)
+                        return 0;
+                case 2:
+                    if (bisiesto && (dia > 0 && dia <= 29))
+                        return dia;
+                    if (!bisiesto && (dia > 0 && dia <= 28))
                         return dia;
                     else
-                        throw new Exception("Error: Dia incorrecto para dado el mes " + this.mes.ToString("00"));
+                        return 0;
+                default:
+                    if (dia > 0 && dia <= 30)
+                        return dia;
+                    else
+                        return 0;
             }
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0:00}-{1:00}-{2:0000}", Dia, Mes, Anio);
         }
     }
 }
