@@ -49,7 +49,7 @@ namespace Ejercicio8
         public override string ToString()
         {
             string separador = " ; ";
-            return "[" +this.GetType().Name + "] " + "Nombre: " + Nombre + separador 
+            return "\t[" +this.GetType().Name + "] " + "Nombre: " + Nombre + separador 
                                                    + "Ruedas: " + NumeroRuedas + separador 
                                                    + "Color: " + Color.ToString() + separador 
                                                    + "Tracción: " + Tipo.ToString();

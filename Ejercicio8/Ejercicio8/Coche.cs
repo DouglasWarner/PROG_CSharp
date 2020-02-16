@@ -39,11 +39,11 @@ namespace Ejercicio8
         {
             if (EstadoActual == Estado.marchando)
             {
-                Console.WriteLine("\tEl {0}, ya se encuentra en marcha", this);
+                Console.WriteLine("{0}, ya se encuentra en marcha", this);
                 return;
             }
 
-            Console.WriteLine("\tEl {0}, esta andando", this);
+            Console.WriteLine("{0}, esta andando", this);
             _estadoActual = Estado.marchando;
         }
 
@@ -51,11 +51,11 @@ namespace Ejercicio8
         {
             if (EstadoActual == Estado.parado)
             {
-                Console.WriteLine("\tEl {0}, ya se encuentra en parado", this);
+                Console.WriteLine("{0}, ya se encuentra en parado", this);
                 return;
             }
 
-            Console.WriteLine("\tEl {0}, se para", this);
+            Console.WriteLine("{0}, se para", this);
             _estadoActual = Estado.parado;
         }
 

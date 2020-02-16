@@ -8,8 +8,6 @@ namespace Ejercicio9
 {
     class Program
     {
-        // Falta asignar movimiento aleatorio del tesoro
-
         static void Main(string[] args)
         {
             GestionJuego gj = new GestionJuego();

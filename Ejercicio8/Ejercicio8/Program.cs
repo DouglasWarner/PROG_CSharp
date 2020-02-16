@@ -21,6 +21,16 @@ namespace Ejercicio8
 
             c.Marchar();
 
+            Moto m = new Moto("BMW", 2, ConsoleColor.Black, Vehiculo.TipoTraccion.Trasera, 120, Moto.TipoCombustible.normal);
+            Bicicleta b = new Bicicleta("Del Campo", 2, ConsoleColor.Blue, Vehiculo.TipoTraccion.Trasera, 250.49F, DateTime.Now);
+            Montaña bM = new Montaña("No fear", 2, ConsoleColor.Cyan, Vehiculo.TipoTraccion.Total, 359.99F, DateTime.Now, false, 16, Montaña.TipoAmortiguacion.suave);
+            Paseo bP = new Paseo("De Paseo", 2, ConsoleColor.DarkMagenta, Vehiculo.TipoTraccion.Trasera, 150, DateTime.Now, 2, "Model EXCLUSIVO", "GUCCI");
+
+            Console.WriteLine(m);
+            Console.WriteLine(b);
+            Console.WriteLine(bM);
+            Console.WriteLine(bP);
+
 
             Console.ReadLine();
 

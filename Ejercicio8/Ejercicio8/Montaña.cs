@@ -32,11 +32,11 @@ namespace Ejercicio8
         public Montaña() : base()
         { }
 
-        public Montaña(string n, int nR, ConsoleColor c, TipoTraccion t, double pvp, DateTime fCompra, bool kitRepar, int pul, TipoAmortiguacion amort) 
+        public Montaña(string n, int nR, ConsoleColor c, TipoTraccion t, double pvp, DateTime fCompra, bool kitRepar, int pulgadasR, TipoAmortiguacion amort) 
             : base(n, nR, c, t, pvp, fCompra)
         {
             _kitReparacion = kitRepar;
-            _pulgadasRuedas = pul;
+            _pulgadasRuedas = pulgadasR;
             _amortiguacion = amort;
         }
     }
