@@ -106,7 +106,7 @@ namespace Douglas.Ejercicio1
             for (int i = 0; i < Opciones.Length; i++)
             {
                 Console.CursorLeft = posDefecto + 1;
-                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+                Console.WriteLine(Opciones[i].PadRight(longitudMaxOpciones));
             }
 
             Console.CursorTop++;
@@ -145,11 +145,13 @@ namespace Douglas.Ejercicio1
             Console.WriteLine(Titulo.PadLeft(Titulo.Length+5));
             Console.CursorTop++;
 
-            for (int i = 0; i < Opciones.Length; i++)
+            for (int i = 0; i < Opciones.Length-1; i++)
             {
                 Console.CursorLeft = posInicialIzquierda + 1;
-                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+                Console.WriteLine("".PadLeft(5) + Opciones[i]);
             }
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.WriteLine("".PadLeft(8) + Opciones.Last());
 
             Console.CursorTop++;
             Console.CursorLeft = posInicialIzquierda + 1;
@@ -191,11 +193,14 @@ namespace Douglas.Ejercicio1
 
             Console.CursorTop++;
 
-            for (int i = 0; i < Opciones.Length; i++)
+            for (int i = 0; i < Opciones.Length - 1; i++)
             {
                 Console.CursorLeft = posInicialIzquierda + 1;
-                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+                Console.WriteLine("".PadLeft(5) + Opciones[i]);
             }
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.WriteLine("".PadLeft(8) + Opciones.Last());
+
 
             Console.CursorTop++;
 
@@ -238,11 +243,14 @@ namespace Douglas.Ejercicio1
 
             Console.CursorTop++;
 
-            for (int i = 0; i < Opciones.Length; i++)
+            for (int i = 0; i < Opciones.Length - 1; i++)
             {
                 Console.CursorLeft = posInicialIzquierda + 1;
-                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+                Console.WriteLine("".PadLeft(5) + Opciones[i]);
             }
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.WriteLine("".PadLeft(8) + Opciones.Last());
+
 
             Console.CursorTop++;
 
@@ -289,11 +297,14 @@ namespace Douglas.Ejercicio1
 
             Console.CursorTop++;
 
-            for (int i = 0; i < Opciones.Length; i++)
+            for (int i = 0; i < Opciones.Length - 1; i++)
             {
                 Console.CursorLeft = posInicialIzquierda + 1;
-                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+                Console.WriteLine("".PadLeft(5) + Opciones[i]);
             }
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.WriteLine("".PadLeft(8) + Opciones.Last());
+
 
             Console.CursorTop++;
 
@@ -338,12 +349,15 @@ namespace Douglas.Ejercicio1
             Console.WriteLine(Titulo.PadLeft(Titulo.Length + 5));
 
             Console.CursorTop++;
-            
-            for (int i = 0; i < Opciones.Length; i++)
+
+            for (int i = 0; i < Opciones.Length - 1; i++)
             {
                 Console.CursorLeft = posInicialIzquierda + 1;
-                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+                Console.WriteLine("".PadLeft(5) + Opciones[i]);
             }
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.WriteLine("".PadLeft(8) + Opciones.Last());
+
 
             Console.CursorTop++;
 
@@ -393,11 +407,14 @@ namespace Douglas.Ejercicio1
 
             Console.CursorTop++;
 
-            for (int i = 0; i < Opciones.Length; i++)
+            for (int i = 0; i < Opciones.Length - 1; i++)
             {
                 Console.CursorLeft = posInicialIzquierda + 1;
-                Console.WriteLine(Opciones[i].PadLeft(longitudMaxOpciones));
+                Console.WriteLine("".PadLeft(5) + Opciones[i]);
             }
+            Console.CursorLeft = posInicialIzquierda + 1;
+            Console.WriteLine("".PadLeft(8) + Opciones.Last());
+
 
             Console.CursorTop++;
 
