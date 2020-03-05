@@ -11,8 +11,8 @@ namespace Ejercicio9
         private Random _rndPosicion;
         private int _minAnchura = 2;
         private int _minAltura = 3;
-        private int _anchura = 20; //Console.WindowWidth-2;
-        private int _altura = 20; //Console.WindowHeight-4;
+        private int _anchura = Console.WindowWidth-2;
+        private int _altura = Console.WindowHeight-4;
         private string _titulo;
         private string[] _mensajeFin;
         private string[,] _areaJuego;
@@ -56,7 +56,7 @@ namespace Ejercicio9
 
         private void MostrarTitulo()
         {
-            _titulo = string.Format("\tJUGADOR:  X: {0}, Y: {1}     TESORO:  X: {2}, Y: {3} \t\t\t\t\tESCAPE PARA SALIR", _j.PosX, _j.PosY, _t.PosX, _t.PosY);
+            _titulo = string.Format("\tJUGADOR:  X: {0}, Y: {1}      TESORO:  X: {2}, Y: {3}  {4} ESCAPE PARA SALIR", _j.PosX, _j.PosY, _t.PosX, _t.PosY, "".PadLeft(30));
             Console.SetCursorPosition(0, 0);
             Console.WriteLine(_titulo);
         }
@@ -74,8 +74,8 @@ namespace Ejercicio9
             }   
             Console.ResetColor();
 
-            PintarJugador();
-            PintarTesoro();
+            _j.MostrarJugador();
+            _t.MostrarTesoro();
         }
 
         private void MostrarMensajeFin()
@@ -87,63 +87,103 @@ namespace Ejercicio9
                 Console.CursorLeft = 30;
                 Console.WriteLine(_mensajeFin[i]);
             }
+            Console.ReadLine();
         }
-
-        private void PintarJugador()
+        
+        
+        private void MovimientoJugador(ConsoleKeyInfo tecla)
         {
-            Console.CursorLeft = _j.PosY;
-            Console.CursorTop = _j.PosX;
-            Console.Write(_j.Icono);
-        }
-
-        private void PintarTesoro()
-        {
-            Console.CursorLeft = _t.PosY;
-            Console.CursorTop = _t.PosX;
-            Console.Write(_t.Icono);
-        }
-
-        private void MovimientoJugador(ConsoleKey tecla)
-        {
-            if (tecla == ConsoleKey.UpArrow)
+            if (tecla.Key == ConsoleKey.UpArrow)
             {
-                if (_j.PosX < _minAltura)
-                    return;
-                
-                Console.SetCursorPosition(_j.PosY, _j.PosX);
-                Console.Write(" ");
+                if (tecla.Modifiers == ConsoleModifiers.Control)
+                {
+                    if (_j.PosX < _minAltura+1)
+                        return;
 
-                _j.MoverJugador(--_j.PosX, _j.PosY);
+                    Console.SetCursorPosition(_j.PosY, _j.PosX);
+                    Console.Write(" ");
+
+                    _j.MoverJugador(_j.PosX-=2, _j.PosY);
+                }
+                else
+                {
+                    if (_j.PosX < _minAltura)
+                        return;
+
+                    Console.SetCursorPosition(_j.PosY, _j.PosX);
+                    Console.Write(" ");
+
+                    _j.MoverJugador(--_j.PosX, _j.PosY);
+                }
             }
-            if (tecla == ConsoleKey.DownArrow)
+            if (tecla.Key == ConsoleKey.DownArrow)
             {
-                if (_j.PosX >= _altura - 1)
-                    return;
+                if (tecla.Modifiers == ConsoleModifiers.Control)
+                {
+                    if (_j.PosX >= _altura - 2)
+                        return;
 
-                Console.SetCursorPosition(_j.PosY, _j.PosX);
-                Console.Write(" ");
+                    Console.SetCursorPosition(_j.PosY, _j.PosX);
+                    Console.Write(" ");
 
-                _j.MoverJugador(++_j.PosX, _j.PosY);
+                    _j.MoverJugador(_j.PosX+=2, _j.PosY);
+                }
+                else
+                {
+                    if (_j.PosX >= _altura - 1)
+                        return;
+
+                    Console.SetCursorPosition(_j.PosY, _j.PosX);
+                    Console.Write(" ");
+
+                    _j.MoverJugador(++_j.PosX, _j.PosY);
+                }
             }
-            if (tecla == ConsoleKey.RightArrow)
+            if (tecla.Key == ConsoleKey.RightArrow)
             {
-                if (_j.PosY >= _anchura - 2)
-                    return;
+                if (tecla.Modifiers == ConsoleModifiers.Control)
+                {
+                    if (_j.PosY >= _anchura - 3)
+                        return;
 
-                Console.SetCursorPosition(_j.PosY, _j.PosX);
-                Console.Write(" ");
+                    Console.SetCursorPosition(_j.PosY, _j.PosX);
+                    Console.Write(" ");
 
-                _j.MoverJugador(_j.PosX, ++_j.PosY);
+                    _j.MoverJugador(_j.PosX, _j.PosY+=2);
+                }
+                else
+                {
+                    if (_j.PosY >= _anchura - 2)
+                        return;
+
+                    Console.SetCursorPosition(_j.PosY, _j.PosX);
+                    Console.Write(" ");
+
+                    _j.MoverJugador(_j.PosX, ++_j.PosY);
+                }
             }
-            if (tecla == ConsoleKey.LeftArrow)
+            if (tecla.Key == ConsoleKey.LeftArrow)
             {
-                if (_j.PosY < _minAnchura)
-                    return;
+                if (tecla.Modifiers == ConsoleModifiers.Control)
+                {
+                    if (_j.PosY < _minAnchura+1)
+                        return;
 
-                Console.SetCursorPosition(_j.PosY, _j.PosX);
-                Console.Write(" ");
+                    Console.SetCursorPosition(_j.PosY, _j.PosX);
+                    Console.Write(" ");
 
-                _j.MoverJugador(_j.PosX, --_j.PosY);
+                    _j.MoverJugador(_j.PosX, _j.PosY-=2);
+                }
+                else
+                {
+                    if (_j.PosY < _minAnchura)
+                        return;
+
+                    Console.SetCursorPosition(_j.PosY, _j.PosX);
+                    Console.Write(" ");
+
+                    _j.MoverJugador(_j.PosX, --_j.PosY);
+                }
             }
         }
         
@@ -153,13 +193,13 @@ namespace Ejercicio9
             int movimientoY = _rndPosicion.Next(-1, 2);
 
             if (_t.PosX < _minAltura)
-                return;
+                movimientoX = _rndPosicion.Next(0, 2);
             if (_t.PosX >= _altura - 1)
-                return;
+                movimientoX = _rndPosicion.Next(-1, 1);
             if (_t.PosY >= _anchura - 2)
-                return;
+                movimientoY = _rndPosicion.Next(-1, 1);
             if (_t.PosY < _minAnchura)
-                return;
+                movimientoY = _rndPosicion.Next(0, 2);
 
             Console.SetCursorPosition(_t.PosY, _t.PosX);
             Console.Write(" ");
@@ -186,10 +226,10 @@ namespace Ejercicio9
             while ((movimiento = Console.ReadKey(true)).Key != _teclaSalir)
             {
                 MostrarTitulo();
-                MovimientoJugador(movimiento.Key);
+                MovimientoJugador(movimiento);
                 MovimientoTesoro();
-                PintarJugador();
-                PintarTesoro();
+                _j.MostrarJugador();
+                _t.MostrarTesoro();
 
                 if (Encontrado())
                 {

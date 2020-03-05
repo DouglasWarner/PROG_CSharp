@@ -39,5 +39,13 @@ namespace Ejercicio9
             PosX = x;
             PosY = y;
         }
+
+        public void MostrarTesoro()
+        {
+            Console.CursorLeft = PosY;
+            Console.CursorTop = PosX;
+            Console.Write(Icono);
+        }
+
     }
 }

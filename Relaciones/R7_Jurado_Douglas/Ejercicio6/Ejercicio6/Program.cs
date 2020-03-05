@@ -22,8 +22,8 @@ namespace Ejercicio6
             Console.WriteLine("\n\t\t GESTION DE FECHAS");
             Console.WriteLine("".PadLeft(60,'='));
             Console.Write("\n\t Escribe la fecha: ");
-
-            fecha.ValidarFecha("28/2/2019");
+            pedirFecha = Console.ReadLine();
+            fecha.ValidarFecha(pedirFecha);
 
             Console.ReadLine();
         }

@@ -186,7 +186,16 @@ namespace Ejercicio4
 
         private static int FibonacciIterativo(int meses)
         {
-            int resultado = meses / (1 - meses - (meses * meses));
+            int resultado = 0;
+            int conejosAdultos = 0;
+            int conejosBebes = 1;
+
+            for (int i = 0; i < meses; i++)
+            {
+                resultado = conejosBebes + conejosAdultos;
+                conejosAdultos = conejosBebes;
+                conejosBebes = resultado;
+            }
 
             return resultado;
         }
@@ -211,7 +220,7 @@ namespace Ejercicio4
                 return;
             }
 
-            Console.WriteLine("\n Resultado: {0}", EsPrimo(numero) ? "El número es primo" : "El número no es primo");
+            Console.WriteLine("\n Resultado: {0}", EsPrimo(numero) ? "El número "+numero+" es primo" : "El número "+numero+" no es primo");
             Console.Write("\n Pulsa cualquier tecla...");
             Console.ReadLine();
         }

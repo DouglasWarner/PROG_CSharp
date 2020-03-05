@@ -10,17 +10,13 @@ namespace Ejercicio9
     {
         static void Main(string[] args)
         {
+            // Desactiva la tecla control del sistema.
+            Console.TreatControlCAsInput = true;
+            Console.BufferHeight = 30;
+
             GestionJuego gj = new GestionJuego();
             
             gj.Jugar();
-
-            /*Random rnd = new Random();
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine(rnd.Next(-1,2));
-                Console.WriteLine(rnd.Next(-1, 2));
-            }*/
-            Console.ReadLine();
         }
     }
 }
