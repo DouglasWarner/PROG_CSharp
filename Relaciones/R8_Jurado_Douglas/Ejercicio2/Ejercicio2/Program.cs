@@ -37,8 +37,8 @@ namespace Ejercicio2
         {
             DirectoryInfo dir = new DirectoryInfo(directorio);
 
-            Console.WriteLine("         INFORMACIÓN DIRECTORIO  ");
-            Console.WriteLine("----------------------------------------------------");
+            Console.WriteLine("                     INFORMACIÓN DIRECTORIO  ");
+            Console.WriteLine("--------------------------------------------------------------------");
             Console.WriteLine("           Nombre completo del directorio: {0}", dir.FullName);
             Console.WriteLine("                 Atributos del directorio: {0}", dir.Attributes);
             Console.WriteLine("      Fecha de la creacion del directorio: {0}", dir.CreationTime);
