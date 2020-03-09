@@ -63,6 +63,7 @@ namespace Ejercicio4
             {
                 ficheroOrigen = args[1];
                 ficheroDestino = args[0];
+                caracter = args[2];
             }
 
             // Si no se ha especificado un directorio, se entiende que es de donde se llama el ejecutable.
@@ -72,7 +73,7 @@ namespace Ejercicio4
                 ficheroDestino = directorioActual + Path.DirectorySeparatorChar + ficheroDestino;
 
 
-            Console.WriteLine("Fichero a copiar: " + ficheroOrigen);
+            Console.WriteLine("Fichero fuente: " + ficheroOrigen);
             Console.WriteLine("Fichero destino: " + ficheroDestino);
 
             Console.WriteLine("\n\nCopiando...");
@@ -98,12 +99,38 @@ namespace Ejercicio4
                     return;
                 }
                 else if (tmp == "S")
-                    File.WriteAllLines(ficheroDestino, File.ReadAllLines(ficheroOrigen).SkipWhile(x => x == caracter));
+                {
+                    using (StreamReader sr = new StreamReader(ficheroOrigen))
+                    {
+                        using (StreamWriter sw = new StreamWriter(ficheroDestino))
+                        {
+                            string item = string.Empty;
+
+                            while ((item = sr.ReadLine()) != null)
+                            {
+                                sw.WriteLine(item.Where(x => x != char.Parse(caracter)).ToArray());
+                            }
+                        }
+                    }
+                }
             }
             else
-                File.WriteAllLines(ficheroDestino, File.ReadAllLines(ficheroOrigen));
+            {
+                using (StreamReader sr = new StreamReader(ficheroOrigen))
+                {
+                    using (StreamWriter sw = new StreamWriter(ficheroDestino))
+                    {
+                        string item = string.Empty;
 
+                        while ((item = sr.ReadLine()) != null)
+                        {
+                            sw.WriteLine(item.Where(x => x != char.Parse(caracter)).ToArray());
+                        }
+                    }
+                }
+            }
 
+            
             Console.Write("\nArchivo copiado con exito ");
 
             Console.ReadLine();
