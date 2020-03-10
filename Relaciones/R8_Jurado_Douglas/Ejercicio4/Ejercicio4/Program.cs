@@ -24,9 +24,11 @@ namespace Ejercicio4
             string caracter = string.Empty;
 
             // Si no existe vuelve a pedir los ficheros
-            if (args.Length < 1)
+            if (args.Length < 3)
             {
+                Console.WriteLine("Error de formato\n");
                 Console.WriteLine("Porfavor introduce el fichero a copiar y el nombre del nuevo fichero y el caracter que no se copiará, sin comillas.\n\n");
+                Console.WriteLine("Ejemplo: Ejercicio4 ficheroDestino ficheroFuente caracter\n");
 
                 Console.Write("Fichero origen: ");
                 ficheroOrigen = Console.ReadLine();
@@ -44,20 +46,6 @@ namespace Ejercicio4
                     Console.ReadLine();
                     return;
                 }
-            }
-            else if (args.Length < 2)       // Si no introduce el fichero fuente
-            {
-                Console.WriteLine("Porfavor introduce el fichero fuente.\n");
-
-                Console.Write("Fichero origen: ");
-                ficheroOrigen = Console.ReadLine();
-            }
-            else if(args.Length < 3)
-            {
-                Console.WriteLine("Porfavor introduce el caracter que no se copiara.\n");
-
-                Console.Write("Caracter: ");
-                caracter = Console.ReadLine();
             }
             else                            // Si lo ha introducido los dos ficheros, origin y destino.
             {
@@ -100,40 +88,53 @@ namespace Ejercicio4
                 }
                 else if (tmp == "S")
                 {
-                    using (StreamReader sr = new StreamReader(ficheroOrigen))
+                    try
                     {
-                        using (StreamWriter sw = new StreamWriter(ficheroDestino))
-                        {
-                            string item = string.Empty;
-
-                            while ((item = sr.ReadLine()) != null)
-                            {
-                                sw.WriteLine(item.Where(x => x != char.Parse(caracter)).ToArray());
-                            }
-                        }
+                        CopiarContenidoAFichero(ficheroOrigen, ficheroDestino, caracter);
+                    }
+                    catch(IOException e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
                     }
                 }
             }
             else
             {
-                using (StreamReader sr = new StreamReader(ficheroOrigen))
+                try
                 {
-                    using (StreamWriter sw = new StreamWriter(ficheroDestino))
-                    {
-                        string item = string.Empty;
-
-                        while ((item = sr.ReadLine()) != null)
-                        {
-                            sw.WriteLine(item.Where(x => x != char.Parse(caracter)).ToArray());
-                        }
-                    }
+                    CopiarContenidoAFichero(ficheroOrigen, ficheroDestino, caracter);
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
                 }
             }
 
-            
-            Console.Write("\nArchivo copiado con exito ");
-
             Console.ReadLine();
+        }
+
+        static void CopiarContenidoAFichero(string ficheroFuente, string ficheroDestino, string caracter)
+        {
+            using (StreamReader sr = new StreamReader(ficheroFuente))
+            using (StreamWriter sw = new StreamWriter(ficheroDestino))
+            {
+                string item = string.Empty;
+
+                while ((item = sr.ReadLine()) != null)
+                {
+                    sw.WriteLine(item.Where(x => x != char.Parse(caracter)).ToArray());
+                }
+            }
+
+            Console.Write("\nArchivo copiado con exito ");
         }
     }
 }
