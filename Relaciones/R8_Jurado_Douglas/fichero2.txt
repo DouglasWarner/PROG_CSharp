@@ -1,0 +1,10 @@
+Mari carmen
+
+10. Haz un programa en C# que muestre por pantalla el contenido de un fichero de texto al revés, comenzando por el
+final hasta el principio.
+11. Haz un programa en C# que lea líneas desde el teclado (hasta introducir una línea vacía) lo almacene en un fichero y
+muestre su contenido. Usa para ello las funciones codificadas en los ejercicios anteriores.
+12. Haz un programa permita acceder, usando un componente, a un fichero de texto y cuente el número de líneas que
+hay, su tamaño, sus atributos y el número de palabras, el resultado se mostrará en pantalla.
+13. Haz un programa que tenga un fichero en el que vaya guardando los datos: Nombre usuario, fecha, hora y tiempo de
+conexión, para cada una de las veces que se ha ejecutado.
