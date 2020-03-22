@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4466B12B-B3AF-4B1F-8E4C-94A4207BED90}</ProjectGuid>
+    <ProjectGuid>{1EC92D09-9A6D-4562-98D0-83D30D0AAEF9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Comando_MSDOS_COPY</RootNamespace>
-    <AssemblyName>Copiar</AssemblyName>
+    <RootNamespace>Comando_MSDOS_DELETE</RootNamespace>
+    <AssemblyName>Comando_MSDOS_DELETE</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

@@ -19,8 +19,14 @@ namespace Comando_MSDOS_DIR
         static void Main(string[] args)
         {
             string directorioSeleccionado = Directory.GetCurrentDirectory();
-            if (args.Length == 1 && args[0] != null)
-                directorioSeleccionado = args[0];
+            if (args.Length == 1)
+                directorioSeleccionado += Path.DirectorySeparatorChar+ args[0];
+
+            if (args.Length > 1)
+            {
+                Console.WriteLine("Error: porfavor introduce un solo directorio");
+                return;
+            }
 
             try
             {
@@ -32,7 +38,7 @@ namespace Comando_MSDOS_DIR
                 Console.WriteLine("----- -- -- ------ ------------     ----\t ------\t         ------");
                 ListarDirectorios(directorios);
                 ListarFicheros(ficheros);
-                Console.WriteLine("\t\t\t\t\t {0} archivos {1,10} bytes", ficheros.Length, ficheros.Sum(x => new FileInfo(x).Length));
+                Console.WriteLine("\t\t\t\t\t {0} archivos {1,10:N} bytes", ficheros.Length, ficheros.Sum(x => new FileInfo(x).Length));
                 Console.WriteLine("\t\t\t\t\t {0} directorios {1:N} bytes libres", directorios.Length, new DriveInfo(Path.GetPathRoot(directorioSeleccionado)).TotalFreeSpace);
             }
             catch
