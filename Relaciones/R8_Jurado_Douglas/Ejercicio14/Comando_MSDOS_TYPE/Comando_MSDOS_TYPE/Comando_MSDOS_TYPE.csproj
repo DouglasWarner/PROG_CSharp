@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1EC92D09-9A6D-4562-98D0-83D30D0AAEF9}</ProjectGuid>
+    <ProjectGuid>{F19ED93E-BABF-47EA-85D7-CADCCB9E649E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Comando_MSDOS_DELETE</RootNamespace>
-    <AssemblyName>Borrar</AssemblyName>
+    <RootNamespace>Comando_MSDOS_TYPE</RootNamespace>
+    <AssemblyName>Mostrar</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="Ejercicio2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ejercicio2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <Grid Margin="70,0,103,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.Row="0">
+            <Label Content="Introduce la expresión:"/>
+            <TextBox Name="tbxExpresion" Height="30" VerticalContentAlignment="Center" MaxLength="100" MaxLines="1" GotFocus="TbxExpresion_GotFocus" LostFocus="TbxExpresion_LostFocus" TextChanged="TbxExpresion_TextChanged"/>
+        </StackPanel>
+        <Button Name="btnCalcular" Content="Cálcular" Grid.Row="1" Height="25" Width="100" HorizontalAlignment="Left" Click="BtnCalcular_Click"/>
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Grid.Row="2">
+            <Label Content="Resultado: "/>
+            <TextBlock Name="tbkResultado" Height="30" FontSize="20" FontWeight="Bold" Margin="30,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

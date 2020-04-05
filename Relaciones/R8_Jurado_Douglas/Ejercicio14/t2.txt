@@ -1,0 +1,3 @@
+[user]
+        email = douglaswarner.jp@gmail.com
+        name = Douglas Warner Jurado Pe├▒a

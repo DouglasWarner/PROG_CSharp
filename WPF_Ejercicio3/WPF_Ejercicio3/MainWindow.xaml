@@ -1,0 +1,32 @@
+﻿<Window x:Class="WPF_Ejercicio3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Ejercicio3"
+        mc:Ignorable="d"
+        Title="Ejercicio3. Acierta un número" Height="350" Width="700">
+    <Grid Width="600" Height="300">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="btnGenerarNumero" Content="Generar Número" Grid.Column="0" Grid.Row="0"
+                Height="25" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="BtnGenerarNumero_Click"/>
+        <CheckBox Name="cbxVerNumero" Content="Ver Número" Grid.Column="1" Grid.Row="0" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Click="CbxVerNumero_Click"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center">
+            <TextBlock Text="Acierta el Número" FontSize="15"/>
+            <TextBox Name="tbxNumero" Height="25" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <Button Name="btnProbar" IsEnabled="False" Content="Probar" Height="25" Width="60" Grid.Column="1" Grid.Row="1"
+                HorizontalAlignment="Left" Margin="10,20,0,0" Click="BtnProbar_Click"/>
+        <TextBlock Name="tbkMensaje" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+        <TextBlock Name="tbkVerNumero" Text="25" FontSize="30" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
+    </Grid>
+</Window>

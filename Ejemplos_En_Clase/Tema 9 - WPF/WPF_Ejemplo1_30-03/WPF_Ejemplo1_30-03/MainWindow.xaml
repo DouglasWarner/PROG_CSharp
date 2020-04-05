@@ -1,0 +1,37 @@
+﻿<Window x:Class="WPF_Ejemplo1_30_03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WPF Mi primer proyecto" Height="430.77" Width="800"
+        Name="winPrincipal">
+
+    <!-- Dentro como componente de Window en mi versión
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Ejemplo1_30_03"
+        mc:Ignorable="d"
+    -->
+
+    <Grid>
+        <Button x:Name="btnPulsame" FontWeight="Bold" FontSize="20" Click="BtnPulsame_Click" Margin="260,93,212,48" Content="">
+            <Button.Background>
+                <ImageBrush ImageSource="Imagenes/img4.jpg"/>
+            </Button.Background>
+        </Button>
+
+        <Rectangle Name="rectPrueba" Height="50" Width="120" Fill="Blue" Margin="94,49,578,301"/>
+
+        <!--    Otra forma de hacer codigo, pero no es lo ideal
+        <x:Code>
+            <![CDATA[
+            private void BtnPulsame_Click(object sender, RoutedEventArgs e)
+            {
+                winPrincipal.Background = (pulsado) ? Brushes.Red : Brushes.Blue;
+                btnPulsame.Background = (pulsado) ? Brushes.Red : Brushes.Blue;
+                pulsado = !pulsado;
+            }
+            ]]>
+        </x:Code>
+        -->
+
+    </Grid>
+</Window>

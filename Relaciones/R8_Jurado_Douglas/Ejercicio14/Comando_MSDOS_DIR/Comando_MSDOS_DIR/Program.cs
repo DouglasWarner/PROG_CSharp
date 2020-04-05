@@ -52,7 +52,8 @@ namespace Comando_MSDOS_DIR
         {
             foreach (string tmp in ficheros)
             {
-                Console.WriteLine("{0} {1,10}\t {2,15}\t {3:N}\t {4}", File.GetLastWriteTime(tmp).ToShortDateString(), File.GetLastWriteTime(tmp).ToShortTimeString(), "<FIL>", new FileInfo(tmp).Length.ToString().PadLeft(10), Path.GetFileName(tmp));
+                if(File.GetAttributes(tmp).HasFlag(FileAttributes.Archive))
+                    Console.WriteLine("{0} {1,10}\t {2,15}\t {3:N}\t {4}", File.GetLastWriteTime(tmp).ToShortDateString(), File.GetLastWriteTime(tmp).ToShortTimeString(), "<FIL>", new FileInfo(tmp).Length.ToString().PadLeft(10), Path.GetFileName(tmp));
             }
         }
 
@@ -60,7 +61,8 @@ namespace Comando_MSDOS_DIR
         {
             foreach (string tmp in directorios)
             {
-                Console.WriteLine("{0,10} {1,10}\t {2,15}\t {3}\t {4}", Directory.GetLastWriteTime(tmp).ToShortDateString(), Directory.GetLastWriteTime(tmp).ToShortTimeString(), "<DIR>", " ".PadLeft(10), Path.GetFileName(tmp));
+                if (File.GetAttributes(tmp).HasFlag(FileAttributes.Directory))
+                    Console.WriteLine("{0,10} {1,10}\t {2,15}\t {3}\t {4}", Directory.GetLastWriteTime(tmp).ToShortDateString(), Directory.GetLastWriteTime(tmp).ToShortTimeString(), "<DIR>", " ".PadLeft(10), Path.GetFileName(tmp));
             }
         }
     }

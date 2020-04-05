@@ -1,0 +1,14 @@
+git restore
+git add -A
+git commit -m 'Tema 4'
+git push --all
+git fetch
+git merge origin/master
+git log
+git commit -m 'Tema 4'
+git add -A
+git commit -m 'Tema 4'
+git push --all
+git log
+git status
+git status

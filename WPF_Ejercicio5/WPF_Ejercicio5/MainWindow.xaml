@@ -1,0 +1,30 @@
+﻿<Window x:Class="WPF_Ejercicio5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Ejercicio5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="100">
+            <Label Content="Frase: " FontSize="20" Height="40" VerticalAlignment="Top"/>
+            <RichTextBox Name="tbxFrase" Height="100" Width="500" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" BorderBrush="Black"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Width="100" Height="80">
+            <Label Content="Original: " HorizontalAlignment="Right"/>
+            <Label Content="Encriptado: " HorizontalAlignment="Right"/>
+            <Label Content="Desencriptado: " HorizontalAlignment="Right"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Width="100" Height="80">
+            <TextBox Name="tbxOriginal" Text="original"/>
+            <TextBox Name="tbxEncriptado" Text="encriptado"/>
+            <TextBox Name="tbxDesencriptado" Text="desencriptado"/>
+        </StackPanel>
+
+        <Button Name="btnEncriptar" Content="Encriptar"/>
+        <Button Name="btnDesencriptar" Content="Desencriptar"/>
+    </Grid>
+</Window>

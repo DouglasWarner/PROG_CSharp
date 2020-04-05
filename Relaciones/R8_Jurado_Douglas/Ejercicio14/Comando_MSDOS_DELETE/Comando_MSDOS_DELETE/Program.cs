@@ -31,26 +31,37 @@ namespace Comando_MSDOS_DELETE
         static void Borrar(string[] archivosABorrar)
         {
             int nBorrados = 0;
-
+            string archivo = string.Empty;
+            
             foreach (string item in archivosABorrar)
             {
-                if (Path.IsPathRooted(item))
+                if (!Path.IsPathRooted(item))
+                    archivo = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + item;
+                else
+                    archivo = item;
+
+                if (!Directory.Exists(archivo) && !File.Exists(archivo))
                 {
-                    if (Directory.Exists(item))
-                    {
-                        nBorrados += Directory.GetFiles(item).Length;
-                        Directory.Delete(item);
-                    }
+                    Console.WriteLine("\n\tNo se pudo encontrar {0}", archivo);
+                    continue;
+                }
+
+                FileAttributes tmp = File.GetAttributes(archivo);
+
+                if (tmp.HasFlag(FileAttributes.Directory))
+                {
+                    nBorrados += Directory.GetFiles(item).Length;
+                    Directory.Delete(item, true);
                 }
                 else
                 {
-                    if (File.Exists(item))
-                    {
-                        nBorrados++;
-                        File.Delete(item);
-                    }
+                    nBorrados++;
+                    File.Delete(item);
                 }
+
             }
+
+            Console.WriteLine("\n\tArchivo(s) borrado(s): {0}", nBorrados);
         }
     }
 }
