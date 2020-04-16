@@ -7,24 +7,60 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel Orientation="Horizontal" Height="100">
-            <Label Content="Frase: " FontSize="20" Height="40" VerticalAlignment="Top"/>
-            <RichTextBox Name="tbxFrase" Height="100" Width="500" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" BorderBrush="Black"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Vertical" Width="100" Height="80">
-            <Label Content="Original: " HorizontalAlignment="Right"/>
-            <Label Content="Encriptado: " HorizontalAlignment="Right"/>
-            <Label Content="Desencriptado: " HorizontalAlignment="Right"/>
+        <!-- Frase y Desplazamiento -->
+        <StackPanel Orientation="Horizontal"  Grid.Column="0" Grid.Row="0" >
+            <!-- Frase -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="30,25,0,0">
+                <Label Content="Frase: " FontSize="15" FontWeight="Bold" Height="40"/>
+                <TextBox Name="tbxFrase" Height="100" Width="500" VerticalScrollBarVisibility="Auto" Block.LineHeight="2" BorderBrush="Black"/>
+            </StackPanel>
+            <!-- Desplazamiento -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="30,30">
+                <Label Content="Desplazamiento" FontSize="15" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBox Name="tbxDesplazamiento" Text="" FontSize="15" Width="100" MaxLength="2" MaxLines="1"/>
+                    <StackPanel Orientation="Vertical">
+                        <Button Name="btnAumentarDesplazamiento" Content="5" FontFamily="Webdings" Click="BtnAumentarDesplazamiento_Click"/>
+                        <Button Name="btnBajarDesplazamiento" Content="6" FontFamily="Webdings" Click="BtnBajarDesplazamiento_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
-
-        <StackPanel Orientation="Vertical" Width="100" Height="80">
-            <TextBox Name="tbxOriginal" Text="original"/>
-            <TextBox Name="tbxEncriptado" Text="encriptado"/>
-            <TextBox Name="tbxDesencriptado" Text="desencriptado"/>
+        <!-- Fin Frase y desplazamiento -->
+        
+        <!-- Resultados -->
+        <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
+            <StackPanel Orientation="Vertical" Width="150" Height="150" >
+                <Label Content="Original: " HorizontalAlignment="Right" Height="50" FontSize="15"/>
+                <Label Content="Encriptado: " HorizontalAlignment="Right" Height="50" FontSize="15"/>
+                <Label Content="Desencriptado: " HorizontalAlignment="Right" Height="50" FontSize="15"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Height="150" Width="400">
+                <TextBlock Name="tbxOriginal" Text="" Height="50"/>
+                <TextBlock Name="tbxEncriptado" Text="" Height="50"/>
+                <TextBlock Name="tbxDesencriptado" Text="" Height="50"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Margin="20,0" Background="#FFDCE7F5">
+                <Button Name="btnEncriptarFichero" Content="Encriptar Fichero" Margin="10,10" Height="30" Click="BtnEncriptarFichero_Click"/>
+                <Button Name="btnDesencriptarFichero" Content="Desencriptar Fichero" Margin="10,10" Height="30" Click="BtnDesencriptarFichero_Click"/>
+            </StackPanel>
         </StackPanel>
-
-        <Button Name="btnEncriptar" Content="Encriptar"/>
-        <Button Name="btnDesencriptar" Content="Desencriptar"/>
+        <!-- Fin Resultados -->
+        
+        <!-- Botones -->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <Button Name="btnEncriptar" Content="Encriptar" Height="30" Width="100" Margin="10,0" Click="BtnEncriptar_Click"/>
+            <Button Name="btnDesencriptar" Content="Desencriptar" Height="30" Width="100" Margin="10,0" Click="BtnDesencriptar_Click"/>
+        </StackPanel>
+        <!-- Fin Botones --> 
     </Grid>
 </Window>
