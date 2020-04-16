@@ -24,5 +24,15 @@ namespace WPF_Ejercicio9
         {
             InitializeComponent();
         }
+
+        private void BtnTirar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAutomatico_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
