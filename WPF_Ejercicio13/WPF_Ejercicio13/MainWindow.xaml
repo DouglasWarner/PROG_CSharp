@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Ejercicio13"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Name="winPrincipal"
+        SizeChanged="WinPrincipal_SizeChanged"
+        Closing="WinPrincipal_Closing">
     <Grid>
-        
+        <WrapPanel Orientation="Vertical" Width="{Binding Width, ElementName=winPrincipal}">
+            <Menu VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="30" FontSize="20">
+                <MenuItem Header="_Archivo">
+                    <MenuItem Name="mtiNuevo" Header="_Nuevo" Click="MtiNuevo_Click"/>
+                    <MenuItem Name="mtiVentanaNuevo" Header="_Ventana Nueva" Click="MtiVentanaNuevo_Click"/>
+                    <MenuItem Name="mtiAbrir" Header="_Abrir..."/>
+                    <MenuItem Name="mtiGuardar" Header="_Guardar"/>
+                    <MenuItem Name="mtiGuardarComo" Header="_Guardar como..."/>
+                    <Separator/>
+                    <MenuItem Name="mtiSalir" Header="_Salir" Click="MtiSalir_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Edición">
+                    <MenuItem Name="mtiCortar" Header="_Cortar"/>
+                    <MenuItem Name="mtiCopiar" Header="_Copiar"/>
+                    <MenuItem Name="mtiPegar" Header="_Pegar"/>
+                    <Separator />
+                    <MenuItem Name="mtiFecha" Header="_Hora y Fecha"/>
+                </MenuItem>
+                <MenuItem Header="_Formato">
+                    <MenuItem Name="mtiFuente" Header="_Fuente..."/>
+                </MenuItem>
+                <MenuItem Header="_Ver">
+                    <MenuItem Name="mtiBarraEstado" Header="_Barra de estado" IsCheckable="True" Click="MtiBarraEstado_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Ayuda">
+                    <MenuItem Name="acercaDe" Header="Acerca de" Click="AcercaDe_Click" />
+                </MenuItem>
+            </Menu>
+            <ScrollViewer Name="scrollTexto" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Height="360" HorizontalAlignment="Left">
+                <RichTextBox Name="rtbxTexto" Background="Black" Foreground="White"/>
+            </ScrollViewer>
+
+            <StatusBar Name="stbEstado" Height="20">
+                <StatusBarItem Name="stbItemLinea"> Lin1 </StatusBarItem>
+                <StatusBarItem>, </StatusBarItem>
+                <StatusBarItem Name="stbItemColumna"> Col 2 </StatusBarItem>
+                <Separator />
+                <StatusBarItem Name="stbItemZoom"> 100 </StatusBarItem>
+                <Separator />
+                <StatusBarItem Name="stbItemFormato"> UTF-8 </StatusBarItem>
+            </StatusBar>
+        </WrapPanel>
     </Grid>
 </Window>
