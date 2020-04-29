@@ -1,0 +1,34 @@
+﻿<Window x:Class="WPF_Ejercicio11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Ejercicio11"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="693.781">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Label Name="lblCambiaColor" Content="Cambia Color de Fondo y Letra" FontSize="25"
+                   MouseDown="LblCambiaColor_MouseDown"/>
+            <Label Name="lblCambiaFuente" Content="Cambia Tipo de Fuente" FontSize="25"
+                   MouseDown="LblCambiaFuente_MouseDown" Margin="0,20"/>
+            <Label Name="lblCambiaAspecto" Content="Cambia Aspecto del Texto" FontSize="25"
+                   MouseDown="LblCambiaAspecto_MouseDown"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Label Content="Fuente                                         Fondo" HorizontalContentAlignment="Center"/>
+            <StackPanel Orientation="Horizontal">
+                <ListBox Name="lbxColorFuente" Height="75" Width="150"/>
+                <ListBox Name="lbxColorFondo" Height="75" Width="150"/>
+            </StackPanel>
+            <Label Content="Fonts Family" HorizontalAlignment="Center"/>
+            <ListBox Name="lbxFuentes" Height="75" Width="150"/>
+            <Label Content="Fonts Style                         Fonts Weight" HorizontalContentAlignment="Center"/>
+            <StackPanel Orientation="Horizontal">
+                <ListBox Name="lbxEstilos" Height="75" Width="150"/>
+                <ListBox Name="lbxEspesor" Height="75" Width="150"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

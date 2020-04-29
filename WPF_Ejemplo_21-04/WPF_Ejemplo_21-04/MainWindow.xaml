@@ -1,0 +1,44 @@
+﻿<Window x:Class="WPF_Ejemplo_21_04.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Ejemplo_21_04"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="500">
+    <Grid>
+        <!-- Manejo de atajos para hacer foco en un elemento 
+        <DockPanel VerticalAlignment="Center">
+            Al poner en target el nombre del textbox usando Alt+N, se selecciona 
+            <Label Content="_Nombre" Target="{Binding ElementName=tbxNombre}"/>
+            <TextBox Name="tbxNombre"/>
+        </DockPanel>
+        <DockPanel VerticalAlignment="Center" Margin="0,75,0,0">
+             Al poner en target el nombre del textbox usando Alt+N, se selecciona 
+            <Label Content="_Apellidos" Target="{Binding ElementName=tbxApellidos}"/>
+            <TextBox Name="tbxApellidos" />
+        </DockPanel>
+        -->
+
+        <ComboBox Name="cmbEjemplo" Margin="10" SelectedIndex="0" Height="35" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left">
+            
+        </ComboBox>
+
+        <ListBox Name="ltbEjemplo" Margin="10" SelectedIndex="0" Height="200" Width="100" VerticalAlignment="Top" HorizontalAlignment="Right" SelectionChanged="LtbEjemplo_SelectionChanged">
+            
+        </ListBox>
+
+        <TabControl Name="tbcEjemplo" Margin="10" Height="50" HorizontalAlignment="Left">
+            <!-- Primera pestaña -->
+            <TabItem Selector.IsSelected="True">
+                <TabItem.Header>Pestaña uno</TabItem.Header>
+            </TabItem>
+            <!-- Segunda pestaña -->
+            <TabItem Selector.IsSelected="True">
+                <TabItem.Header>Pestaña dos</TabItem.Header>
+            </TabItem>
+        </TabControl>
+        <Button Name="btnAnadirTabItem" Content="Añadir" HorizontalAlignment="Left" Height="25" Width="120" Margin="10,193,0,101" Click="BtnAnadirTabItem_Click"/>
+        <Button Name="btnOrdenar" Content="Ordenar Lista" Height="25" Width="120" VerticalAlignment="Bottom" Margin="0,0,0,10" Click="BtnOrdenar_Click"/>
+    </Grid>
+</Window>

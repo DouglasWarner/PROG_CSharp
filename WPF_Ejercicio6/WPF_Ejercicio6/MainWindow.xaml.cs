@@ -37,10 +37,9 @@ namespace WPF_Ejercicio6
             InitializeComponent();
             lbReloj.Content = string.Format("{0} : {1} : {2}", DateTime.Now.Hour.ToString("00"), DateTime.Now.Minute.ToString("00"), DateTime.Now.Second.ToString("00"));
             LlenarComboBoxHoraYMinuto();
-            timer.Interval = TimeSpan.FromMilliseconds(1);
+            timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
             timer.Start();
-            SystemSounds.Hand.Play();
         }
 
         private void Timer_Tick(object sender, EventArgs e)

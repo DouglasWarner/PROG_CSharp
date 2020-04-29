@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 //---------------
 using IO = System.IO;
 using F = System.Windows.Forms;
+using System.Security.Policy;
 
 namespace WPF_Ejercicio5
 {
@@ -24,6 +25,7 @@ namespace WPF_Ejercicio5
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string cesar = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
         private int desplazamiento = 3;
 
         public MainWindow()
@@ -53,12 +55,14 @@ namespace WPF_Ejercicio5
         {
             tbxOriginal.Text = tbxFrase.Text;
             tbxEncriptado.Text = Encriptar(tbxFrase.Text);
+            tbxFrase.Text = tbxEncriptado.Text;
         }
 
         private void BtnDesencriptar_Click(object sender, RoutedEventArgs e)
         {
-            tbxOriginal.Text = tbxEncriptado.Text;
-            tbxDesencriptado.Text = Desencriptar(tbxEncriptado.Text);
+            tbxOriginal.Text = tbxFrase.Text;
+            tbxDesencriptado.Text = Desencriptar(tbxFrase.Text);
+            tbxFrase.Text = tbxDesencriptado.Text;
         }
 
         private string Encriptar(string frase)
@@ -67,7 +71,9 @@ namespace WPF_Ejercicio5
 
             for (int i = 0; i < frase.Length; i++)
             {
-                resultado.Append(frase[(i + desplazamiento) % frase.Length]);
+                int indiceLetra = (cesar.IndexOf(frase[i].ToString().ToUpper()) + desplazamiento);
+
+                resultado.Append(cesar[indiceLetra % cesar.Length]);
             }
 
             return resultado.ToString();
@@ -79,7 +85,9 @@ namespace WPF_Ejercicio5
 
             for (int i = 0; i < frase.Length; i++)
             {
-                resultado.Append(frase[(frase.Length + (i - desplazamiento)) % frase.Length]);
+                int indiceLetra = (cesar.IndexOf(frase[i].ToString().ToUpper()) + (cesar.Length - desplazamiento));
+
+                resultado.Append(cesar[indiceLetra % cesar.Length]);
             }
 
             return resultado.ToString();
@@ -123,7 +131,14 @@ namespace WPF_Ejercicio5
             using (IO.StreamReader sr = new IO.StreamReader(fs))
             using (IO.StreamWriter sw = new IO.StreamWriter(tmp))
             {
-                while(!sr.EndOfStream)
+                sw.Write("#");
+                for (int i = 0; i < desplazamiento; i++)
+                {
+                    sw.Write(".");
+                }
+                sw.WriteLine("#");
+
+                while (!sr.EndOfStream)
                 {
                     sw.WriteLine(Encriptar(sr.ReadLine()));
                 }
@@ -144,6 +159,8 @@ namespace WPF_Ejercicio5
             using (IO.StreamReader sr = new IO.StreamReader(fs))
             using (IO.StreamWriter sw = new IO.StreamWriter(tmp))
             {
+                string[] tmp1 = sr.ReadLine().Split('#');
+                desplazamiento = tmp1[1].Count(x => x == '.');
                 while (!sr.EndOfStream)
                 {
                     sw.WriteLine(Desencriptar(sr.ReadLine()));
