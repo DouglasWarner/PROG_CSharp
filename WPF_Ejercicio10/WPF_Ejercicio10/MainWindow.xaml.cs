@@ -40,6 +40,8 @@ namespace WPF_Ejercicio10
             winVentanaPrincipal.Height = 415;
             winVentanaPrincipal.Width = 350;
             lbxHistorial.ItemsSource = historialExpresiones;
+
+            Clipboard.Clear();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -77,14 +79,13 @@ namespace WPF_Ejercicio10
                     if (tbxCuadro.Text.Length == 1 && tbxCuadro.Text == "0")
                         ultimaExpresion.Append("0");
 
-                    if (ultimaExpresion[ultimaExpresion.Length - 1] == '.')
+                    if (ultimaExpresion.Length > 0 && ultimaExpresion[ultimaExpresion.Length - 1] == '.')
                     {
                         ultimaExpresion.Remove(ultimaExpresion.Length - 1, 1);
                         expresion.Remove(expresion.Length - 1, 1);
                     }
-
-                    ultimaExpresion.Append(tmp);
-                    expresion.Append(tmp);
+                    
+                    expresion.Append(string.Concat(' ', tmp, ' '));
 
                     ultimaExpresion.Clear();
                 }
@@ -99,30 +100,29 @@ namespace WPF_Ejercicio10
 
         private double Calcular()
         {
-            string[] numeros = expresion.ToString().Split(botones[0], StringSplitOptions.RemoveEmptyEntries);
-            string[] simbolos = expresion.ToString().Split(botones[1], StringSplitOptions.RemoveEmptyEntries);
+            string[] expresionSeparada = expresion.ToString().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             double resultado = 0;
 
             try
             {
-                if (!double.TryParse(numeros[0], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out resultado))
+                if (!double.TryParse(expresionSeparada[0], NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out resultado))
                     return 0;
 
-                for (int i = 0; i < simbolos.Length; i++)
+                for (int i = 0; i < expresionSeparada.Length; i++)
                 {
-                    switch (simbolos[i])
+                    switch (expresionSeparada[i])
                     {
                         case "+":
-                            resultado += double.Parse(numeros[i + 1], CultureInfo.InvariantCulture);
+                            resultado += double.Parse(expresionSeparada[i + 1], CultureInfo.InvariantCulture);
                             break;
                         case "-":
-                            resultado -= double.Parse(numeros[i + 1], CultureInfo.InvariantCulture);
+                            resultado -= double.Parse(expresionSeparada[i + 1], CultureInfo.InvariantCulture);
                             break;
                         case "*":
-                            resultado *= double.Parse(numeros[i + 1], CultureInfo.InvariantCulture);
+                            resultado *= double.Parse(expresionSeparada[i + 1], CultureInfo.InvariantCulture);
                             break;
                         case "/":
-                            resultado /= double.Parse(numeros[i + 1], CultureInfo.InvariantCulture);
+                            resultado /= double.Parse(expresionSeparada[i + 1], CultureInfo.InvariantCulture);
                             break;
                     }
                 }
@@ -137,7 +137,9 @@ namespace WPF_Ejercicio10
 
         private void BtnBorrarUltimaOperacion_Click(object sender, RoutedEventArgs e)
         {
-            expresion.Remove(expresion.ToString().LastIndexOf(ultimaExpresion.ToString(), expresion.Length), ultimaExpresion.Length);
+            int posBorrar = expresion.ToString().LastIndexOf(' ') + 1;
+
+            expresion.Remove(posBorrar, ultimaExpresion.Length);
             ultimaExpresion.Clear();
             tbxCuadro.Text = expresion.ToString();
         }
@@ -164,33 +166,21 @@ namespace WPF_Ejercicio10
         private void BtnSigno_Click(object sender, RoutedEventArgs e)
         {
             conSigno = !conSigno;
+            double cambioSigno = 0;
             string tmp = string.Empty;
 
-            if (conSigno)
-            {
-                if (ultimaExpresion.Length > 0)
-                {
-                    tmp = string.Concat("(-", ultimaExpresion.ToString(), ")");
+            cambioSigno = double.Parse(ultimaExpresion.ToString()) * -1;
+            tmp = ultimaExpresion.ToString();
 
-                    BtnBorrarUltimaOperacion_Click(this, null);
-                    expresion.Append(tmp);
-                    tbxCuadro.Text = expresion.ToString();
-                }
-            }
-            else
-            {
-                tmp = expresion.ToString().Substring(expresion.ToString().LastIndexOf('-', expresion.Length - 1)-1);
-                if (tmp.Length > 0)
-                {
-                    ultimaExpresion.Append(tmp);
-                    BtnBorrarUltimaOperacion_Click(this, null);
-                    tmp = tmp.Remove(0, 2);
-                    tmp = tmp.Remove(tmp.Length - 1, 1);
-                    expresion.Append(tmp);
-                    ultimaExpresion.Append(tmp);
-                    tbxCuadro.Text = expresion.ToString();
-                }
-            }
+            ultimaExpresion.Clear();
+            ultimaExpresion.Append(cambioSigno);
+
+            int posInsertar = expresion.ToString().LastIndexOf(' ');
+            int longitudInsertar = expresion.ToString().Substring(posInsertar).Length;
+
+            expresion.Replace(tmp, cambioSigno.ToString(), posInsertar, longitudInsertar);
+
+            tbxCuadro.Text = expresion.ToString();
         }
         
         private void CbxHistorial_Checked(object sender, RoutedEventArgs e)
@@ -218,6 +208,55 @@ namespace WPF_Ejercicio10
         private void CbxHistorial_Unchecked(object sender, RoutedEventArgs e)
         {
             CbxHistorial_Checked(this, null);
+        }
+
+        private void Pegar_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = Clipboard.ContainsText();
+        }
+
+        private void Pegar_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            tbxCuadro.Paste();
+            ultimaExpresion.Clear();
+            ultimaExpresion.Append(Clipboard.GetText());
+            expresion.Append(Clipboard.GetText());
+            tbxCuadro.Text = expresion.ToString();
+        }
+
+        private void Copiar_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = tbxCuadro.SelectionLength > 0;
+        }
+
+        private void Copiar_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            tbxCuadro.Copy();
+        }
+
+        private void Cortar_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = tbxCuadro.SelectionLength > 0;
+        }
+
+        private void Cortar_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            tbxCuadro.Cut();
+            expresion.Clear();
+            expresion.Append(tbxCuadro.Text);
+        }
+
+        private void TbxCuadro_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!botones[1].Contains(e.Text[e.Text.Length - 1]))
+                e.Handled = true;
+        }
+
+        private void AcercaDe_Click(object sender, RoutedEventArgs e)
+        {
+            AcercaDe ventana = new AcercaDe();
+
+            ventana.ShowDialog();
         }
     }
 }

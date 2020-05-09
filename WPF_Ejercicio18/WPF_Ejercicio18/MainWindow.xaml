@@ -1,0 +1,82 @@
+﻿<Window x:Class="WPF_Ejercicio18.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Ejercicio18"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="532.104" Width="572.525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+
+        <Grid Width="500" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Jarra A "/>
+                <TextBox Name="tbxJarraA" Text="7"/>
+            </StackPanel>
+            <Button Name="btnCrearJarras" Content="CrearJarras" Click="BtnCrearJarras_Click"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Jarra B "/>
+                <TextBox Name="tbxJarraB" Text="4" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Column="0">
+                <Button Content="Llenar" Tag="A" Click="BtnLlenar_Click"/>
+                <Button Content="Vaciar" Margin="0,20" Tag="A" Click="BtnVaciar_Click"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Column="1">
+                <Button Name="btnVolcarJarraA" Content="-->" Height="25" Click="BtnVolcarJarraA_Click"/>
+                <Button Name="btnVolcarJarraB" Content="&lt;--" Height="25" Margin="0,20" Click="BtnVolcarJarraB_Click"/>
+                <Button Name="btnFinalizar" Content="Finalizar" Height="25" Click="BtnFinalizar_Click" />
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Column="2">
+                <Button Content="Llenar" Tag="B" Click="BtnLlenar_Click"/>
+                <Button Content="Vaciar" Margin="0,20" Tag="B" Click="BtnVaciar_Click" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid Margin="50,0">
+                    <ProgressBar Name="prbrCantidadJarraA" Height="40" Width="175"/>
+                    <TextBox Name="tbxCantidadJarraA" HorizontalAlignment="Center" Height="20" Width="50" Background="LightGray" IsReadOnly="True"/>
+                </Grid>
+                <Grid Margin="50,0">
+                    <ProgressBar Name="prbrCantidadJarraB" Height="40" Width="175"/>
+                    <TextBox Name="tbxCantidadJarraB" HorizontalAlignment="Center" Height="20" Width="50" Background="LightGray" IsReadOnly="True"/>
+                </Grid>
+            </StackPanel>
+            <ListBox Name="lbxMensajes" Height="175" Width="500" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Center" SourceUpdated="LbxMensajes_SourceUpdated"/>
+            <Grid VerticalAlignment="Bottom" Margin="0,7,0,12">
+                <TextBlock Name="tbkJarrasInicializado" Width="250" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="35,0,0,0" Background="LightGray"/>
+                <Button Name="btnDemo" Content="Demo" Height="20" Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,35,0" Click="BtnDemo_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
+    
+<!--    MultiBinding
+<TextBox.Text>
+    <MultiBinding StringFormat="{}{0}/{1}">
+        <Binding ElementName="prbrCantidadJarraB" Path="Value"/>
+        <Binding ElementName="prbrCantidadJarraB" Path="Maximum"/>
+    </MultiBinding>
+</TextBox.Text>
+    -->

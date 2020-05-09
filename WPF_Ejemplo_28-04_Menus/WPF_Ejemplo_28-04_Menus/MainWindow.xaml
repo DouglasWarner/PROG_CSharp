@@ -6,32 +6,68 @@
         xmlns:local="clr-namespace:WPF_Ejemplo_28_04_Menus"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="600">
+    
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Copiar"/>
+            <MenuItem Header="Pegar"/>
+            <MenuItem Header="Cortar"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+    
     <Grid>
         
         <!-- Globalización traducción
         https://docs.microsoft.com/es-es/dotnet/framework/wpf/advanced/globalization-for-wpf
         -->
-        <Menu Style="{StaticResource EstilDelMenu}" Height="30" VerticalAlignment="Top" FontSize="15" HorizontalAlignment="Stretch">
-            <MenuItem Name="mitArchivo" Header="_Archivos">
-                <MenuItem Header="_Nuevo">
-                    <MenuItem.Icon>
-                        <Image Source="463.bmp"/>
-                    </MenuItem.Icon>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+            <Menu Style="{StaticResource EstilDelMenu}" Height="30" VerticalAlignment="Top" FontSize="15" HorizontalAlignment="Stretch">
+                <MenuItem Name="mitArchivo" Header="_Archivos">
+                    <MenuItem Header="_Nuevo">
+                        <MenuItem.Icon>
+                            <Image Source="463.bmp"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="A_brir"/>
+                    <Separator/>
+                    <MenuItem Header="_Salir" Click="MenuItem_Click"/>
                 </MenuItem>
-                <MenuItem Header="A_brir"/>
-                <Separator/>
-                <MenuItem Header="_Salir" Click="MenuItem_Click"/>
-            </MenuItem>
-            <MenuItem Header="_Editar">
-                <MenuItem Header="_Copiar"/>
-                <MenuItem Header="_Pegar"/>
-                <MenuItem Header="Cor_tar"/>
-            </MenuItem>
-            <MenuItem Header="A_yuda">
-                <MenuItem Name="mitemAyuda" Header="Ver la ayuda" Click="MitemAyuda_Click"/>
-                <MenuItem Header="Acerca de"/>
-            </MenuItem>
-        </Menu>
+                <MenuItem Header="_Editar">
+                    <MenuItem Header="_Copiar"/>
+                    <MenuItem Header="_Pegar"/>
+                    <MenuItem Header="Cor_tar"/>
+                </MenuItem>
+                <MenuItem Header="Herramientas">
+                    <MenuItem Name="mniIdioma" Header="Idioma">
+                        <MenuItem Name="mniEspañol" Header="Español" IsChecked="True" IsCheckable="True" Click="MniEspañol_Click"/>
+                        <MenuItem Name="mniIngles" Header="Ingles" IsChecked="False" IsCheckable="True" Click="MniIngles_Click"/>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Fuentes">
+                    <ComboBox IsEditable="True" Text="Opciones">
+                        <ComboBoxItem Content="Uno"/>
+                        <ComboBoxItem Content="Dos"/>
+                        <ComboBoxItem Content="Tres"/>
+                    </ComboBox>
+                </MenuItem>
+                <MenuItem Header="A_yuda">
+                    <MenuItem Name="mitemAyuda" Header="Ver la ayuda" Click="MitemAyuda_Click"/>
+                    <MenuItem Header="Acerca de"/>
+                </MenuItem>
+            </Menu>
+            <ToolBar>
+                <MenuItem Header="tool bar"/>
+            </ToolBar>
+        </StackPanel>
 
+        <Button Name="btnBoton" Content="Mi boton" Margin="132,112,513,238">
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Copiar del boton"/>
+                    <MenuItem Header="Pegar del boton"/>
+                    <MenuItem Header="Cortar del boton"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
     </Grid>
 </Window>

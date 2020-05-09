@@ -8,49 +8,45 @@
         Title="MainWindow" Height="450" Width="800"
         Name="winPrincipal"
         SizeChanged="WinPrincipal_SizeChanged"
-        Closing="WinPrincipal_Closing">
+        Closing="WinPrincipal_Closing"
+        ResizeMode="CanResizeWithGrip">
     <Grid>
-        <WrapPanel Orientation="Vertical" Width="{Binding Width, ElementName=winPrincipal}">
-            <Menu VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="30" FontSize="20">
+        <DockPanel Width="{Binding Width, ElementName=winPrincipal}" LastChildFill="True">
+            <Menu VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="30" FontSize="20" DockPanel.Dock="Top">
                 <MenuItem Header="_Archivo">
                     <MenuItem Name="mtiNuevo" Header="_Nuevo" Click="MtiNuevo_Click"/>
                     <MenuItem Name="mtiVentanaNuevo" Header="_Ventana Nueva" Click="MtiVentanaNuevo_Click"/>
-                    <MenuItem Name="mtiAbrir" Header="_Abrir..."/>
-                    <MenuItem Name="mtiGuardar" Header="_Guardar"/>
-                    <MenuItem Name="mtiGuardarComo" Header="_Guardar como..."/>
+                    <MenuItem Name="mtiAbrir" Header="_Abrir..." Click="MtiAbrir_Click"/>
+                    <MenuItem Name="mtiGuardar" Header="_Guardar" Click="MtiGuardar_Click"/>
+                    <MenuItem Name="mtiGuardarComo" Header="_Guardar como..." Click="MtiGuardarComo_Click"/>
                     <Separator/>
                     <MenuItem Name="mtiSalir" Header="_Salir" Click="MtiSalir_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Edición">
-                    <MenuItem Name="mtiCortar" Header="_Cortar"/>
-                    <MenuItem Name="mtiCopiar" Header="_Copiar"/>
-                    <MenuItem Name="mtiPegar" Header="_Pegar"/>
-                    <Separator />
-                    <MenuItem Name="mtiFecha" Header="_Hora y Fecha"/>
+                    <MenuItem Name="mtiFecha" Header="_Hora y Fecha" Click="MtiFecha_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Formato">
-                    <MenuItem Name="mtiFuente" Header="_Fuente..."/>
+                    <MenuItem Name="mtiFuente" Header="_Fuente..." Click="MtiFuente_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Ver">
-                    <MenuItem Name="mtiBarraEstado" Header="_Barra de estado" IsCheckable="True" Click="MtiBarraEstado_Click"/>
+                    <MenuItem Name="mtiBarraEstado" Header="_Barra de estado" IsChecked="True" IsCheckable="True" Click="MtiBarraEstado_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Ayuda">
                     <MenuItem Name="acercaDe" Header="Acerca de" Click="AcercaDe_Click" />
                 </MenuItem>
             </Menu>
-            <ScrollViewer Name="scrollTexto" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Height="360" HorizontalAlignment="Left">
-                <RichTextBox Name="rtbxTexto" Background="Black" Foreground="White"/>
-            </ScrollViewer>
+            
+            <RichTextBox Name="rtbxTexto" Height="360" DockPanel.Dock="Top" HorizontalAlignment="Left"
+                             HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Block.LineHeight="1"
+                          TextChanged="RtbxTexto_TextChanged"/>
 
-            <StatusBar Name="stbEstado" Height="20">
-                <StatusBarItem Name="stbItemLinea"> Lin1 </StatusBarItem>
+            <StatusBar Name="stbEstado" Height="25" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" FontSize="15">
+                <StatusBarItem Name="stbItemLinea" Margin="20,0,0,0"> Lin 1 </StatusBarItem>
                 <StatusBarItem>, </StatusBarItem>
                 <StatusBarItem Name="stbItemColumna"> Col 2 </StatusBarItem>
-                <Separator />
-                <StatusBarItem Name="stbItemZoom"> 100 </StatusBarItem>
-                <Separator />
-                <StatusBarItem Name="stbItemFormato"> UTF-8 </StatusBarItem>
+                <Separator Margin="50,0,0,0" />
+                <StatusBarItem Name="stbItemFormato" Margin="10,0,0,0"> UTF-8 </StatusBarItem>
             </StatusBar>
-        </WrapPanel>
+        </DockPanel>
     </Grid>
 </Window>

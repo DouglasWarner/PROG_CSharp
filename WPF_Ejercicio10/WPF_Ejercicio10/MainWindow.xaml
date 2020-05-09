@@ -9,20 +9,34 @@
         Background="LightGray"
         Name="winVentanaPrincipal"
         ResizeMode="CanMinimize">
+<!--
+    <Window.CommandBindings>
+        <CommandBinding x:Name="Pegar" Command="Paste" CanExecute="Pegar_CanExecute" Executed="Pegar_Executed" />
+        <CommandBinding x:Name="Copiar" Command="Copy" CanExecute="Copiar_CanExecute" Executed="Copiar_Executed"/>
+        <CommandBinding x:Name="Cortar" Command="Cut" CanExecute="Cortar_CanExecute" Executed="Cortar_Executed"/>
+    </Window.CommandBindings>
+-->
     <Grid>
         <StackPanel Orientation="Vertical" Width="337" HorizontalAlignment="Left">
             <Menu FontSize="15">
-                <MenuItem Header="_Edicion">
-                    <Label Content="_Copiar" />
-                    <Label Content="_Cortar" />
-                    <Label Content="_Pegar" />
+                <MenuItem Header="_Edicion" FocusManager.IsFocusScope="True">
+                    <MenuItem.CommandBindings>
+                        <CommandBinding x:Name="Pegar" Command="Paste" CanExecute="Pegar_CanExecute" Executed="Pegar_Executed" />
+                        <CommandBinding x:Name="Copiar" Command="Copy" CanExecute="Copiar_CanExecute" Executed="Copiar_Executed"/>
+                        <CommandBinding x:Name="Cortar" Command="Cut" CanExecute="Cortar_CanExecute" Executed="Cortar_Executed"/>
+                    </MenuItem.CommandBindings>
+                    <MenuItem Header="Copiar" Command="Copy"/>
+                    <MenuItem Header="Cortar" Command="Cut"/>
+                    <MenuItem Header="Pegar" Command="Paste"/>
                 </MenuItem>
                 <MenuItem Header="_Ver">
                     <CheckBox Name="cbxHistorial" Content="_Historial" Checked="CbxHistorial_Checked" Unchecked="CbxHistorial_Unchecked"/>
                 </MenuItem>
-                <MenuItem Header="_Ayuda"/>
+                <MenuItem Header="_Ayuda">
+                    <MenuItem Name="acercaDe" Header="Acerca de" Click="AcercaDe_Click" />
+                </MenuItem>
             </Menu>
-            <TextBox Name="tbxCuadro" TextAlignment="Right" FontSize="20" Width="300" Margin="10"/>
+            <TextBox Name="tbxCuadro" TextAlignment="Right" FontSize="20" Width="300" Margin="10" PreviewTextInput="TbxCuadro_PreviewTextInput" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -46,7 +60,7 @@
                 <Button Content="8" Grid.Column="1" Grid.Row="0" Click="Button_Click"/>
                 <Button Content="5" Grid.Column="1" Grid.Row="1" Click="Button_Click"/>
                 <Button Content="2" Grid.Column="1" Grid.Row="2" Click="Button_Click"/>
-                <Button Name="btnSigno" Content="+/-" Grid.Column="1" Grid.Row="3" Click="BtnSigno_Click" IsEnabled="False"/>
+                <Button Name="btnSigno" Content="+/-" Grid.Column="1" Grid.Row="3" Click="BtnSigno_Click"/>
 
                 <Button Content="9" Grid.Column="2" Grid.Row="0" Click="Button_Click"/>
                 <Button Content="6" Grid.Column="2" Grid.Row="1" Click="Button_Click"/>

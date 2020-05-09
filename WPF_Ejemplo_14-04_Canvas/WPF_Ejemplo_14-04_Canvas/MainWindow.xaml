@@ -5,16 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Ejemplo_14_04_Canvas"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="Iconos/logo.ico"
+        Title="MainWindow" Height="450" Width="764.751" WindowStartupLocation="CenterScreen" Icon="Iconos/logo.ico"
         Name="winVentana" Closing="WinVentana_Closing">
-    
+
     <Grid>
+        <!--
         <Canvas Name="cnvPrincipal" Background="Red" Width="450" Height="400" HorizontalAlignment="Right" Margin="10,0"/>
         <Button Name="btnAnadirContenido" Content="Añadir Contenido" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20" Height="30" Width="150" Click="BtnAnadirContenido_Click"/>
-        <!-- Juego de la Barra/Pelota
-        <Canvas>
-            <Ellipse Name="Bola" Height="50" Width="50" Fill="Blue" Canvas.Left="375" Canvas.Top="189"/>
-            <Rectangle Name="Barra" Width="150" Height="30" Fill="Red" Canvas.Left="330" Canvas.Top="360"/>
-        </Canvas>-->
+        -->
+
+        <!-- Juego de la Barra/Pelota -->
+        <Canvas Name="cvnPanel" Height="300" Width="600" Background="SkyBlue" HorizontalAlignment="Center" Margin="0,0,0,100">
+            <Ellipse Name="Bola" Height="50" Width="50" Fill="Black" Canvas.Left="223" Canvas.Top="105"/>
+            <Rectangle Name="Barra" Width="100" Height="30" Fill="Red" Canvas.Left="200" Canvas.Top="225"/>
+        </Canvas>
+
+        <Button Name="btnIniciar" Content="Iniciar" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Click="BtnIniciar_Click" Margin="78,0,0,53"/>
+        <Button Name="btnDetener" Content="Detener" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="BtnDetener_Click" Margin="0,0,79,53"/>
     </Grid>
 </Window>

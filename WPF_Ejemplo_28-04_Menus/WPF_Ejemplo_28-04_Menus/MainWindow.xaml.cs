@@ -36,5 +36,19 @@ namespace WPF_Ejemplo_28_04_Menus
 
             miAyuda.ShowDialog();
         }
+
+        private void MniEspañol_Click(object sender, RoutedEventArgs e)
+        {
+            mniEspañol.IsChecked = true;
+            mniIngles.IsChecked = false;
+            Title = "ESPAÑOL";
+        }
+
+        private void MniIngles_Click(object sender, RoutedEventArgs e)
+        {
+            mniEspañol.IsChecked = false;
+            mniIngles.IsChecked = true;
+            Title = "INGLES";
+        }
     }
 }

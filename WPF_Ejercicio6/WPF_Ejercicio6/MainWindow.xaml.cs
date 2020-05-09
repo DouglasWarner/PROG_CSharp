@@ -30,7 +30,6 @@ namespace WPF_Ejercicio6
         private bool _activado = true;
         private int hora = -1;
         private int minuto = -1;
-        private bool sonidoAlarma = true;
 
         public MainWindow()
         {
@@ -49,27 +48,27 @@ namespace WPF_Ejercicio6
 
         private void ActivarReloj()
         {
-            DateTime tmpDate = DateTime.Now.Date;
-            int tmpHora = DateTime.Now.Hour;
-            int tmpMin = DateTime.Now.Minute;
-
             if (_activado)
                 lbReloj.Content = string.Format("{0} : {1} : {2}", DateTime.Now.Hour.ToString("00"), DateTime.Now.Minute.ToString("00"), DateTime.Now.Second.ToString("00"));
 
-            if (tmpHora == hora && tmpMin == minuto && tmpDate == fecha.Date)
-            {
-                if (sonidoAlarma)
-                {
-                    SystemSounds.Hand.Play();
-                    sonidoAlarma = false;
-                }
-            }
-            else
-                sonidoAlarma = true;
+            ComprobarAlarma();
 
             sbitemFecha.Content = char.ToUpperInvariant(DateTime.Now.ToLongDateString()[0]) + DateTime.Now.ToLongDateString().Substring(1);
 
             Thread.Sleep(2);
+        }
+
+        private void ComprobarAlarma()
+        {
+            DateTime tmpDate = DateTime.Now.Date;
+            int tmpHora = DateTime.Now.Hour;
+            int tmpMin = DateTime.Now.Minute;
+            int tmpSec = DateTime.Now.Second;
+
+            if (tmpHora == hora && tmpMin == minuto && tmpSec == 0 && tmpDate == fecha.Date)
+            {
+                SystemSounds.Hand.Play();
+            }
         }
 
         private void LlenarComboBoxHoraYMinuto()
@@ -123,8 +122,7 @@ namespace WPF_Ejercicio6
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            fecha = new DateTime(((DatePicker)sender).SelectedDate.Value.Year, ((DatePicker)sender).SelectedDate.Value.Month, ((DatePicker)sender).SelectedDate.Value.Day,
-                fecha.Hour, fecha.Minute, fecha.Second);
+            fecha = dprFecha.SelectedDate.Value;
         }
     }
 }
